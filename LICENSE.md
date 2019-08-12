@@ -1,3 +1,5 @@
+## creative commons
+
 # Attribution-NonCommercial-NoDerivatives 4.0 International
 
 Creative Commons Corporation (“Creative Commons”) is not a law firm and does not provide legal services or legal advice. Distribution of Creative Commons public licenses does not create a lawyer-client or other relationship. Creative Commons makes its licenses and related information available on an “as-is” basis. Creative Commons gives no warranties regarding its licenses, any material licensed under their terms and conditions, or any related information. Creative Commons disclaims all liability for damages resulting from their use to the fullest extent possible.
@@ -93,7 +95,7 @@ a. ___Attribution.___
       B. indicate if You modified the Licensed Material and retain an indication of any previous modifications; and
 
       C. indicate the Licensed Material is licensed under this Public License, and include the text of, or the URI or hyperlink to, this Public License.
-
+ 
         For the avoidance of doubt, You do not have permission under this Public License to Share Adapted Material.
 
    2. You may satisfy the conditions in Section 3(a)(1) in any reasonable manner based on the medium, means, and context in which You Share the Licensed Material. For example, it may be reasonable to satisfy the conditions by providing a URI or hyperlink to a resource that includes the required information.
