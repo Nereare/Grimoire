@@ -1,0 +1,49 @@
+####################################################
+#              ToDo Bot Configuration              #
+####################################################
+todo:
+  autoAssign: true
+  exclude: "\.gitattributes"
+
+####################################################
+#             Welcome Bot Configuration            #
+####################################################
+#                new-issue-welcome                 #
+# https://github.com/behaviorbot/new-issue-welcome #
+####################################################
+newIssueWelcomeComment: >
+  Thanks for opening your first issue here! :sparkles:
+
+  This repository has an **issue template** and we ask that you follow it.
+
+  Also, note that there is a **[Code of Conduct](CODE-OF-CONDUCT.md)**. Please take a time to read it.
+
+  The :busts_in_silhouette: humans will be here shortly to assess your issue! And thanks once again for your first issue! :tada:
+####################################################
+#                  new-pr-welcome                  #
+# https://github.com/behaviorbot/new-pr-welcome    #
+####################################################
+newPRWelcomeComment: >
+  Thanks for opening this pull request! :octocat:
+
+  Please check out our [Contributing Guidelines](CONTRIBUTING.md) and our [Code of Conduct](CODE-OF-CONDUCT.md).
+####################################################
+#                  first-pr-merge                  #
+# https://github.com/behaviorbot/first-pr-merge    #
+####################################################
+firstPRMergeComment: >
+  Congrats on merging your first pull request! :+1:
+
+  Keep on coding! :tada:
+
+####################################################
+#            Sentiment Bot Configuration           #
+####################################################
+#                  sentiment-bot                   #
+# https://github.com/behaviorbot/sentiment-bot     #
+####################################################
+sentimentBotToxicityThreshold: .7
+sentimentBotReplyComment: >
+  Please be sure to review the [code of conduct](code-of-conduct.md) and be respectful.
+
+  The human @Nereare will be here to review this shortly.
