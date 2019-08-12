@@ -1,7 +1,7 @@
 # Grimoire
 
-[![GitHub package.json version](https://img.shields.io/github/package-json/v/Nereare/Grimoire)](https://github.com/Nereare/Grimoire)
-[![License](https://img.shields.io/github/license/Nereare/Grimoire.svg)](https://github.com/Nereare/Grimoire)
+[![Version 0.1.0](https://img.shields.io/badge/Version-0.1.0-brightgreen?logo=github&logoColor=lightgreen)](https://github.com/Nereare/Grimoire)
+[![License](https://img.shields.io/badge/License-CC--BY--SA--4.0-orange?logo=creative-commons&logoColor=orange)](LICENSE.md)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](CODE-OF-CONDUCT.md)
 
 A library for RPG worldbuilding texts.
