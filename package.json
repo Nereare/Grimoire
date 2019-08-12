@@ -1,7 +1,7 @@
 {
-  "name"            : "Grimoire",
+  "name"            : "Indigo Domain Grimoire",
   "version"         : "0.1.0",
-  "description"     : "A library for RPG worldbuilding texts.",
+  "description"     : "Notes on a campaing, previously non-megalomaiacal, but now astronomical.",
   "license"         : "CC-BY-SA-4.0",
   "private"         : true,
   "keywords"        : [
