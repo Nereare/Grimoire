@@ -18,9 +18,9 @@ This project uses [SemVer](http://semver.org/) for versioning. For the versions 
 
 ## Legal Stuff
 
-[![Creative Commons License](https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png)](http://creativecommons.org/licenses/by-nc-nd/4.0/)
+[![Creative Commons Attribution ShareAlike 4.0 License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/)
 
-<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Grimoire</span> by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Igor Padoim</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
+<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Grimoire</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/Nereare/Grimoire" property="cc:attributionName" rel="cc:attributionURL">Igor Padoim</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 
 ![d20 Logo](https://i.imgur.com/8CG0VEv.png)
 
