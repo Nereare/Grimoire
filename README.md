@@ -1,47 +1,29 @@
-# {{PKG_NAME}}
+# Grimoire
 
-[![GitHub package.json version](https://img.shields.io/github/package-json/v/{{PKG_REPO}})](https://github.com/{{PKG_REPO}})
-[![License](https://img.shields.io/github/license/{{PKG_REPO}}.svg)](https://github.com/{{PKG_REPO}})
+[![GitHub package.json version](https://img.shields.io/github/package-json/v/Nereare/Grimoire)](https://github.com/Nereare/Grimoire)
+[![License](https://img.shields.io/github/license/Nereare/Grimoire.svg)](https://github.com/Nereare/Grimoire)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](CODE-OF-CONDUCT.md)
 
-<!--
-TODO Delete the notice line on ReadMe
-BODY The [ReadMe file](README.md) has a notice line guiding to the template's tutorial. Delete it and replace by the repository's description.
--->
-# *This is a template repository. Please read [this file](DELETE_ME.md) for instructions on how to set it.*
-
-## Installing
-
-<!--
-TODO Set installation instructions
-BODY If there is some installation method, define it on the [README file](README.md).
--->
-1. Foo.
+A library for RPG worldbuilding texts.
 
 ## Contributing
 
-1. Fork it!
-2. Create your feature branch: `git checkout -b my-new-feature`
-3. Commit your changes: `git commit -am 'Add some feature'`
-4. Push to the branch: `git push origin my-new-feature`
-5. Submit a pull request :tada:
-
 Please, also read our [Contributing Guidelines](CONTRIBUTING.md).
 
-### Code of Conduct
-
-Please note that this project is released with a [Contributor Code of Conduct](CODE-OF-CONDUCT.md). By participating in this project you agree to abide by its terms.
+Also, note that this project is released with a [Contributor Code of Conduct](CODE-OF-CONDUCT.md). By participating in this project you agree to abide by its terms.
 
 ## History & Versioning
 
-See the [Change Log](CHANGELOG.md) for further history.
-
-This project uses [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/{{PKG_REPO}}/tags).
+This project uses [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/Nereare/Grimoire/tags). See the [Change Log](CHANGELOG.md) for history.
 
 ## Legal Stuff
 
-<!--
-TODO Set desired licese
-BODY This repository's template sets the license to MIT's by default. If this is not the intended license, change it.
--->
-* [MIT License](https://opensource.org/licenses/MIT).
+[![Creative Commons License](https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png)](http://creativecommons.org/licenses/by-nc-nd/4.0/)
+
+<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Grimoire</span> by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Igor Padoim</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
+
+![d20 Logo](https://i.imgur.com/8CG0VEv.png)
+
+Some of the contents of this site may fall under the [Open Game License](https://www.wizards.com/default.asp?x=d20/srdfaq/20040123b).
+
+`d20 System` and the `d20 System` logo are trademarks of Wizards of the Coast, Inc. and are used according to the terms of the d20 System License. A copy of this License can be found at [www.wizards.com](http://www.wizards.com/default.asp?x=d20/article/srdarchive).
