@@ -1,0 +1,35 @@
+title            : Grimoire
+email            : igorpadoim@gmail.com
+description      : A library for RPG worldbuilding texts.
+baseurl          : "" # the subpath of your site, e.g. /blog
+url              : "" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username : nereare
+github_username  :  nereare
+
+markdown         : kramdown
+plugins          :
+  - jekyll-feed
+  - jekyll-redirect-from
+  - jekyll-relative-links
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jemoji
+
+relative_links   :
+  enabled        : true
+  collections    : true
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - CHANGELOG.md
+  - CODE-OF-CONDUCT.md
+  - CONTRIBUTING.md
+  - LICENSE.md
+  - OGL.md
+  - README.md
