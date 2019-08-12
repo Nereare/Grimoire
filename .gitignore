@@ -194,4 +194,10 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+### Jekyll ###
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
 # End of https://www.gitignore.io/api/osx,node,less,sass,code,grunt,linux,bower,windows,dropbox
