@@ -26,21 +26,20 @@ The following text is the property of Wizards of the Coast, Inc. and is Copyrigh
 14.  **Reformation:** If any provision of this License is held to be unenforceable, such provision shall be reformed only to the extent necessary to make it enforceable.
 15.  ### COPYRIGHT NOTICE
 
-    Open Game License v 1.0a Copyright 2000, Wizards of the Coast, Inc.
-
-    _System Reference Document_ Copyright 2000-2003, Wizards of the Coast, Inc.; Authors Jonathan Tweet, Monte Cook, Skip Williams, Rich Baker, Andy Collins, David Noonan, Rich Redman, Bruce R. Cordell, John D. Rateliff, Thomas Reid, James Wyatt, based on original material by E. Gary Gygax and Dave Arneson.
-
-    _Creature Collection Volume 1_ Copyright 2000, Clark Peterson.
-
-    _Modern System Reference Document_ Copyright 2002, Wizards of the Coast, Inc.; Authors Bill Slavicsek, Jeff Grubb, Rich Redman, Charles Ryan, based on material by Jonathan Tweet, Monte Cook, Skip Williams, Richard Baker,Peter Adkison, Bruce R. Cordell, John Tynes, Andy Collins, and JD Wiker
-
-    _Monster Manual II_ Copyright 2002, Wizards of the Coast, Inc.
-
-    _Swords of Our Fathers_ Copyright 2003, The Game Mechanics.
-
-    _Mutants & Masterminds_ Copyright 2002, Green Ronin Publishing.
-
-    _Unearthed Arcana_ Copyright 2004, Wizards of the Coast, Inc.; Andy Collins, Jesse Decker, David Noonan, Rich Redman.
-
+> Open Game License v 1.0a Copyright 2000, Wizards of the Coast, Inc.
+>
+> _System Reference Document_ Copyright 2000-2003, Wizards of the Coast, Inc.; Authors Jonathan Tweet, Monte Cook, Skip Williams, Rich Baker, Andy Collins, David Noonan, Rich Redman, Bruce R. Cordell, John D. Rateliff, Thomas Reid, James Wyatt, based on original material by E. Gary Gygax and Dave Arneson.
+>
+> _Creature Collection Volume 1_ Copyright 2000, Clark Peterson.
+>
+> _Modern System Reference Document_ Copyright 2002, Wizards of the Coast, Inc.; Authors Bill Slavicsek, Jeff Grubb, Rich Redman, Charles Ryan, based on material by Jonathan Tweet, Monte Cook, Skip Williams, Richard Baker,Peter Adkison, Bruce R. Cordell, John Tynes, Andy Collins, and JD Wiker
+>
+> _Monster Manual II_ Copyright 2002, Wizards of the Coast, Inc.
+>
+> _Swords of Our Fathers_ Copyright 2003, The Game Mechanics.
+>
+> _Mutants & Masterminds_ Copyright 2002, Green Ronin Publishing.
+>
+> _Unearthed Arcana_ Copyright 2004, Wizards of the Coast, Inc.; Andy Collins, Jesse Decker, David Noonan, Rich Redman.
 
 END OF LICENSE
