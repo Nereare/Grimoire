@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en-US' }}">
+  <head>
+    {% if site.google_analytics %}
+      <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '{{ site.google_analytics }}');
+      </script>
+    {% endif %}
+
+    {% seo %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="icon" type="image/png" href="{{ 'assets/favicon.png' | relative_url }}" />
+
+    <title>{{ site.title }}</title>
+
+    <link rel="stylesheet" href="{{ 'node_modules/normalize.css/normalize.css' | relative_url }}" />
+    <link rel="stylesheet" href="{{ 'node_modules/getskeleton/lib/css/skeleton.css' | relative_url }}" />
+    <link rel="stylesheet" href="{{ 'node_modules/@mdi/font/css/materialdesignicons.min.css' | relative_url }}" />
+    <link rel="stylesheet" href="{{ 'node_modules/typeface-montserrat/index.css' | relative_url }}" />
+    <link rel="stylesheet" href="{{ 'node_modules/typeface-source-serif-pro/index.css' | relative_url }}" />
+    <link rel="stylesheet" href="{{ 'node_modules/typeface-unifrakturmaguntia/index.css' | relative_url }}" />
+    <link rel="stylesheet" href="{{ 'node_modules/typeface-vollkorn/index.css' | relative_url }}" />
+    <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
+
+    {% feed_meta %}
+  </head>
+
+  <body>
+    <header class="container">
+      <div class="row">
+        <h1 class="main">{{ page.title | default: site.title }}</h1>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- CONTENTS -->
+      {{ content }}
+    </main>
+  </body>
+</html>

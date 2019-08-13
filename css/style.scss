@@ -1,0 +1,70 @@
+---
+# Read me Jekyll. #kthxbye
+---
+
+$header: #58180d;
+$h-line: #c9ad6a;
+$body  : #212121;
+
+html, body {
+  background-color: #eee5ce;
+  background-image: url(https://i.imgur.com/kGmFpkF.jpg);
+  background-size: cover;
+
+  font-family: 'Source Serif Pro', serif;
+  text-align: justify;
+  color: $body;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Source Serif Pro', serif;
+  font-variant: small-caps;
+  font-weight: 600;
+  color: $header;
+}
+h1 {
+  font-size: 2.5em;
+  &.main {
+    font-family: 'Vollkorn', serif;
+    font-size: 4em;
+    font-weight: 900;
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 0.3em;
+
+    color: white;
+    -webkit-text-stroke: 3.5px black;
+    text-stroke: 3.5px black;
+    text-shadow: 0 0 5px black;
+
+    &::after {
+      display: block;
+      content: url({{ 'assets/after_losangle.svg' | relative_url }});
+      filter: drop-shadow(0 0 4px rgba(0, 0, 0, .7));
+      margin-top: -0.5em;
+    }
+  }
+  & + p:not(.subtitle)::first-letter {
+    float: left;
+    font-family: 'UnifrakturMaguntia', cursive;
+    font-size: 4em;
+    line-height: 1em;
+    margin-right: .1em;
+    text-transform: uppercase;
+  }
+}
+h2 { font-size: 2.0em; }
+h3 {
+  border-bottom: 2px solid $h-line;
+  font-size: 1.8em;
+}
+h4 { font-size: 1.5em; }
+h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-variant: small-caps;
+  font-weight: 700;
+}
+h5 { font-size: 1.5em; }
+h6 { font-size: 1.0em; }

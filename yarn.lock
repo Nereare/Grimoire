@@ -16,3 +16,23 @@ normalize.css@^8.0.1:
   version "8.0.1"
   resolved "https://registry.yarnpkg.com/normalize.css/-/normalize.css-8.0.1.tgz#9b98a208738b9cc2634caacbc42d131c97487bf3"
   integrity sha512-qizSNPO93t1YUuUhP22btGOo3chcvDFqFaj2TRybP0DMxkHOCTYwp3n34fel4a31ORXy4m1Xq0Gyqpb5m33qIg==
+
+"typeface-montserrat@>=0.0.75 <0.1.0":
+  version "0.0.75"
+  resolved "https://registry.yarnpkg.com/typeface-montserrat/-/typeface-montserrat-0.0.75.tgz#b796d9c767ab8ed1343271985beb1e44b382b7b3"
+  integrity sha512-8ski20t3hdwu2T85pVfjK4jsDbwW8yWzd+LAKxYEmu+JVLVlB7G2yfmdKZz06pUwYCLVFvHvup+NYYulHDpE+w==
+
+"typeface-source-serif-pro@>=0.0.75 <0.1.0":
+  version "0.0.75"
+  resolved "https://registry.yarnpkg.com/typeface-source-serif-pro/-/typeface-source-serif-pro-0.0.75.tgz#6aa8e3121d44aaca558bf5e57cc80adec3c72ee7"
+  integrity sha512-xgx8PdcUbFR9kSlcbmTidCqzsSM41QEemq8AjNLslEHG1Uol7Knjw32h7GJ6hUtp2YijKLbtv6YD7tBbNymghw==
+
+"typeface-unifrakturmaguntia@>=0.0.72 <0.1.0":
+  version "0.0.72"
+  resolved "https://registry.yarnpkg.com/typeface-unifrakturmaguntia/-/typeface-unifrakturmaguntia-0.0.72.tgz#2c314a0ebf54d522c9ceb84fa338bbf3b698b6d4"
+  integrity sha512-+arjO+M5PK9CEMtJm7KWCxZS4NIhxHx04iBuTKiU95JyB9xD4YBpfU5Y3NYqUPvUj3YnNJbPvq9B9Ayt0JE8ug==
+
+"typeface-vollkorn@>=0.0.72 <0.1.0":
+  version "0.0.72"
+  resolved "https://registry.yarnpkg.com/typeface-vollkorn/-/typeface-vollkorn-0.0.72.tgz#eab29df42e6ae5ab96ff4a062f071ad439c27060"
+  integrity sha512-p2wWq3UH48kU6afKHLrWacJeKcqvZJvhbFKPpzOKd6c3hjyyqduYaixJ4cAZcSMrlaIgrqauqLmMqq1a3p9rMg==
