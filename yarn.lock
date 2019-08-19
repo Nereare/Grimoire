@@ -17,22 +17,22 @@ normalize.css@^8.0.1:
   resolved "https://registry.yarnpkg.com/normalize.css/-/normalize.css-8.0.1.tgz#9b98a208738b9cc2634caacbc42d131c97487bf3"
   integrity sha512-qizSNPO93t1YUuUhP22btGOo3chcvDFqFaj2TRybP0DMxkHOCTYwp3n34fel4a31ORXy4m1Xq0Gyqpb5m33qIg==
 
-"typeface-montserrat@>=0.0.75 <0.1.0":
+typeface-libre-baskerville@^0.0.72:
+  version "0.0.72"
+  resolved "https://registry.yarnpkg.com/typeface-libre-baskerville/-/typeface-libre-baskerville-0.0.72.tgz#c5d6d82a9b316f01a1714088f8ca36fe7c3f418b"
+  integrity sha512-8eY5Tee80wNMfKCPYQguj2dODct+sQo3Et7meKOYklvaBRA1PK/DQnaNlYT+I85s1Z7PGUwBtZuG0yOIz4R9vg==
+
+typeface-montserrat@^0.0.75:
   version "0.0.75"
   resolved "https://registry.yarnpkg.com/typeface-montserrat/-/typeface-montserrat-0.0.75.tgz#b796d9c767ab8ed1343271985beb1e44b382b7b3"
   integrity sha512-8ski20t3hdwu2T85pVfjK4jsDbwW8yWzd+LAKxYEmu+JVLVlB7G2yfmdKZz06pUwYCLVFvHvup+NYYulHDpE+w==
 
-"typeface-source-serif-pro@>=0.0.75 <0.1.0":
-  version "0.0.75"
-  resolved "https://registry.yarnpkg.com/typeface-source-serif-pro/-/typeface-source-serif-pro-0.0.75.tgz#6aa8e3121d44aaca558bf5e57cc80adec3c72ee7"
-  integrity sha512-xgx8PdcUbFR9kSlcbmTidCqzsSM41QEemq8AjNLslEHG1Uol7Knjw32h7GJ6hUtp2YijKLbtv6YD7tBbNymghw==
-
-"typeface-unifrakturmaguntia@>=0.0.72 <0.1.0":
+typeface-noto-sans@^0.0.72:
   version "0.0.72"
-  resolved "https://registry.yarnpkg.com/typeface-unifrakturmaguntia/-/typeface-unifrakturmaguntia-0.0.72.tgz#2c314a0ebf54d522c9ceb84fa338bbf3b698b6d4"
-  integrity sha512-+arjO+M5PK9CEMtJm7KWCxZS4NIhxHx04iBuTKiU95JyB9xD4YBpfU5Y3NYqUPvUj3YnNJbPvq9B9Ayt0JE8ug==
+  resolved "https://registry.yarnpkg.com/typeface-noto-sans/-/typeface-noto-sans-0.0.72.tgz#44f1022fe094595240c89f1e362517b1fe35be6c"
+  integrity sha512-a5wI6LUIQ/6XRRf9x/ZXjO4NwfTfcPmkMVe0SoUKVWw/s7GGWERAK73PKFLEmKKGaN59OkwFsotPgYtea0d34A==
 
-"typeface-vollkorn@>=0.0.72 <0.1.0":
-  version "0.0.72"
-  resolved "https://registry.yarnpkg.com/typeface-vollkorn/-/typeface-vollkorn-0.0.72.tgz#eab29df42e6ae5ab96ff4a062f071ad439c27060"
-  integrity sha512-p2wWq3UH48kU6afKHLrWacJeKcqvZJvhbFKPpzOKd6c3hjyyqduYaixJ4cAZcSMrlaIgrqauqLmMqq1a3p9rMg==
+typeface-unifrakturcook@^0.0.71:
+  version "0.0.71"
+  resolved "https://registry.yarnpkg.com/typeface-unifrakturcook/-/typeface-unifrakturcook-0.0.71.tgz#3bb631d2f5ce5e467264126a3093c4b664f8619b"
+  integrity sha512-6YCj624GD7tkdhOxJ4qm+O3fwnRqxA7FwENNZl0MzPVf1a/9K/PW6K3TOKGmvgBT454+CW6oMhFYhPRm69R1Sw==

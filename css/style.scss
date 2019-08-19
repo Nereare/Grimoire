@@ -2,30 +2,31 @@
 # Read me Jekyll. #kthxbye
 ---
 
-$header   : #58180d;
-$h-line   : #c9ad6a;
+$header   : #922610;
+$h-line   : #e69a28;
 $body     : #212121;
+$back     : #eee5ce;
 
-$link     : #58180d;
-$alink    : #ad3723;
+$link     : $header;
+$alink    : #cf2d0c;
 
-$tag      : #9c8246;
-$h-tag    : #c9ad6a;
-$category : #58180d;
-$h-cat    : #ad3723;
+$tag      : $h-line;
+$h-tag    : #ff9b05;
+$category : $header;
+$h-cat    : $alink;
 
 html, body {
-  background-color: #eee5ce;
+  background-color: $back;
   background-image: url({{ 'assets/background.jpg' | absolute_url }});
   background-size: cover;
 
-  font-family: 'Source Serif Pro', serif;
+  font-family: 'Noto Sans', sans-serif;
   text-align: justify;
   color: $body;
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Source Serif Pro', serif;
+  font-family: 'Libre Baskerville', serif;
   font-variant: small-caps;
   font-weight: 600;
   color: $header;
@@ -43,7 +44,7 @@ h1 {
   }
   & + p:not(.subtitle):not(.meta)::first-letter {
     float: left;
-    font-family: 'UnifrakturMaguntia', cursive;
+    font-family: 'UnifrakturCook', cursive;
     font-size: 4em;
     line-height: 1em;
     margin-right: .1em;
