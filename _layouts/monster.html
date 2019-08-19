@@ -1,0 +1,194 @@
+---
+layout: default
+---
+
+<div class="eight columns">
+  <div class="metadata">
+    <h1>{{ page.title | default: 'Monster' }}</h1>
+    <p class="meta">{{ page.author | default: 'Unknown' }} &bull; {{ page.date | default: '1938-07-27' | date: '%A, %B %e, %Y' }}</p>
+  </div>
+
+  {{ content }}
+</div>
+
+<div class="four columns">
+  <div class="stat-block-container">
+    <div class="stat-block">
+      <hr class="orange-border" />
+      <div class="section-left">
+        <div class="creature-heading">
+          <h1>{{ page.monster.name | default: 'Terrasque' }}</h1>
+          <h2>{{ page.monster.size | default: 'Colossal' }} {{ page.monster.type | default: 'magical beast' }}, {{ page.monster.align | default: 'always neutral' }}</h2>
+        </div>
+        <!-- creature heading -->
+        <svg height="5" width="100%" class="tapered-rule">
+        <polyline points="0,0 400,2.5 0,5"></polyline>
+      </svg>
+        <div class="top-stats">
+          <div class="property-line first">
+            <h4>Armor Class</h4>
+            <p>{{ page.monster.ac.base | default: '35' }}{% if page.monster.ac.desc != '' %} ({{ page.monster.ac.desc }}){% endif %}, touch {{ page.monster.ac.touch | default: '5' }}, flat-footed {{ page.monster.ac.flat | default: '32' }}</p>
+          </div>
+          <!-- property line -->
+          <div class="property-line">
+            <h4>Hit Points</h4>
+            <p>{{ page.monster.hp.hp | default: '858' }}hp ({{ page.monster.hp.hd | default: '48d10 + 594' }})</p>
+          </div>
+          <!-- property line -->
+          <div class="property-line">
+            <h4>Speed</h4>
+            <p>{{ page.monster.speed | default: '20ft' }}</p>
+          </div>
+          <!-- property line -->
+          <div class="property-line">
+            <h4>Initiative</h4>
+            <p>{{ page.monster.initiative | default: '+7' }}</p>
+          </div>
+          <!-- property line -->
+          <div class="property-line">
+            <h4>Space/Reach</h4>
+            <p>{{ page.monster.space | default: '30ft' }}/{{ page.monster.reach | default: '20ft' }}</p>
+          </div>
+          <!-- property line -->
+          <div class="property-line">
+            <h4>BA/Grapple</h4>
+            <p>{{ page.monster.ba | default: '+48' }}/{{ page.monster.grapple | default: '+81' }}</p>
+          </div>
+          <!-- property line -->
+          <div class="property-line last">
+            <h4>Saves</h4>
+            <p>Fort {{ page.monster.saves.fort | default: '+38' }}, Ref {{ page.monster.saves.ref | default: '+29' }}, Will {{ page.monster.saves.will | default: '+20' }}</p>
+          </div>
+          <!-- property line -->
+          <svg height="5" width="100%" class="tapered-rule">
+        <polyline points="0,0 400,2.5 0,5"></polyline>
+      </svg>
+          <div class="abilities">
+            <div class="ability-strength">
+              <h4>STR</h4>
+              <p>{{ page.monster.abilities.str | default: '45 (+17)' }}</p>
+            </div>
+            <!-- ability strength -->
+            <div class="ability-dexterity">
+              <h4>DEX</h4>
+              <p>{{ page.monster.abilities.dex | default: '16 (+3)' }}</p>
+            </div>
+            <!-- ability dexterity -->
+            <div class="ability-constitution">
+              <h4>CON</h4>
+              <p>{{ page.monster.abilities.con | default: '35 (+12)' }}</p>
+            </div>
+            <!-- ability constitution -->
+            <div class="ability-intelligence">
+              <h4>INT</h4>
+              <p>{{ page.monster.abilities.int | default: '3 (-4)' }}</p>
+            </div>
+            <!-- ability intelligence -->
+            <div class="ability-wisdom">
+              <h4>WIS</h4>
+              <p>{{ page.monster.abilities.wis | default: '14 (+2)' }}</p>
+            </div>
+            <!-- ability wisdom -->
+            <div class="ability-charisma">
+              <h4>CHA</h4>
+              <p>{{ page.monster.abilities.cha | default: '14 (+2)' }}</p>
+            </div>
+            <!-- ability charisma -->
+          </div>
+          <!-- abilities -->
+          <svg height="5" width="100%" class="tapered-rule">
+        <polyline points="0,0 400,2.5 0,5"></polyline>
+      </svg>
+          <div class="property-line first">
+            <h4>Skills</h4>
+            <p>{{ page.monster.skills | default: 'none' }}</p>
+          </div>
+          <!-- property line -->
+          <div class="property-line">
+            <h4>Feats</h4>
+            <p>{{ page.monster.feats | default: 'none' }}</p>
+          </div>
+          <!-- property line -->
+          <div class="property-line">
+            <h4>Challenge Rating</h4>
+            <p>{{ page.monster.cr | default: 20 }}</p>
+          </div>
+          <!-- property line -->
+          <div class="property-line">
+            <h4>Treasure</h4>
+            <p>{{ page.monster.treasure | default: 'None' }}</p>
+          </div>
+          <!-- property line -->
+          <div class="property-line">
+            <h4>Advancement</h4>
+            <p>{{ page.monster.advancement | default: '49+ HD (Colossal)' }}</p>
+          </div>
+          <!-- property line -->
+          <div class="property-line">
+            <h4>Level Adjustment</h4>
+            <p>{{ page.monster.lvl_adj | default: 'N/A' }}</p>
+          </div>
+          <!-- property line -->
+          <div class="property-line">
+            <h4>Environment</h4>
+            <p>{{ page.monster.env | default: 'Any' }}</p>
+          </div>
+          <!-- property line -->
+          <div class="property-line last">
+            <h4>Organization</h4>
+            <p>{{ page.monster.org | default: 'Solitary' }}</p>
+          </div>
+          <!-- property line -->
+        </div>
+        <!-- top stats -->
+        <svg height="5" width="100%" class="tapered-rule">
+        <polyline points="0,0 400,2.5 0,5"></polyline>
+      </svg>
+        <div class="property-block">
+          <h4>Special Qualities</h4>
+          <p>{{ page.monster.qualities | default: 'none'}}</p>
+        </div>
+        <!-- property block -->
+        <div class="property-block">
+          <h4>Special Attacks</h4>
+          <p>{{ page.monster.sp_attacks | default: 'none' }}</p>
+        </div>
+        <!-- property block -->
+      </div>
+      <!-- section left -->
+      <div class="section-right">
+        <div class="actions">
+          <h3>Actions</h3>
+          <div class="property-block">
+            <h4>Full Attack</h4>
+            <p>{{ page.monster.attacks.full | default: 'Bite +57 melee (4d8 + 17 / 18-20 / x3)' }}</p>
+          </div>
+          <!-- property block -->
+          <div class="property-block">
+            <h4>{{ page.monster.attacks.name | default: 'Bite' }}</h4>
+            <p>{{ page.monster.attacks.desc | default: '+57 melee (4d8 + 17 / 18-20 / ×3)' }}</p>
+          </div>
+          <!-- property block -->
+        </div>
+        {% assign: items = page.monster.possessions | join: '' %}
+        {% if items != '' %}
+        <!-- actions -->
+        <div class="actions">
+          <h3>Possessions</h3>
+          {% for item in page.monster.possessions %}
+          <div class="property-block">
+            <h4>{{ item.name }}</h4>
+            <p>{{ item.desc }}</p>
+          </div>
+          <!-- property block -->
+          {% endfor %}
+        </div>
+        <!-- actions -->
+        {% endif %}
+      </div>
+      <!-- section right -->
+      <hr class="orange-border bottom" />
+    </div>
+    <!-- stat block -->
+  </div>
+</div>
