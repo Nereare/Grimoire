@@ -2,9 +2,12 @@
 # Read me Jekyll. #kthxbye
 ---
 
-$header: #58180d;
-$h-line: #c9ad6a;
-$body  : #212121;
+$header : #58180d;
+$h-line : #c9ad6a;
+$body   : #212121;
+
+$link   : #58180d;
+$alink  : #ad3723;
 
 html, body {
   background-color: #eee5ce;
@@ -62,6 +65,13 @@ h5, h6 {
 }
 h5 { font-size: 1.5em; }
 h6 { font-size: 1.0em; }
+
+a {
+  text-decoration: none;
+  color: $link;
+  &:visited { color: $link; }
+  &:hover, &:active { color: $alink; }
+}
 
 header {
   overflow: auto;
