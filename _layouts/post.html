@@ -4,7 +4,7 @@ layout: default
 
 <div class="metadata">
   <h1>{{ page.title | default: 'Post' }}</h1>
-  <p class="meta">{{ page.author | default: 'Unknown' }} &bull; {{ page.date | default: '0000-00-00' | date: '%A, %B %e, %Y' }}</p>
+  <p class="meta">{{ page.author | default: 'Unknown' }} &bull; {{ page.date | default: '1938-07-27' | date: '%A, %B %e, %Y' }}</p>
   {% assign: tagg = page.tags | join: '' %}
   {% if tagg != '' %}
   <p>
