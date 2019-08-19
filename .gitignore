@@ -201,3 +201,7 @@ _site/
 .jekyll-metadata
 
 # End of https://www.gitignore.io/api/osx,node,less,sass,code,grunt,linux,bower,windows,dropbox
+
+### Adobe Suite Files, Some ###
+*.psd
+*.ai
