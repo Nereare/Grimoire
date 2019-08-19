@@ -24,8 +24,14 @@ This project uses [SemVer](http://semver.org/) for versioning. For the versions 
 
 <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Grimoire</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/Nereare/Grimoire" property="cc:attributionName" rel="cc:attributionURL">Igor Padoim</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
 
+### System Reference Document
+
 ![d20 Logo](https://i.imgur.com/8CG0VEv.png)
 
 Some of the contents of this site may fall under the [Open Game License](https://www.wizards.com/default.asp?x=d20/srdfaq/20040123b).
 
 `d20 System` and the `d20 System` logo are trademarks of Wizards of the Coast, Inc. and are used according to the terms of the d20 System License. A copy of this License can be found at [www.wizards.com](http://www.wizards.com/default.asp?x=d20/article/srdarchive).
+
+### Acknowledgements
+
+* Favicon adapted from [D20](https://thenounproject.com/term/d20/1279708/) by Rafaël Massé from the Noun Project (available under a [Creative Commons Attribution License 3.0](https://creativecommons.org/licenses/by/3.0/us/legalcode)).
