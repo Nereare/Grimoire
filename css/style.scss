@@ -2,12 +2,17 @@
 # Read me Jekyll. #kthxbye
 ---
 
-$header : #58180d;
-$h-line : #c9ad6a;
-$body   : #212121;
+$header   : #58180d;
+$h-line   : #c9ad6a;
+$body     : #212121;
 
-$link   : #58180d;
-$alink  : #ad3723;
+$link     : #58180d;
+$alink    : #ad3723;
+
+$tag      : #9c8246;
+$h-tag    : #c9ad6a;
+$category : #58180d;
+$h-cat    : #ad3723;
 
 html, body {
   background-color: #eee5ce;
@@ -36,7 +41,7 @@ h1 {
     text-align: justify;
     margin-top: 1em;
   }
-  & + p:not(.subtitle)::first-letter {
+  & + p:not(.subtitle):not(.meta)::first-letter {
     float: left;
     font-family: 'UnifrakturMaguntia', cursive;
     font-size: 4em;
@@ -79,4 +84,39 @@ header {
   background-image: url({{ 'assets/header.png' | absolute_url }});
   background-position: bottom;
   background-size: auto 125%;
+}
+div.metadata {
+  p {
+    margin-top: -1.5em;
+    font-family: 'Montserrat', sans-serif;
+    font-variant: small-caps;
+    font-weight: 700;
+    overflow: auto;
+  }
+  span {
+    display: inline-block;
+    float: left;
+    border-radius: 0.3em;
+
+    vertical-align: middle;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    font-weight: 500;
+
+    min-width: 5em;
+    margin-right: 0.5em;
+    padding: 0.3em 0.6em;
+
+    color: white;
+    transition: background-color 0.3s;
+    &.tag {
+      background-color: $tag;
+      &:hover { background-color: $h-tag; }
+    }
+    &.category {
+      background-color: $category;
+      &:hover { background-color: $h-cat; }
+    }
+  }
 }

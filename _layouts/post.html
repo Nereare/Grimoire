@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<div class="metadata">
+  <h1>{{ page.title | default: 'Post' }}</h1>
+  <p class="meta">{{ page.author | default: 'Unknown' }} &bull; {{ page.date | default: '0000-00-00' | date: '%A, %B %e, %Y' }}</p>
+  {% assign: tagg = page.tags | join: '' %}
+  {% if tagg != '' %}
+  <p>
+    {% for tag in page.tags %}
+    <span class="mdi mdi-tag-outline tag"> {{ tag }}</span>
+    {% endfor %}
+  </p>
+  {% endif %}
+  {% assign: catt = page.categories | join: '' %}
+  {% if catt != '' %}
+  <p>
+    {% for category in page.categories %}
+    <span class="mdi mdi-folder-outline category"> {{ category }}</span>
+    {% endfor %}
+  </p>
+  {% endif %}
+</div>
+
+{{ content }}

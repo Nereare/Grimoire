@@ -1,6 +1,6 @@
 {
   "name"                          : "Indigo-Domain-Grimoire",
-  "version"                       : "0.1.0",
+  "version"                       : "0.3.0",
   "description"                   : "Notes on a campaing, previously non-megalomaiacal, but now astronomical.",
   "license"                       : "CC-BY-SA-4.0",
   "private"                       : true,
