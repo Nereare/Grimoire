@@ -3,7 +3,7 @@ rvm:
   - 2.5.3
 
 before_install:
-  - gem update --system
+  - gem update --system -​-no-post-install-message
   - gem install bundler
 install:
   - bundle install --retry=3 --no-deployment
