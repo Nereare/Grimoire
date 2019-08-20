@@ -86,6 +86,7 @@ header {
   background-image: url({{ 'assets/header.png' | absolute_url }});
   background-position: bottom;
   background-size: auto 125%;
+  margin-bottom: 3em;
 }
 div.metadata {
   p {
