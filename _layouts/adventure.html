@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<div class="eight columns">
+  <div class="metadata">
+    <h1>{{ page.title | default: 'Adventure' }}</h1>
+    <p class="meta">{{ page.author | default: 'Unknown' }} &bull; {{ page.date | default: '1938-07-27' | date: '%A, %B %e, %Y' }}</p>
+  </div>
+
+  {{ content }}
+</div>
+
+<div class="four columns">
+  <blockquote class="meta">
+    <h5>{{ page.adventure.name | default: 'Adventure Name' }}</h5>
+    <p class="subtitle">An adventure for {{ page.adventure.char-num | default: 4 }} player character{% if page.adventure.char-num > 1 %}s{% endif %} of {% if page.adventure.lvl.range %}levels {{ page.adventure.lvl.min }} through {{ page.adventure.lvl.max }}{% else %}{{ page.adventure.lvl.lvl }} level{% endif %}.</p>
+    <p><strong>Max XP:</strong> {{ page.adventure.max-xp }} xp</p>
+    <p><strong>Max Gold:</strong> {{ page.adventure.max-gp }} gp</p>
+    <p><strong>&#35; Encounters:</strong> {{ page.adventure.max-xp }} xp</p>
+    <p><strong>Type:</strong> {{ page.adventure.type }}</p>
+    {% if page.adventure.questline %}
+    <p><strong>Questline:</strong> <em>{{ page.adventure.questline.name }}</em>, Chapter {{ page.adventure.questline.chapter }}</p>
+    {% endif %}
+  </blockquote>
+</div>
