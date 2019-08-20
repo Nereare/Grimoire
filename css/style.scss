@@ -88,6 +88,7 @@ header {
   background-size: auto 125%;
   margin-bottom: 3em;
 }
+
 div.metadata {
   p {
     margin-top: -1.5em;
@@ -121,5 +122,19 @@ div.metadata {
       background-color: $category;
       &:hover { background-color: $h-cat; }
     }
+  }
+}
+
+.page-404 {
+  h2, p {
+    text-align: center;
+    margin-bottom: 0.3em;
+  }
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2em;
+    max-width: 256px;
   }
 }
