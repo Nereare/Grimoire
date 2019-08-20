@@ -13,9 +13,19 @@ plugins          :
   - jekyll-sitemap
   - jemoji
 
+# Relativize links in collections
 relative_links   :
   enabled        : true
   collections    : true
+
+# Collections
+collections:
+  adventures:
+    output       : true
+    sort_by      : title
+  monsters:
+    output       : true
+    sort_by      : title
 
 exclude:
   - Gemfile
