@@ -19,15 +19,15 @@ relative_links   :
   collections    : true
 
 # Collections
-collections:
-  adventures:
+collections      :
+  adventures     :
     output       : true
     sort_by      : title
-  monsters:
+  monsters       :
     output       : true
     sort_by      : title
 
-exclude:
+exclude          :
   - Gemfile
   - Gemfile.lock
   - vendor/bundle/
