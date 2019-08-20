@@ -3,9 +3,6 @@ title        : Monster Page Title
 author       : Author Name
 date         : 2019-08-19
 
-tags         : []
-categories   : []
-
 monster:
   name        : Terrasque
   size        : Colossal
