@@ -1,10 +1,8 @@
-title            : Grimório do Domínio Índigo
+title            : Grimoire
 email            : igorpadoim@gmail.com
-description      : Notas sobre uma campanha, previamente não megalomaníaca, mas agora astronômica.
-baseurl          : "" # the subpath of your site, e.g. /blog
-url              : "" # the base hostname & protocol for your site, e.g. http://example.com
+description      : A jekyll quasi-wiki for RPG-oriented worldbuilding.
 twitter_username : nereare
-github_username  :  nereare
+github_username  : nereare
 
 markdown         : kramdown
 plugins          :

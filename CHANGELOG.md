@@ -1,6 +1,6 @@
-# [Indigo Domain Grimoire](https://github.com/Nereare/Grimoire) Change Log
+# [Grimoire](https://github.com/Nereare/Grimoire) Change Log
 
-This is the change log to Indigo Domain Grimoire. For further info on this project, see the [ReadMe file](README.md).
+This is the change log to Grimoire. For further info on this project, see the [ReadMe file](README.md).
 
 All notable changes to this project will be documented in this file.
 

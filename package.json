@@ -1,9 +1,9 @@
 {
-  "name"                         : "Indigo-Domain-Grimoire",
-  "version"                      : "0.10.5",
-  "description"                  : "Notes on a campaing, previously non-megalomaiacal, but now astronomical.",
+  "name"                         : "Grimoire",
+  "version"                      : "0.10.6",
+  "description"                  : "A jekyll quasi-wiki for RPG-oriented worldbuilding.",
   "license"                      : "CC-BY-SA-4.0",
-  "private"                      : true,
+  "private"                      : false,
   "keywords"                     : [
     "rpg",
     "worldbuilding",
