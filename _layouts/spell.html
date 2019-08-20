@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+<div class="spell header">
+  <h1>{{ page.title | default: 'Spell' }}</h1>
+  <p class="meta">{{ page.author | default: 'Unknown' }} &bull; {{ page.date | default: '1938-07-27' | date: '%A, %B %e, %Y' }}</p>
+  <!-- -->
+  <div>
+    {% assign: descs = page.spell.descriptor | join: '' %}
+    <p>{{ page.spell.school }}{% if page.spell.subschool != '' %} ({{ page.spell.subschool }}){% endif %}{% if descs != '' %} [{{ page.spell.descriptor | join: ', ' }}]{% endif %}</p>
+
+    <p><strong>Level:</strong> {{ page.spell.level | join: ', ' }}</p>
+    <p><strong>Components:</strong> {{ page.spell.components.list | join: ', ' }}</p>
+    <p><strong>Casting Time:</strong> {{ page.spell.cast-time | default: '1 standard action' }}</p>
+    <p><strong>Range:</strong> {{ page.spell.range | default: 'Touch' }}</p>
+    <p><strong>Target:</strong> {{ page.spell.target | default: 'Self' }}</p>
+    <p><strong>Duration:</strong> {{ page.spell.duration.desc | default: 'Instantaneous' }}{% if page.spell.duration.dismiss %} (D){% endif %}</p>
+    <p><strong>Saving Throw:</strong> {% if page.spell.save.type != 'None' %}{{ page.spell.save.type | default: 'Will' }} {{ page.spell.save.effect | default: 'negates' }}{% else %}None{% endif %}{% if page.spell.save.harmless %} (harmless){% endif %}</p>
+    <p><strong>Spell Resistance:</strong> {% if page.spell.resistance %}Yes{% else %}No{% endif %}</p>
+  </div>
+</div>
+
+{{ content }}
+
+<div class="spell components">
+  <!-- Material Components, if applicable -->
+  {% if page.spell.components.material != '' %}
+  <h6>Material Component</h6>
+  <p>{{ page.spell.components.material }}</p>
+  {% endif %}
+
+  <!-- Arcane Focus, if applicable -->
+  {% if page.spell.components.focus != '' %}
+  <h6>Arcane Focus</h6>
+  <p>{{ page.spell.components.focus }}</p>
+  {% endif %}
+
+  <!-- XP Cost, if applicable -->
+  {% if page.spell.components.xp != '' %}
+  <h6>XP Cost</h6>
+  <p>{{ page.spell.components.xp }}</p>
+  {% endif %}
+</div>

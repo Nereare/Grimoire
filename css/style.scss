@@ -90,7 +90,7 @@ header {
 }
 
 div.metadata {
-  p {
+  p:nth-child(2) {
     margin-top: -1.5em;
     font-family: 'Montserrat', sans-serif;
     font-variant: small-caps;
@@ -122,6 +122,37 @@ div.metadata {
       background-color: $category;
       &:hover { background-color: $h-cat; }
     }
+  }
+}
+
+div.spell {
+  p { margin-bottom: 0; }
+  &.header {
+    p.meta {
+      margin-top: -1.5em;
+      margin-bottom: 1.0em;
+      font-family: 'Montserrat', sans-serif;
+      font-variant: small-caps;
+      font-weight: 700;
+      overflow: auto;
+    }
+    div {
+      margin-left: 2em;
+      margin-bottom: 1em;
+      p:first-child {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.2em;
+        font-variant: small-caps;
+        font-weight: 700;
+      }
+    }
+  }
+  &.components {
+    h6 {
+      margin-bottom: 0;
+      margin-top: 0.7em;
+    }
+    p { margin-left: 1em; }
   }
 }
 
