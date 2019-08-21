@@ -14,9 +14,9 @@ layout: default
 <div class="four columns">
   <blockquote class="meta">
     <h5>{{ page.adventure.name | default: 'Adventure Name' }}</h5>
-    <p class="subtitle">An adventure for {{ page.adventure.char-num | default: 4 }} player character{% if page.adventure.char-num > 1 %}s{% endif %} of {% if page.adventure.lvl.range %}levels {{ page.adventure.lvl.min }} through {{ page.adventure.lvl.max }}{% else %}{{ page.adventure.lvl.lvl }} level{% endif %}.</p>
-    <p><strong>Max XP:</strong> {{ page.adventure.max-xp }} xp</p>
-    <p><strong>Max Gold:</strong> {{ page.adventure.max-gp }} gp</p>
+    <p class="subtitle">An adventure for {{ page.adventure.char-num | default: 4 | pluralize: 'player character', 'player characters' }} of {% if page.adventure.lvl.range %}levels {{ page.adventure.lvl.min }} through {{ page.adventure.lvl.max }}{% else %}{{ page.adventure.lvl.lvl }} level{% endif %}.</p>
+    <p><strong>Max XP:</strong> {{ page.adventure.max-xp | pretty_number }} xp</p>
+    <p><strong>Max Gold:</strong> {{ page.adventure.max-gp | pretty_number }} gp</p>
     <p><strong>&#35; Encounters:</strong> {{ page.adventure.max-xp }} xp</p>
     <p><strong>Type:</strong> {{ page.adventure.type }}</p>
     {% if page.adventure.questline %}

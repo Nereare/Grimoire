@@ -17,20 +17,20 @@ monster:
     hp        : 858
     hd        : 48d10 + 594
   speed       : 20ft
-  initiative  : '+7'
+  initiative  : +7
   space       : 30ft
   reach       : 20ft
   saves:
-    fort      : '+38'
-    ref       : '+29'
-    will      : '+20'
+    fort      : +38
+    ref       : +29
+    will      : +20
   abilities:
-    str       : 45 (+17)
-    dex       : 16 (+3)
-    con       : 35 (+12)
-    int       : 3 (-4)
-    wis       : 14 (+2)
-    cha       : 14 (+2)
+    str       : 45
+    dex       : 16
+    con       : 35
+    int       : 3
+    wis       : 14
+    cha       : 14
   skills      : Listen +17, Search +9, Spot +17, Survival +14 (+16 following tracks)
   feats       : Alertness, Awesome Blow, Blind-Fight, Cleave, Combat Reflexes, Dodge, Great Cleave, Improved Bull Rush, Improved Initiative, Iron Will, Power Attack, Toughness (6)
   cr          : 20
