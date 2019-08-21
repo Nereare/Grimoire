@@ -17,13 +17,13 @@ monster:
     hp        : 858
     hd        : 48d10 + 594
   speed       : 20ft
-  initiative  : '+7'
+  initiative  : +7
   space       : 30ft
   reach       : 20ft
   saves:
-    fort      : '+38'
-    ref       : '+29'
-    will      : '+20'
+    fort      : +38
+    ref       : +29
+    will      : +20
   abilities:
     str       : 45 (+17)
     dex       : 16 (+3)

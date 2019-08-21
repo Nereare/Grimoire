@@ -42,7 +42,7 @@ layout: default
           <!-- property line -->
           <div class="property-line">
             <h4>Initiative</h4>
-            <p>{{ page.monster.initiative | default: '+7' }}</p>
+            <p>{{ page.monster.initiative | default: 7 | add_sign }}</p>
           </div>
           <!-- property line -->
           <div class="property-line">
@@ -57,7 +57,7 @@ layout: default
           <!-- property line -->
           <div class="property-line last">
             <h4>Saves</h4>
-            <p>Fort {{ page.monster.saves.fort | default: '+38' }}, Ref {{ page.monster.saves.ref | default: '+29' }}, Will {{ page.monster.saves.will | default: '+20' }}</p>
+            <p>Fort {{ page.monster.saves.fort | default: 38 | add_sign }}, Ref {{ page.monster.saves.ref | default: 29 | add_sign }}, Will {{ page.monster.saves.will | default: 20 | add_sign }}</p>
           </div>
           <!-- property line -->
           <svg height="5" width="100%" class="tapered-rule">

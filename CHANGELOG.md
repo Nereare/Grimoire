@@ -52,7 +52,10 @@ Principles of a change log, excerpted from [Keep a Changelog](http://keepachange
   - Monster;
   - Post;
   - Non-Epic Spell.
-* Layouts' tutorial.
+* Layouts tutorial.
+* Custom filters:
+  - `PrettyNumberFilter` for adding thousands separators;
+  - `AddSignFilter` for prepending `+` on positive modifiers.
 
 ### Change
 * Bump `nokogiri` to `>= 1.10.4`.
