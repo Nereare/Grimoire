@@ -40,9 +40,18 @@ Principles of a change log, excerpted from [Keep a Changelog](http://keepachange
 * Add [Jekyll](https://jekyllrb.com/) and [Yarn](https://yarnpkg.com/).
 * Yarn dependencies:
   - [Libre Baskerville](https://yarnpkg.com/en/package/typeface-libre-baskerville) font, `^0.0.72`;
-  - [Material Design Icons](https://yarnpkg.com/en/package/@mdi/font), `^3.9.96`;
+  - [Material Design Icons](https://yarnpkg.com/en/package/@mdi/font), `^4.1.95`;
   - [Montserrat](https://yarnpkg.com/en/package/typeface-montserrat) font, `^0.0.75`;
   - [Normalize.css](https://yarnpkg.com/en/package/normalize.css), `^8.0.1`;
   - [Noto Sans](https://yarnpkg.com/en/package/typeface-noto-sans) font, `^0.0.72`;
   - [Skeleton](https://yarnpkg.com/en/package/getskeleton), `^2.0.4`;
   - [UnifrakturCook](https://yarnpkg.com/en/package/typeface-unifrakturcook) font, `^0.0.71`.
+* Layouts:
+  - Adventure;
+  - Default;
+  - Monster;
+  - Post;
+  - Non-Epic Spell.
+
+### Change
+* Bump `nokogiri` to `>= 1.10.4`.

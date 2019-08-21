@@ -1,6 +1,6 @@
 {
   "name"                         : "Grimoire",
-  "version"                      : "0.11.10",
+  "version"                      : "0.11.11",
   "description"                  : "A jekyll quasi-wiki for RPG-oriented worldbuilding.",
   "license"                      : "CC-BY-SA-4.0",
   "private"                      : false,
@@ -23,7 +23,7 @@
     "url"                        : "https://github.com/Nereare"
   },
   "dependencies"                 : {
-    "@mdi/font"                  : "^3.9.96",
+    "@mdi/font"                  : "^4.1.95",
     "getskeleton"                : "^2.0.4",
     "normalize.css"              : "^8.0.1",
     "typeface-libre-baskerville" : "^0.0.72",
