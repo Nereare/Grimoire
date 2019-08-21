@@ -87,20 +87,20 @@ This layout has two columns:
 | `hp.hp`            | :heavy_check_mark: | `integer`            | The maximum hit points of the creature                                               |
 | `hp.hd`            | :heavy_check_mark: | `string`             | The hit dice of the creature and any bonus (*e.g.* `10d8 + 15`)                      |
 | `speed`            | :heavy_check_mark: | `string`             | The speed of the creature (*e.g.* `30ft`)                                            |
-| `initiative`       | :heavy_check_mark: | `string`             | The initiative bonus of the creature, with plus/minus sign (*e.g.* `+2`)             |
+| `initiative`       | :heavy_check_mark: | `integer`            | The initiative bonus of the creature                                                 |
 | `space`            | :heavy_check_mark: | `string`             | The space border occupied by the creature                                            |
 | `reach`            | :heavy_check_mark: | `string`             | The reach of the creature                                                            |
 | `saves`            | :heavy_check_mark: | `object`             | An object containing the saving throw bonuses of the creature                        |
-| `saves.fort`       | :heavy_check_mark: | `string`             | The Fortitude bonus of the creature                                                  |
-| `saves.ref`        | :heavy_check_mark: | `string`             | The Reflex bonus of the creature                                                     |
-| `saves.will`       | :heavy_check_mark: | `string`             | The Will bonus of the creature                                                       |
+| `saves.fort`       | :heavy_check_mark: | `integer`            | The Fortitude bonus of the creature                                                  |
+| `saves.ref`        | :heavy_check_mark: | `integer`            | The Reflex bonus of the creature                                                     |
+| `saves.will`       | :heavy_check_mark: | `integer`            | The Will bonus of the creature                                                       |
 | `abilities`        | :heavy_check_mark: | `object`             | An object containing the abilities of the creature                                   |
-| `abilities.str`    | :heavy_check_mark: | `string`             | The Strength of the creature                                                         |
-| `abilities.dex`    | :heavy_check_mark: | `string`             | The Dexterity of the creature                                                        |
-| `abilities.con`    | :heavy_check_mark: | `string`             | The Constitution of the creature                                                     |
-| `abilities.int`    | :heavy_check_mark: | `string`             | The Intelligence of the creature                                                     |
-| `abilities.wis`    | :heavy_check_mark: | `string`             | The Wisdom of the creature                                                           |
-| `abilities.cha`    | :heavy_check_mark: | `string`             | The Charisma of the creature                                                         |
+| `abilities.str`    | :heavy_check_mark: | `integer`            | The Strength of the creature                                                         |
+| `abilities.dex`    | :heavy_check_mark: | `integer`            | The Dexterity of the creature                                                        |
+| `abilities.con`    | :heavy_check_mark: | `integer`            | The Constitution of the creature                                                     |
+| `abilities.int`    | :heavy_check_mark: | `integer`            | The Intelligence of the creature                                                     |
+| `abilities.wis`    | :heavy_check_mark: | `integer`            | The Wisdom of the creature                                                           |
+| `abilities.cha`    | :heavy_check_mark: | `integer`            | The Charisma of the creature                                                         |
 | `skills`           | :x:                | `string`             | A string *list* of all skills of the creature and their bonuses                      |
 | `feats`            | :x:                | `strint`             | A string *list* of all feats of the creature                                         |
 | `cr`               | :heavy_check_mark: | `integer`            | The Challenge Rating of the creature                                                 |
@@ -126,7 +126,7 @@ Variables pertaining to hit points need not be given `hp` after them, the layout
 
 ##### Abilities
 
-Each ability variable must be given the bonus after it, that't why they are `string` variables, not `integer`s. For the time being, the layout does not compute values nor does it make calculations.
+Each ability variable must be only the base value, the raw score. The layout calculates and appends the modifiers on its own.
 
 ##### String Lists
 
