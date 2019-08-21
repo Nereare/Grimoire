@@ -26,6 +26,9 @@ collections      :
   monsters       :
     output       : true
     sort_by      : title
+  spells         :
+    output       : true
+    sort_by      : title
 
 exclude          :
   - Gemfile
