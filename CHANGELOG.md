@@ -54,8 +54,9 @@ Principles of a change log, excerpted from [Keep a Changelog](http://keepachange
   - Non-Epic Spell.
 * Layouts tutorial.
 * Custom filters:
-  - `PrettyNumberFilter` for adding thousands separators;
-  - `AddSignFilter` for prepending `+` on positive modifiers.
+  - `AbilityModFilter` for appending modifiers to ability scores;
+  - `AddSignFilter` for prepending `+` on positive modifiers;
+  - `PrettyNumberFilter` for adding thousands separators.
 
 ### Change
 * Bump `nokogiri` to `>= 1.10.4`.

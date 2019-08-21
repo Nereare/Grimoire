@@ -66,32 +66,32 @@ layout: default
           <div class="abilities">
             <div class="ability-strength">
               <h4>STR</h4>
-              <p>{{ page.monster.abilities.str | default: '45 (+17)' }}</p>
+              <p>{{ page.monster.abilities.str | default: 45 | ability }}</p>
             </div>
             <!-- ability strength -->
             <div class="ability-dexterity">
               <h4>DEX</h4>
-              <p>{{ page.monster.abilities.dex | default: '16 (+3)' }}</p>
+              <p>{{ page.monster.abilities.dex | default: 16 | ability }}</p>
             </div>
             <!-- ability dexterity -->
             <div class="ability-constitution">
               <h4>CON</h4>
-              <p>{{ page.monster.abilities.con | default: '35 (+12)' }}</p>
+              <p>{{ page.monster.abilities.con | default: 35 | ability }}</p>
             </div>
             <!-- ability constitution -->
             <div class="ability-intelligence">
               <h4>INT</h4>
-              <p>{{ page.monster.abilities.int | default: '3 (-4)' }}</p>
+              <p>{{ page.monster.abilities.int | default: 3 | ability }}</p>
             </div>
             <!-- ability intelligence -->
             <div class="ability-wisdom">
               <h4>WIS</h4>
-              <p>{{ page.monster.abilities.wis | default: '14 (+2)' }}</p>
+              <p>{{ page.monster.abilities.wis | default: 14 | ability }}</p>
             </div>
             <!-- ability wisdom -->
             <div class="ability-charisma">
               <h4>CHA</h4>
-              <p>{{ page.monster.abilities.cha | default: '14 (+2)' }}</p>
+              <p>{{ page.monster.abilities.cha | default: 14 | ability }}</p>
             </div>
             <!-- ability charisma -->
           </div>
