@@ -159,16 +159,13 @@ layout: default
       <div class="section-right">
         <div class="actions">
           <h3>Actions</h3>
+          {% for attack in page.monster.attacks %}
           <div class="property-block">
-            <h4>Full Attack</h4>
-            <p>{{ page.monster.attacks.full | default: 'Bite +57 melee (4d8 + 17 / 18-20 / x3)' }}</p>
+            <h4>{{ attack.name }}</h4>
+            <p>{{ attack.desc | default: '+57 melee (4d8 + 17 / 18-20 / x3)' }}</p>
           </div>
           <!-- property block -->
-          <div class="property-block">
-            <h4>{{ page.monster.attacks.name | default: 'Bite' }}</h4>
-            <p>{{ page.monster.attacks.desc | default: '+57 melee (4d8 + 17 / 18-20 / ×3)' }}</p>
-          </div>
-          <!-- property block -->
+          {% endfor %}
         </div>
         {% assign: items = page.monster.possessions | join: '' %}
         {% if items != '' %}

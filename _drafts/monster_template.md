@@ -42,9 +42,10 @@ monster:
   qualities   : Augmented critical, frightful presence, improved grab, rush, swallow whole
   sp_attacks  : Augmented critical, frightful presence, improved grab, rush, swallow whole
   attacks:
-    full      : Bite +57 melee (4d8+17/18-20/×3) and 2 horns +52 melee (1d10+8) and 2 claws +52 melee (1d12+8) and tail slap +52 melee (3d8+8)
-    name      : Bite
-    desc      : +57 melee (4d8+17/18-20/×3)
+    - name    : Full Attack
+      desc    : Bite +57 melee (4d8+17/18-20/×3) and 2 horns +52 melee (1d10+8) and 2 claws +52 melee (1d12+8) and tail slap +52 melee (3d8+8)
+    - name    : Bite
+      desc    : +57 melee (4d8+17/18-20/×3)
   possessions :
     - name    : Item
       desc    : Description
