@@ -56,6 +56,7 @@ Principles of a change log, excerpted from [Keep a Changelog](http://keepachange
 * Custom filters:
   - `AbilityModFilter` for appending modifiers to ability scores;
   - `AddSignFilter` for prepending `+` on positive modifiers;
+  - `PluralizeFilter` for appending the singular or plural word, depending on the number given (the code must list both forms of the word);
   - `PrettyNumberFilter` for adding thousands separators.
 
 ### Change
