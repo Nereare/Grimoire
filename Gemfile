@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 gem "jekyll", "~> 3.8.6"
 gem "html-proofer"
+gem "nokogiri", ">= 1.10.4"
 
 group :jekyll_plugins do
   gem "jekyll-feed"
