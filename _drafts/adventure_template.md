@@ -11,8 +11,8 @@ adventure:
     min      : 1st
     max      : 3rd
     lvl      : 4th
-  max-xp     : '2,000'
-  max-gp     : '12,000'
+  max-xp     : 2,000
+  max-gp     : 12,000
   encounters : 5
   type       : Dungeon Delve
   questline:

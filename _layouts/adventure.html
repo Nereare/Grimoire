@@ -20,7 +20,7 @@ layout: default
     <p><strong>&#35; Encounters:</strong> {{ page.adventure.max-xp }} xp</p>
     <p><strong>Type:</strong> {{ page.adventure.type }}</p>
     {% if page.adventure.questline %}
-    <p><strong>Questline:</strong> <em>{{ page.adventure.questline.name }}</em>, Chapter {{ page.adventure.questline.chapter }}</p>
+    <p><strong>Questline:</strong> <em>{{ page.adventure.questline.name }}</em>{% if page.adventure.questline.chapter %}, Chapter {{ page.adventure.questline.chapter }}{% endif %}</p>
     {% endif %}
   </blockquote>
 </div>
