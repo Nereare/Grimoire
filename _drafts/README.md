@@ -16,7 +16,7 @@ After you created what you want, you must move your creation to the adequate fol
 
 ### File Names
 
-We ask that each file be named according to Jekyll [convention to post names](https://jekyllrb.com/docs/posts/), with its [date](http://xkcd.com/1179/) of writing or finishing, as you see fit, and its title without special characters and accents, and all whitespaces replaced by hyphens (`-`), in the form: `YYYY-MM-DD-title-without-spaces.md`
+We ask that each file be named according to [Jekyll] [convention to post names](https://jekyllrb.com/docs/posts/), with its [date](http://xkcd.com/1179/) of writing or finishing, as you see fit, and its title without special characters and accents, and all whitespaces replaced by hyphens (`-`), in the form: `YYYY-MM-DD-title-without-spaces.md`
 
 ### Common Front Matter
 
@@ -29,6 +29,8 @@ All files must have [front matter] defined in its top. Below we will discuss spe
 | `date`   | The same date as in the filename, following [ISO 8601]'s format  |
 | `layout` | One of the layouts available - please don't alter the template's |
 
+All metadata above **is required**.
+
 All layouts will output, under the first-level header (`h1`), both the author name and the date.
 
 ## Individualities
@@ -36,6 +38,8 @@ All layouts will output, under the first-level header (`h1`), both the author na
 Each layout has specialized [front matter], which is used by the layout on display. Here we discuss each of them.
 
 ### Adventure Layout
+
+Aimed at documenting adventures from the point-of-view of the Dungeon Master, use this when planning an adventure, so that all information regarding it is centralized.
 
 This layout has two columns:
 
@@ -59,5 +63,17 @@ This layout has two columns:
 | `questline.name`    | :x:                | `string`  | The name of the questline or campaign                                        |
 | `questline.chapter` | :x:                | `string`  | The chapter of the questline or campaign                                     |
 
+### Post Layout
+
+This is a generic layout, aimed at [Jekyll]'s posts. We suggest using this layout for logging and documenting sessions of a campaign.
+
+This is the one layout with a single column, which contains the first-level header, author name, date, and, if defined, tags and categories. Below which list the contents of the post.
+
+| Metadata     | Required? | Type      | Description                            |
+|:------------:|:---------:|:---------:|:---------------------------------------|
+| `tags`       | :x:       | `array`   | The tags of the post                   |
+| `categories` | :x:       | `array`   | The category or categories of the post |
+
+[Jekyll]: https://jekyllrb.com/
 [front matter]: https://jekyllrb.com/docs/front-matter/
 [ISO 8601]: https://www.iso.org/iso-8601-date-and-time-format.html
