@@ -32,7 +32,7 @@ layout: default
           <!-- property line -->
           <div class="property-line">
             <h4>Hit Points</h4>
-            <p>{{ page.monster.hp.hp | default: '858' }}hp ({{ page.monster.hp.hd | default: '48d10 + 594' }})</p>
+            <p>{{ page.monster.hp.hp | default: '858' | pretty_number }}hp ({{ page.monster.hp.hd | default: '48d10 + 594' }})</p>
           </div>
           <!-- property line -->
           <div class="property-line">
