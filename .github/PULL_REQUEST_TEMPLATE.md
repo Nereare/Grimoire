@@ -1,12 +1,3 @@
----
-name: Pull Request
-about: Open a pull request
-title: ''
-labels: ''
-assignees: ''
-
----
-
 Describe concisely the changes implemented by the code on this pull request.
 
 - **Added:**
