@@ -52,6 +52,7 @@ Principles of a change log, excerpted from [Keep a Changelog](http://keepachange
   - Monster;
   - Post;
   - Non-Epic Spell.
+* Layouts' tutorial.
 
 ### Change
 * Bump `nokogiri` to `>= 1.10.4`.
