@@ -1,0 +1,107 @@
+---
+layout: default
+---
+
+<div class="seven columns">
+  <div class="metadata">
+    <h1>{{ page.title | default: 'Monster' }}</h1>
+    <p class="meta">{{ page.author | default: 'Unknown' }} &bull; {{ page.date | default: '1938-07-27' | date: '%A, %B %e, %Y' }}</p>
+  </div>
+
+  {{ content }}
+
+  {% assign: ss = page.shops | join: '' %}
+  {% assign: hs = page.houses | join: '' %}
+  {% if ss != '' or hs != '' %}
+  <h2>Buildings</h2>
+
+  {% if ss != '' %}
+  <!-- Shops List -->
+  <h3>Shops</h3>
+  {% for shop in page.shops %}
+  <div class="building">
+    <h5>{{ shop.name }}</h5>
+    <p class="type">{{ shop.type }}</p>
+    <p><strong>Owner:</strong> {{ shop.owner.name }}, {{ shop.owner.gender }} {{ shop.owner.race }}, {{ shop.owner.level }}-level {{ shop.owner.class }}</p>
+    <p><strong>Location:</strong> {{ shop.location }}</p>
+    <p><strong>Description:</strong> {{ shop.desc }}</p>
+    <h6>{{ shop.goods.name }}</h6>
+    <ul>
+      {% for good in shop.goods.list %}
+      <li>{{ good.name }} ({{ good.cost }})</li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endfor %}
+  {% endif %}
+
+  {% if hs != '' %}
+  <!-- Houses List -->
+  <h3>Houses</h3>
+  {% for house in page.houses %}
+  <div class="building">
+    {% if house.name != '' %}
+    <h5>{{ house.name }}</h5>
+    <p class="type">{{ house.type }}</p>
+    {% else %}
+    <h5>{{ house.type }}</h5>
+    {% endif %}
+    <p><strong>Location:</strong> {{ house.location }}</p>
+    <p><strong>Description:</strong> {{ house.desc }}</p>
+    <h6>Inhabitants</h6>
+    <ul>
+      {% for person in house.people %}
+      <li><strong>{{ person.name }}:</strong> {{ person.gender }} {{ person.race }}, {{ person.level }}-level {{ person.class }}{% if person.owner %}, <strong>owner</strong>{% endif %}.</li>
+      {% endfor %}
+    </ul>
+    {% assign: is = house.items | join: '' %}
+    {% if is != '' %}
+    <h6>Items</h6>
+    <ul>
+      {% for item in house.items %}
+      <li><strong>{{ item.name }}:</strong> {{ item.desc }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+  {% endfor %}
+  {% endif %}
+
+  {% endif %}
+</div>
+
+<div class="five columns">
+  <blockquote class="meta">
+    <h5>{{ page.settlement.name | default: 'Settlement Name' }}</h5>
+    <p class="subtitle">{{ page.settlement.size | default: 'Small City' }}</p>
+
+    <p><strong>Size:</strong> {{ page.settlement.size }}</p>
+    <p><strong>Demograpics:</strong> {% for race in page.settlement.demograpics %}{{ race.percent }}% {{ race.race }}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
+    <p><strong>Population:</strong> {{ page.settlement.population | pretty_number }} souls</p>
+    <p><strong>Wealth:</strong> {{ page.settlement.wealth | pretty_number }} gp</p>
+    <p><strong>GP Limit:</strong> {{ page.settlement.gp-limit | pretty_number }} gp</p>
+
+    {% assign: cs = page.settlement.centres | join: '' %}
+    {% if cs != '' %}
+    <h6>Ruling</h6>
+    <ul>
+      {% for centre in page.settlement.centres %}
+      <li><strong>{{ centre.name }}:</strong> {{ centre.type }} ({{ centre.align | abbr_align }})</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% assign: as = page.settlement.authorities | join: '' %}
+    {% if as != '' %}
+    <h6>Authorities</h6>
+    <ul>
+      {% for authority in page.settlement.authorities %}
+      <li><strong>{{ authority.name }}:</strong> {{ authority.title }}, {{ authority.level }}-level {{ authority.class }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    <!--
+    <p><strong>:</strong> {{ page.settlement }}</p>
+    -->
+  </blockquote>
+</div>

@@ -50,8 +50,9 @@ Principles of a change log, excerpted from [Keep a Changelog](http://keepachange
   - Adventure;
   - Default;
   - Monster;
+  - Non-Epic Spell;
   - Post;
-  - Non-Epic Spell.
+  - Settlement.
 * Layouts tutorial.
 * Custom filters:
   - `AbbrAlignFilter` for getting the abbreviation for alignments;

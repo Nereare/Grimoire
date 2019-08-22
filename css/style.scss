@@ -169,3 +169,27 @@ div.spell {
     max-width: 256px;
   }
 }
+
+.building {
+  margin-bottom: 1.5em;
+  p { margin-bottom: 0.3em; }
+  p.type {
+    margin-top: -1.0em;
+    font-family: 'Montserrat', sans-serif;
+    font-variant: small-caps;
+    font-weight: 700;
+    overflow: auto;
+  }
+  h5 { margin-bottom: 0.3em; }
+  h6 {
+    font-size: 1.1em;
+    margin-bottom: 0;
+    margin-top: 0.5em;
+  }
+  ul { margin-bottom: 0; }
+  li {
+    list-style: none;
+    margin-left: 1.5em;
+    margin-bottom: 0.3em;
+  }
+}
