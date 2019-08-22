@@ -59,6 +59,7 @@ Principles of a change log, excerpted from [Keep a Changelog](http://keepachange
   - `AbbrAlignFilter` for getting the abbreviation for alignments;
   - `AbilityModFilter` for appending modifiers to ability scores;
   - `AddSignFilter` for prepending `+` on positive modifiers;
+  - `ArticulateFilter` for prepending either *a* or *an* to a word, based on its first word only;
   - `OrdinalFilter` for appenging the ordinal suffix to the number (*e.g.* `th`, `st`);
   - `PluralizeFilter` for appending the singular or plural word, depending on the number given (the code must list both forms of the word);
   - `PrettyNumberFilter` for adding thousands separators.
