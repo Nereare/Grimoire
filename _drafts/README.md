@@ -9,6 +9,7 @@ After you created what you want, you must move your creation to the adequate fol
 | Collection  | Sub-folder     | Layout       | Description                                                                              |
 |:-----------:|:--------------:|:------------:|:-----------------------------------------------------------------------------------------|
 | Adventures  | `_adventures`  | `adventure`  | Each individual adventure, with all its data, encounters and steps                       |
+| Chapters    | `_chapters`    | `chapter`    | Texts, prose or otherwise, in a series or book                                           |
 | Monsters    | `_monsters`    | `monster`    | Individual monsters, NPCs, PCs or other creatures                                        |
 | Posts       | `_posts`       | `post`       | Generic post format with few metadata                                                    |
 | Settlements | `_settlements` | `settlement` | Cities, towns and other settlements, as well as their ruling structure, shops and houses |
@@ -64,6 +65,19 @@ This layout has two columns:
 | `questline`         | :x:                | `object`  | An object describing the questline to which this adventure pertains          |
 | `questline.name`    | :x:                | `string`  | The name of the questline or campaign                                        |
 | `questline.chapter` | :x:                | `string`  | The chapter of the questline or campaign                                     |
+
+### Chapter Layout
+
+This layout is aimed at written prose and poetry, when these pertain to a book or serial collection of texts. Standalone texts fit better as a post (see below).
+
+This layout has a single column, which contains the first-level header, author name, date, book name and chapter number. Below which lies the contents of the chapter, with, when defined, links to previous and next chapters.
+
+| Metadata   | Required?          | Type                  | Description                                                                           |
+|:----------:|:------------------:|:---------------------:|:--------------------------------------------------------------------------------------|
+| `book`     | :heavy_check_mark: | `string`              | The name of the book or series to which the text belongs                              |
+| `number`   | :heavy_check_mark: | `string` or `integer` | The number of chapter of this text in the above book                                  |
+| `previous` | :x:                | `string` or `boolean` | The filename (without extension) of the previous post in the book, or `false` if none |
+| `next`     | :x:                | `string` or `boolean` | The filename (without extension) of the next post in the book, or `false` if none     |
 
 ### Monster Layout
 
