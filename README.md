@@ -1,10 +1,10 @@
 # Grimoire
 
-[![GitHub package.json version](https://img.shields.io/github/package-json/v/Nereare/Grimoire?color=%2303a9f4&label=Version&logo=github&logoColor=%2303a9f4)](https://github.com/Nereare/Grimoire)
-[![GitHub](https://img.shields.io/github/license/Nereare/Grimoire?color=%23f57c00&label=License&logo=creative-commons&logoColor=%23f57c00)](LICENSE.md)
+[![GitHub package.json version](https://img.shields.io/github/package-json/v/Nereare/Grimoire)](https://github.com/Nereare/Grimoire)
+[![GitHub](https://img.shields.io/github/license/Nereare/Grimoire)](LICENSE.md)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](CODE-OF-CONDUCT.md)
-[![Travis (.org)](https://img.shields.io/travis/Nereare/Grimoire?label=Build&logo=travis-ci&logoColor=success)](https://travis-ci.org/Nereare/Grimoire)
-[![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/Nereare/Grimoire?label=Dependencies)](https://libraries.io/github/Nereare/Grimoire)
+[![Travis (.org)](https://img.shields.io/travis/Nereare/Grimoire)](https://travis-ci.org/Nereare/Grimoire)
+[![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/Nereare/Grimoire)](https://libraries.io/github/Nereare/Grimoire)
 
 A jekyll quasi-wiki for RPG-oriented worldbuilding.
 
