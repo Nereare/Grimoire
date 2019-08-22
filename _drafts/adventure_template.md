@@ -8,9 +8,9 @@ adventure:
   char-num   : 4
   lvl:
     range    : true
-    min      : 1st
-    max      : 3rd
-    lvl      : 4th
+    min      : 1
+    max      : 3
+    lvl      : 4
   max-xp     : 2,000
   max-gp     : 12,000
   encounters : 5

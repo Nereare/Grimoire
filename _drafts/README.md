@@ -52,7 +52,7 @@ This layout has two columns:
 | `char-num`          | :heavy_check_mark: | `integer` | The number of player characters suggested for the adventure                  |
 | `lvl`               | :heavy_check_mark: | `object`  | An object describing suggested levels, see below                             |
 | `lvl.range`         | :heavy_check_mark: | `boolean` | `true` if designed for a range of levels (*e.g.* 1st-3rd), `false` otherwise |
-| `lvl.min`           | :x:                | `string`  | Minimum PC level suggested (*e.g.* `3rd`), required if `lvl.range` is `true` |
+| `lvl.min`           | :x:                | `string`  | Minimum PC level suggested (*e.g.* `3`), required if `lvl.range` is `true`   |
 | `lvl.max`           | :x:                | `string`  | Maximum PC level suggested, required if `lvl.range` is `true`                |
 | `lvl.lvl`           | :x:                | `string`  | PC level suggested, required if `lvl.range` is `false`                       |
 | `max-xp`            | :heavy_check_mark: | `integer` | Maximum XP obtainable for the adventure                                      |

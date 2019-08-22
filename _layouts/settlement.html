@@ -22,7 +22,7 @@ layout: default
   <div class="building">
     <h5>{{ shop.name }}</h5>
     <p class="type">{{ shop.type }}</p>
-    <p><strong>Owner:</strong> {{ shop.owner.name }}, {{ shop.owner.gender }} {{ shop.owner.race }}, {{ shop.owner.level }}-level {{ shop.owner.class }}</p>
+    <p><strong>Owner:</strong> {{ shop.owner.name }}, {{ shop.owner.gender }} {{ shop.owner.race }}, {{ shop.owner.level | ordinal }}-level {{ shop.owner.class }}</p>
     <p><strong>Location:</strong> {{ shop.location }}</p>
     <p><strong>Description:</strong> {{ shop.desc }}</p>
     <h6>{{ shop.goods.name }}</h6>
@@ -51,7 +51,7 @@ layout: default
     <h6>Inhabitants</h6>
     <ul>
       {% for person in house.people %}
-      <li><strong>{{ person.name }}:</strong> {{ person.gender }} {{ person.race }}, {{ person.level }}-level {{ person.class }}{% if person.owner %}, <strong>owner</strong>{% endif %}.</li>
+      <li><strong>{{ person.name }}:</strong> {{ person.gender }} {{ person.race }}, {{ person.level | ordinal }}-level {{ person.class }}{% if person.owner %}, <strong>owner</strong>{% endif %}.</li>
       {% endfor %}
     </ul>
     {% assign: is = house.items | join: '' %}
@@ -96,7 +96,7 @@ layout: default
     <h6>Authorities</h6>
     <ul>
       {% for authority in page.settlement.authorities %}
-      <li><strong>{{ authority.name }}:</strong> {{ authority.title }}, {{ authority.level }}-level {{ authority.class }}</li>
+      <li><strong>{{ authority.name }}:</strong> {{ authority.title }}, {{ authority.level | ordinal }}-level {{ authority.class }}</li>
       {% endfor %}
     </ul>
     {% endif %}

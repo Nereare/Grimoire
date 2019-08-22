@@ -23,7 +23,7 @@ settlement:
       align    : Lawful Good
   authorities:
     - class      : Warrior
-      level      : 5th
+      level      : 5
       title      : Constable
       name       : Urist McLeader
 
@@ -35,7 +35,7 @@ shops:
       gender   : Male
       race     : Human
       class    : Commoner
-      level    : 5th
+      level    : 5
     location   : East Road
     desc       : A large wooden building with rooms for both humans and halflings alike.
     goods:
@@ -58,13 +58,13 @@ houses:
         gender : Male
         race   : Halfling
         class  : Commoner
-        level  : 1st
+        level  : 1
         owner  : true
       - name   : Bob
         gender : Male
         race   : Halfling
         class  : Commoner
-        level  : 1st
+        level  : 1
     items:
       - name   : Money
         desc   : 2 gp, 11 sp and 45 cp
