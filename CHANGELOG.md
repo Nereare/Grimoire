@@ -48,6 +48,7 @@ Principles of a change log, excerpted from [Keep a Changelog](http://keepachange
   - [UnifrakturCook](https://yarnpkg.com/en/package/typeface-unifrakturcook) font, `^0.0.71`.
 * Layouts:
   - Adventure;
+  - Chapter;
   - Default;
   - Monster;
   - Non-Epic Spell;

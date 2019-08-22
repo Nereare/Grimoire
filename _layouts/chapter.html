@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<div class="metadata">
+  <h1>{{ page.title | default: 'Post' }}</h1>
+  <p class="meta">{{ page.author | default: 'Unknown' }} &bull; {{ page.date | default: '1938-07-27' | date: '%A, %B %e, %Y' }}</p>
+  <p class="chapter">{{ page.chapter.book }} &bull; Chapter {{ page.chapter.number }}</p>
+  <!-- -->
+</div>
+
+{{ content }}
+
+<div class="chapter links">
+  {% if page.chapter.previous != false %}
+  <a class="prev" href="{{ page.chapter.previous | prepend: 'chapters/' | append: '.html' | absolute_url }}">Previous Chapter</a>
+  {% endif %}
+  {% if page.chapter.next != false %}
+  <a class="next" href="{{ page.chapter.next | prepend: 'chapters/' | append: '.html' | absolute_url }}">Next Chapter</a>
+  {% endif %}
+</div>

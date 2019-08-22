@@ -90,7 +90,7 @@ header {
 }
 
 div.metadata {
-  p:nth-child(2) {
+  p:nth-child(2), p.chapter {
     margin-top: -1.5em;
     font-family: 'Montserrat', sans-serif;
     font-variant: small-caps;
@@ -191,5 +191,25 @@ div.spell {
     list-style: none;
     margin-left: 1.5em;
     margin-bottom: 0.3em;
+  }
+}
+
+.chapter.links {
+  overflow: auto;
+  a {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    @media screen and (min-width: 550px) {
+      width: 40%;
+      &.prev {
+        text-align: left;
+        float: left;
+      }
+      &.next {
+        text-align: right;
+        float: right;
+      }
+    }
   }
 }

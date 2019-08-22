@@ -23,7 +23,13 @@ collections      :
   adventures     :
     output       : true
     sort_by      : title
+  chapters       :
+    output       : true
+    sort_by      : book
   monsters       :
+    output       : true
+    sort_by      : title
+  settlements    :
     output       : true
     sort_by      : title
   spells         :
