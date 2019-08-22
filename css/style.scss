@@ -213,3 +213,18 @@ div.spell {
     }
   }
 }
+
+h2.collections {
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+}
+.collection {
+  margin-bottom: 2em;
+  h5 { margin-bottom: 0.2em; }
+  ul { margin-bottom: 0; }
+  li {
+    list-style: none;
+    margin-left: 1.5em;
+    margin-bottom: 0.3em;
+  }
+}

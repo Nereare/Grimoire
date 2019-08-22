@@ -1,0 +1,89 @@
+---
+layout: default
+---
+
+{{ content }}
+
+<!-- Collections Title -->
+{% assign: adventures = site.adventures | join: '' %}
+{% assign: chapters = site.chapters | join: '' %}
+{% assign: monsters = site.monsters | join: '' %}
+{% assign: posts = site.posts | join: '' %}
+{% assign: settlements = site.settlements | join: '' %}
+{% assign: spells = site.spells | join: '' %}
+
+{% if adventures != '' or chapters != '' or monsters != '' or posts != '' or settlements != '' or spells != '' %}
+<h2 class="collections">Collections</h2>
+{% endif %}
+
+<!-- Adventure List -->
+{% if adventures != '' %}
+<div class="collection">
+  <h5>Adventures</h5>
+  <ul>
+  {% for adventure in site.adventures %}
+    <li><strong><a href="{{ adventure.url }}">{{ adventure.adventure.name }}</a>:</strong> {{ adventure.adventure.type | articulate: true }} for {{ adventure.adventure.char-num | default: 4 | pluralize: 'player character', 'player characters' }} of {% if adventure.adventure.lvl.range %}levels {{ adventure.adventure.lvl.min | ordinal }} through {{ adventure.adventure.lvl.max | ordinal }}{% else %}{{ adventure.adventure.lvl.lvl | ordinal }} level{% endif %}.</li>
+  {% endfor %}
+  </ul>
+</div>
+{% endif %}
+
+<!-- Chapter List -->
+{% if chapters != '' %}
+<div class="collection">
+  <h5>Chapters</h5>
+  <ul>
+  {% for chapter in site.chapters %}
+    <li><strong><a href="{{ chapter.url }}">{{ chapter.title }}</a>:</strong> Chapter {{ chapter.chapter.number }} from {{ chapter.chapter.book }}.</li>
+  {% endfor %}
+  </ul>
+</div>
+{% endif %}
+
+<!-- Monster List -->
+{% if monsters != '' %}
+<div class="collection">
+  <h5>Monsters</h5>
+  <ul>
+  {% for monster in site.monsters %}
+    <li><strong><a href="{{ monster.url }}">{{ monster.monster.name }}</a>:</strong> {{ monster.monster.size | articulate: true }} {{ monster.monster.type }}, CR {{ monster.monster.cr }}.</li>
+  {% endfor %}
+  </ul>
+</div>
+{% endif %}
+
+<!-- Post List -->
+{% if posts != '' %}
+<div class="collection">
+  <h5>Posts</h5>
+  <ul>
+  {% for post in site.posts %}
+    <li><strong><a href="{{ post.url }}">{{ post.title }}</a>:</strong> {{ post.excerpt | strip_html | truncatewords: 50 }}(...)</li>
+  {% endfor %}
+  </ul>
+</div>
+{% endif %}
+
+<!-- Settlement List -->
+{% if settlements != '' %}
+<div class="collection">
+  <h5>Settlements</h5>
+  <ul>
+  {% for settlement in site.settlements %}
+    <li><strong><a href="{{ settlement.url }}">{{ settlement.settlement.name }}</a>:</strong> {{ settlement.settlement.type | articulate: true }}.</li>
+  {% endfor %}
+  </ul>
+</div>
+{% endif %}
+
+<!-- Spell List -->
+{% if spells != '' %}
+<div class="collection">
+  <h5>Spells</h5>
+  <ul>
+  {% for spell in site.spells %}
+    <li><strong><a href="{{ spell.url }}">{{ spell.spell.name }}</a>:</strong> {{ spell.spell.school | articulate: true }}{% if spell.spell.subschool %} ({{ spell.spell.subschool }}){% endif %}{% assign: descs = spell.spell.descriptor | join: '' %}{% if descs != '' %} [{{ spell.spell.descriptor | join: ', ' }}]{% endif %} for {{ spell.spell.level | join: ', ' }}.</li>
+  {% endfor %}
+  </ul>
+</div>
+{% endif %}

@@ -27,6 +27,11 @@ Principles of a change log, excerpted from [Keep a Changelog](http://keepachange
 ## [Unreleased]
 
 ### Added
+* ...
+
+## [1.0.0] - `2019-08-22`
+
+### Added
 * Code of Conduct from [Contributor Covenant v1.4.1](https://www.contributor-covenant.org/).
 * [License](LICENSE.md).
 * Git metafiles (`.gitignore` and `.gitattributes`).
@@ -50,6 +55,7 @@ Principles of a change log, excerpted from [Keep a Changelog](http://keepachange
   - Adventure;
   - Chapter;
   - Default;
+  - Index;
   - Monster;
   - Non-Epic Spell;
   - Post;
@@ -66,3 +72,6 @@ Principles of a change log, excerpted from [Keep a Changelog](http://keepachange
 
 ### Change
 * Bump `nokogiri` to `>= 1.10.4`.
+
+[Unreleased]: https://github.com/Nereare/Grimoire/compare/1.0.0...HEAD
+[1.0.0]: https://github.com/Nereare/Grimoire/releases/tag/1.0.0
