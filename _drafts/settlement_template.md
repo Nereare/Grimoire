@@ -36,6 +36,9 @@ shops:
       race     : Human
       class    : Commoner
       level    : 5
+    prices:
+      sell     : 120
+      buy      : false
     location   : East Road
     desc       : A large wooden building with rooms for both humans and halflings alike.
     goods:

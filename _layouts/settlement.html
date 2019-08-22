@@ -25,12 +25,20 @@ layout: default
     <p><strong>Owner:</strong> {{ shop.owner.name }}, {{ shop.owner.gender }} {{ shop.owner.race }}, {{ shop.owner.level | ordinal }}-level {{ shop.owner.class }}</p>
     <p><strong>Location:</strong> {{ shop.location }}</p>
     <p><strong>Description:</strong> {{ shop.desc }}</p>
+    <h6>Transactions</h6>
+    <ul>
+      <li><strong>Selling:</strong> {% if shop.prices.sell %}{{ shop.prices.sell }}% market price{% else %}Does not sell{% endif %}</li>
+      <li><strong>Buying:</strong> {% if shop.prices.buy %}{{ shop.prices.buy }}% market price{% else %}Does not buy{% endif %}</li>
+    </ul>
+    {% assign: gs = shop.goods | join: '' %}
+    {% if gs != '' %}
     <h6>{{ shop.goods.name }}</h6>
     <ul>
       {% for good in shop.goods.list %}
       <li>{{ good.name }} ({{ good.cost }})</li>
       {% endfor %}
     </ul>
+    {% endif %}
   </div>
   {% endfor %}
   {% endif %}
