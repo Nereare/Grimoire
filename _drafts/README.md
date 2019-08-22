@@ -6,11 +6,13 @@ Please do note that this template has some special [collections](https://jekyllr
 
 After you created what you want, you must move your creation to the adequate folder.
 
-| Collection | Sub-folder    | Layout      | Description                                                        |
-|:----------:|:-------------:|:-----------:|:-------------------------------------------------------------------|
-| Adventures | `_adventures` | `adventure` | Each individual adventure, with all its data, encounters and steps |
-| Monsters   | `_monsters`   | `monster`   | Individual monsters, NPCs, PCs or other creatures                  |
-| Spells     | `_spells`     | `spell`     | Non-epic spells of any class and nature                            |
+| Collection  | Sub-folder     | Layout       | Description                                                                              |
+|:-----------:|:--------------:|:------------:|:-----------------------------------------------------------------------------------------|
+| Adventures  | `_adventures`  | `adventure`  | Each individual adventure, with all its data, encounters and steps                       |
+| Monsters    | `_monsters`    | `monster`    | Individual monsters, NPCs, PCs or other creatures                                        |
+| Posts       | `_posts`       | `post`       | Generic post format with few metadata                                                    |
+| Settlements | `_settlements` | `settlement` | Cities, towns and other settlements, as well as their ruling structure, shops and houses |
+| Spells      | `_spells`      | `spell`      | Non-epic spells of any class and nature                                                  |
 
 ## Common Aspects
 
