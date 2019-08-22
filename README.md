@@ -20,9 +20,7 @@ This project uses [SemVer](http://semver.org/) for versioning. For the versions 
 
 ## Legal Stuff
 
-[![Creative Commons Attribution ShareAlike 4.0 License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/)
-
-<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Grimoire</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/Nereare/Grimoire" property="cc:attributionName" rel="cc:attributionURL">Igor Padoim</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+[![MIT License](http://i.imgur.com/Ze3dFob.png "MIT License")](https://opensource.org/licenses/MIT)
 
 ### System Reference Document
 
@@ -34,5 +32,6 @@ Some of the contents of this site may fall under the [Open Game License](https:/
 
 ### Acknowledgements
 
+* [MIT License Logo](http://excaliburzero.deviantart.com/art/MIT-License-Logo-595847140) by [ExcaliburZero](http://excaliburzero.deviantart.com/), available under a [Creative Commons Attribution 3.0 License](https://creativecommons.org/licenses/by/3.0/)
 * Favicon adapted from [D20](https://thenounproject.com/term/d20/1279708/) by Rafaël Massé from the Noun Project (available under a [Creative Commons Attribution License 3.0](https://creativecommons.org/licenses/by/3.0/us/legalcode)).
 * 404 image adapted from [D20](https://thenounproject.com/term/d20/1315314/) by HeadsOfBirds from the Noun Project (available under a [Creative Commons Attribution License 3.0](https://creativecommons.org/licenses/by/3.0/us/legalcode)).
