@@ -27,6 +27,11 @@ Principles of a change log, excerpted from [Keep a Changelog](http://keepachange
 ## [Unreleased]
 
 ### Added
+* ...
+
+## [1.2.1] - `2019-08-26`
+
+### Added
 * Detailed demographics to Settlement layout.
 * Update tutorial for detailed demographics.
 
@@ -74,5 +79,6 @@ Principles of a change log, excerpted from [Keep a Changelog](http://keepachange
 ### Change
 * Bump `nokogiri` to `>= 1.10.4`.
 
-[Unreleased]: https://github.com/Nereare/Grimoire/compare/1.0.0...HEAD
+[Unreleased]: https://github.com/Nereare/Grimoire/compare/1.2.1...HEAD
+[1.2.1]: https://github.com/Nereare/Grimoire/compare/1.0.0...1.2.1
 [1.0.0]: https://github.com/Nereare/Grimoire/releases/tag/1.0.0
