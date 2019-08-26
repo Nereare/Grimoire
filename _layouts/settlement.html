@@ -84,7 +84,7 @@ layout: default
     <p class="subtitle">{{ page.settlement.size | default: 'Small City' }}</p>
 
     <p><strong>Size:</strong> {{ page.settlement.size }}</p>
-    <p><strong>Demograpics:</strong> {% for race in page.settlement.demograpics %}{{ race.percent }}% {{ race.race }}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
+    <p><strong>Demographics:</strong> {% for race in page.settlement.demographics %}{{ race.percent }}% {{ race.race }}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
     <p><strong>Population:</strong> {{ page.settlement.population | pretty_number }} souls</p>
     <p><strong>Wealth:</strong> {{ page.settlement.wealth | pretty_number }} gp</p>
     <p><strong>GP Limit:</strong> {{ page.settlement.gp-limit | pretty_number }} gp</p>
@@ -108,8 +108,117 @@ layout: default
       {% endfor %}
     </ul>
     {% endif %}
-    <!--
-    <p><strong>:</strong> {{ page.settlement }}</p>
-    -->
+
+    {% assign: ds = page.demographics | join: '' %}
+    {% if ds != '' %}
+    <h6>Demographics</h6>
+
+    <details>
+      <summary>Overview</summary>
+      <ul>
+        <li><strong>Nobles:</strong> {{ page.demographics.overview.nobles | pretty_number }}</li>
+        <li><strong>Officers:</strong> {{ page.demographics.overview.officers | pretty_number }}</li>
+        <li><strong>Clergy:</strong> {{ page.demographics.overview.clergy | pretty_number }}</li>
+        <li><strong>Freeholders:</strong> {{ page.demographics.overview.freeholders | pretty_number }}</li>
+        <li><strong>Citizens:</strong> {{ page.demographics.overview.citizens | pretty_number }}</li>
+        <li><strong>Hirelings:</strong> {{ page.demographics.overview.hirelings | pretty_number }}</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>Nobility</summary>
+      <p><strong>Ruling House</strong></p>
+      <ul>
+        <li><strong>Nobles:</strong> {{ page.demographics.ruling-house.nobles | pretty_number }}</li>
+        <li><strong>Relatives:</strong> {{ page.demographics.ruling-house.relatives | pretty_number }}</li>
+        <li><strong>Servants:</strong> {{ page.demographics.ruling-house.servants | pretty_number }}</li>
+        <li><strong>Guards:</strong> {{ page.demographics.ruling-house.guards | pretty_number }}</li>
+        <li><strong>Serjaants:</strong> {{ page.demographics.ruling-house.serjaants | pretty_number }}</li>
+      </ul>
+      <p><strong>Other Noble Houses</strong></p>
+      <ul>
+        <li><strong>Houses:</strong> {{ page.demographics.other-houses.houses | pretty_number }}</li>
+        <li><strong>Population:</strong> {{ page.demographics.other-houses.population | pretty_number }}</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>Officers</summary>
+      <ul>
+        <li><strong>Reeves:</strong> {{ page.demographics.officers.reeves | pretty_number }}</li>
+        <li><strong>Messors:</strong> {{ page.demographics.officers.messors | pretty_number }}</li>
+        <li><strong>Woodwards:</strong> {{ page.demographics.officers.woodwards | pretty_number }}</li>
+        <li><strong>Constables:</strong> {{ page.demographics.officers.constables | pretty_number }}</li>
+        <li><strong>Guards:</strong> {{ page.demographics.officers.guards | pretty_number }}</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>Clergy</summary>
+      <ul>
+        <li><strong>Clerics:</strong> {{ page.demographics.clergy.clerics | pretty_number }}</li>
+        <li><strong>Priests:</strong> {{ page.demographics.clergy.priests | pretty_number }}</li>
+      </ul>
+    </details>
+
+    <details>
+      <summary>Freeholders</summary>
+      <ul>
+        <li><strong>Adventures:</strong> {{ page.demographics.freeholders.adventures | pretty_number }}</li>
+        <li><strong>Apothecaries:</strong> {{ page.demographics.freeholders.apothecaries | pretty_number }}</li>
+        <li><strong>Armourers&ast;:</strong> {{ page.demographics.freeholders.armourers | pretty_number }}</li>
+        <li><strong>Artists:</strong> {{ page.demographics.freeholders.artists | pretty_number }}</li>
+        <li><strong>Butchers&ast;:</strong> {{ page.demographics.freeholders.butchers | pretty_number }}</li>
+        <li><strong>Chandlers:</strong> {{ page.demographics.freeholders.chandlers | pretty_number }}</li>
+        <li><strong>Charcoalers:</strong> {{ page.demographics.freeholders.charcoalers | pretty_number }}</li>
+        <li><strong>Cobblers:</strong> {{ page.demographics.freeholders.cobblers | pretty_number }}</li>
+        <li><strong>Entertainers:</strong> {{ page.demographics.freeholders.entertainers | pretty_number }}</li>
+        <li><strong>Foresters:</strong> {{ page.demographics.freeholders.foresters | pretty_number }}</li>
+        <li><strong>Furriers:</strong> {{ page.demographics.freeholders.furriers | pretty_number }}</li>
+        <li><strong>Glassworkers:</strong> {{ page.demographics.freeholders.glassworkers | pretty_number }}</li>
+        <li><strong>Innkeepers:</strong> {{ page.demographics.freeholders.innkeepers | pretty_number }}</li>
+        <li><strong>Jewelers:</strong> {{ page.demographics.freeholders.jewelers | pretty_number }}</li>
+        <li><strong>Litigants:</strong> {{ page.demographics.freeholders.litigants | pretty_number }}</li>
+        <li><strong>Locksmiths:</strong> {{ page.demographics.freeholders.locksmiths | pretty_number }}</li>
+        <li><strong>Masons:</strong> {{ page.demographics.freeholders.masons | pretty_number }}</li>
+        <li><strong>Metalsmiths&ast;:</strong> {{ page.demographics.freeholders.metalsmiths | pretty_number }}</li>
+        <li><strong>Bakers&ast;:</strong> {{ page.demographics.freeholders.bakers | pretty_number }}</li>
+        <li><strong>Ostlers&ast;:</strong> {{ page.demographics.freeholders.ostlers | pretty_number }}</li>
+        <li><strong>Outfitters:</strong> {{ page.demographics.freeholders.outfitters | pretty_number }}</li>
+        <li><strong>Physicians:</strong> {{ page.demographics.freeholders.physicians | pretty_number }}</li>
+        <li><strong>Potters:</strong> {{ page.demographics.freeholders.potters | pretty_number }}</li>
+        <li><strong>Roofers:</strong> {{ page.demographics.freeholders.roofers | pretty_number }}</li>
+        <li><strong>Ropemakers:</strong> {{ page.demographics.freeholders.ropemakers | pretty_number }}</li>
+        <li><strong>Sages:</strong> {{ page.demographics.freeholders.sages | pretty_number }}</li>
+        <li><strong>Salters&ast;:</strong> {{ page.demographics.freeholders.salters | pretty_number }}</li>
+        <li><strong>Scribes:</strong> {{ page.demographics.freeholders.scribes | pretty_number }}</li>
+        <li><strong>Shipwrights&ast;:</strong> {{ page.demographics.freeholders.shipwrights | pretty_number }}</li>
+        <li><strong>Tailors:</strong> {{ page.demographics.freeholders.tailors | pretty_number }}</li>
+        <li><strong>Tanners&ast;:</strong> {{ page.demographics.freeholders.tanners | pretty_number }}</li>
+        <li><strong>Taverners:</strong> {{ page.demographics.freeholders.taverners | pretty_number }}</li>
+        <li><strong>Teamsters:</strong> {{ page.demographics.freeholders.teamsters | pretty_number }}</li>
+        <li><strong>Timberwrights&ast;:</strong> {{ page.demographics.freeholders.timberwrights | pretty_number }}</li>
+        <li><strong>Tinkers:</strong> {{ page.demographics.freeholders.tinkers | pretty_number }}</li>
+        <li><strong>Vintners:</strong> {{ page.demographics.freeholders.vintners | pretty_number }}</li>
+        <li><strong>Weaponcrafters&ast;:</strong> {{ page.demographics.freeholders.weaponcrafters | pretty_number }}</li>
+        <li><strong>Weavers:</strong> {{ page.demographics.freeholders.weavers | pretty_number }}</li>
+        <li><strong>Woodcrafters:</strong> {{ page.demographics.freeholders.woodcrafters | pretty_number }}</li>
+        <li><strong>Yeomen:</strong> {{ page.demographics.freeholders.yeomen | pretty_number }}</li>
+      </ul>
+      <p>Freeholders typically live in the same building as their shop, unless marked with an asterisk (&ast;), in which case their dwelling is separate from their place of business.</p>
+    </details>
+
+    <details>
+      <summary>Buildings</summary>
+      <ul>
+        <li><strong>Mansions:</strong> {{ page.demographics.buildings.mansions | pretty_number }}</li>
+        <li><strong>Churches:</strong> {{ page.demographics.buildings.churches | pretty_number }}</li>
+        <li><strong>Businesses:</strong> {{ page.demographics.buildings.businesses | pretty_number }}</li>
+        <li><strong>Municipal:</strong> {{ page.demographics.buildings.municipal | pretty_number }}</li>
+        <li><strong>Homes:</strong> {{ page.demographics.buildings.homes | pretty_number }}</li>
+        <li><strong>Total:</strong> {{ page.demographics.buildings.total | pretty_number }}</li>
+      </ul>
+    </details>
+    {% endif %}
   </blockquote>
 </div>
