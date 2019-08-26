@@ -28,6 +28,7 @@ Principles of a change log, excerpted from [Keep a Changelog](http://keepachange
 
 ### Added
 * Detailed demographics to Settlement layout.
+* Update tutorial for detailed demographics.
 
 ## [1.0.0] - `2019-08-22`
 
