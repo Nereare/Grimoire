@@ -26,3 +26,8 @@ sudo: false
 cache:
   bundler: true
   yarn: true
+
+notifications:
+  email:
+    on_success: change
+    on_failure: change
