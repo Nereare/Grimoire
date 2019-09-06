@@ -205,3 +205,6 @@ _site/
 ### Adobe Suite Files, Some ###
 *.psd
 *.ai
+
+### Gems ###
+*.gem
