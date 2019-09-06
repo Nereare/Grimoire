@@ -27,13 +27,13 @@ Principles of a change log, excerpted from [Keep a Changelog](http://keepachange
 ## [Unreleased]
 
 ### Added
-* Release to [RubyGems](https://rubygems.org/).
+* Release to [RubyGems](https://rubygems.org/) as [`nereare_grimoire`](https://rubygems.org/gems/nereare_grimoire).
 
 ### Changed
 * Gemfile dependencies to gemspec file.
 
-### Added
-* ...
+### Fixed
+* Added missing Ruby version to gemspec.
 
 ## [1.2.1] - `2019-08-26`
 

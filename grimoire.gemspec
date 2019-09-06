@@ -2,9 +2,10 @@
 
 Gem::Specification.new do |spec|
   spec.name          = 'nereare_grimoire'
-  spec.version       = '1.3.1'
+  spec.version       = '1.3.2'
   spec.authors       = ['Igor Padoim']
   spec.email         = ['igorpadoim@gmail.com']
+  spec.license       = 'MIT'
 
   spec.summary       = 'A jekyll quasi-wiki for RPG-oriented worldbuilding.'
   spec.homepage      = 'https://github.com/Nereare/Grimoire'
@@ -17,9 +18,10 @@ Gem::Specification.new do |spec|
   end
 
   spec.platform = Gem::Platform::RUBY
+  spec.required_ruby_version = '>= 2.5.0'
 
-  spec.add_development_dependency 'html-proofer'
-  spec.add_development_dependency 'nokogiri', '>= 1.10.4'
+  spec.add_development_dependency 'html-proofer', '~> 3.11.1'
+  spec.add_development_dependency 'nokogiri', '~> 1.10.4'
 
   spec.add_dependency 'jekyll', '~> 3.8.6'
   spec.add_dependency 'jekyll-feed', '~> 0.12.1'
