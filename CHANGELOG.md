@@ -26,8 +26,16 @@ Principles of a change log, excerpted from [Keep a Changelog](http://keepachange
 
 ## [Unreleased]
 
+## [1.3.2] - 2019-09-06
+
 ### Added
-* ...
+* Release to [RubyGems](https://rubygems.org/) as [`nereare_grimoire`](https://rubygems.org/gems/nereare_grimoire).
+
+### Changed
+* Gemfile dependencies to gemspec file.
+
+### Fixed
+* Added missing Ruby version to gemspec.
 
 ## [1.2.1] - `2019-08-26`
 
@@ -79,6 +87,7 @@ Principles of a change log, excerpted from [Keep a Changelog](http://keepachange
 ### Change
 * Bump `nokogiri` to `>= 1.10.4`.
 
-[Unreleased]: https://github.com/Nereare/Grimoire/compare/1.2.1...HEAD
+[Unreleased]: https://github.com/Nereare/Grimoire/compare/1.3.2...HEAD
+[1.3.2]: https://github.com/Nereare/Grimoire/compare/1.2.1...1.3.2
 [1.2.1]: https://github.com/Nereare/Grimoire/compare/1.0.0...1.2.1
 [1.0.0]: https://github.com/Nereare/Grimoire/releases/tag/1.0.0
