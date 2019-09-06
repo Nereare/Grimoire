@@ -27,6 +27,12 @@ Principles of a change log, excerpted from [Keep a Changelog](http://keepachange
 ## [Unreleased]
 
 ### Added
+* Release to [RubyGems](https://rubygems.org/).
+
+### Changed
+* Gemfile dependencies to gemspec file.
+
+### Added
 * ...
 
 ## [1.2.1] - `2019-08-26`
