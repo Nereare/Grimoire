@@ -26,7 +26,7 @@ Principles of a change log, excerpted from [Keep a Changelog](http://keepachange
 
 ## [Unreleased]
 
-## [1.3.2] - 2019-09-06
+## [1.3.2] - `2019-09-06`
 
 ### Added
 * Release to [RubyGems](https://rubygems.org/) as [`nereare_grimoire`](https://rubygems.org/gems/nereare_grimoire).
