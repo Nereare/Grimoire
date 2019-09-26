@@ -10,11 +10,6 @@ plugins          :
   - jekyll-sitemap
   - jemoji
 
-# Relativize links in collections
-relative_links   :
-  enabled        : true
-  collections    : true
-
 # Collections
 collections      :
   adventures     :
