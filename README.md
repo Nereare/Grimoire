@@ -9,21 +9,7 @@
 
 A jekyll quasi-wiki for RPG-oriented worldbuilding.
 
-## Installing
-
-Add the gem to your `Gemfile`:
-
-```ruby
-gem 'nereare_grimoire'
-```
-
-And set the theme on your `_config.yml` file:
-
-```yaml
-theme: nereare_grimoire
-```
-
-This project uses custom filters, which is not supported by GitHub pages, so sorry, but it cannot properly work under this circunstance. :cry:
+Read our [documentation](https://nereare.github.io/Grimoire/) on how to install and run this project!
 
 ## Contributing
 

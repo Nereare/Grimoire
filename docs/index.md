@@ -18,6 +18,14 @@ nav_order: 1
 
 [Grimoire] is a theme for [Jekyll] version `4.0.0` and up, so it depends on [Ruby] and [RubyGems], managed through [Bundler]. These last dependencies must be installed in order for this theme to be usable.
 
+## Installing
+
+Add the gem to your `Gemfile`:
+
+```ruby
+gem 'nereare_grimoire'
+```
+
 Once all dependencies are installed, follow [Jekyll]'s tutorial on how to create a new blog. On the `_config.yml` file, set:
 
 ```yaml
@@ -27,6 +35,7 @@ email: your@email.here
 description: Description of the creation
 
 # Do-not-change Blocks
+theme: nereare_grimoire
 markdown: kramdown
 plugins:
   - jekyll-feed
@@ -80,6 +89,10 @@ As of now, this theme supports the following page types, which you can read furt
 * Spell layout.
 
 We also recommend you read first the [Introduction to Layouts](introduction) guide.
+
+## Restriction
+
+This project uses custom filters, which is not supported by GitHub pages, so sorry, but it cannot properly work under this circunstance. :cry:
 
 [Grimoire]: https://github.com/Nereare/Grimoire
 [Jekyll]: https://jekyllrb.com/
