@@ -1,0 +1,25 @@
+title: Grimoire
+footer_content: 'Copyright &copy; 2019 Igor Padoim. Distributed by an <a href="https://opensource.org/licenses/MIT">MIT license.</a>'
+
+aux_links:
+  'Grimoire on GitHub':
+    - 'https://github.com/Nereare/Grimoire'
+  'Grimoire Gem':
+    - 'https://rubygems.org/gems/nereare_grimoire'
+
+remote_theme: pmarsceill/just-the-docs
+
+plugins:
+  - jemoji
+
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
