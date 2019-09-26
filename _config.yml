@@ -39,6 +39,7 @@ collections      :
 exclude          :
   - Gemfile
   - Gemfile.lock
+  - script/
   - vendor/bundle/
   - vendor/cache/
   - vendor/gems/
