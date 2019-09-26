@@ -29,13 +29,12 @@
 
     <title>{{ site.title }}</title>
 
-    <link rel="stylesheet" href="{{ 'node_modules/normalize.css/normalize.css' | absolute_url }}" />
-    <link rel="stylesheet" href="{{ 'node_modules/getskeleton/lib/css/skeleton.css' | absolute_url }}" />
-    <link rel="stylesheet" href="{{ 'node_modules/@mdi/font/css/materialdesignicons.min.css' | absolute_url }}" />
-    <link rel="stylesheet" href="{{ 'node_modules/typeface-montserrat/index.css' | absolute_url }}" />
-    <link rel="stylesheet" href="{{ 'node_modules/typeface-libre-baskerville/index.css' | absolute_url }}" />
-    <link rel="stylesheet" href="{{ 'node_modules/typeface-noto-sans/index.css' | absolute_url }}" />
-    <link rel="stylesheet" href="{{ 'node_modules/typeface-unifrakturcook/index.css' | absolute_url }}" />
+    <!-- Remote Stylesheets -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/getskeleton@2.0.4-2/lib/css/skeleton.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@4.4.95/css/materialdesignicons.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Montserrat|Noto+Sans|UnifrakturCook:700&display=swap" />
+    <!-- Local Stylesheets -->
     <link rel="stylesheet" href="{{ 'css/style.css' | absolute_url }}" />
     <link rel="stylesheet" href="{{ 'css/stats-block.css' | absolute_url }}" />
     <link rel="stylesheet" href="{{ 'css/boxes.css' | absolute_url }}" />

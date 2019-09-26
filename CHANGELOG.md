@@ -1,30 +1,24 @@
-# [Grimoire](https://github.com/Nereare/Grimoire) Change Log
-
-This is the change log to Grimoire. For further info on this project, see the [ReadMe file](README.md).
+# [Grimoire](https://github.com/Nereare/Grimoire) Changelog
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
-
-Principles of a change log, excerpted from [Keep a Changelog](http://keepachangelog.com/):
-
-* It’s made for humans, not machines, so legibility is crucial.
-* Easy to link to any section (hence Markdown over plain text).
-* One sub-section per version.
-* List releases in reverse-chronological order (newest on top).
-* Write all dates in `YYYY-MM-DD` format. (Example: `2012-06-02` for `June 2nd, 2012`.) It’s international, [sensible](http://xkcd.com/1179/), and language-independent.
-* Explicitly mention whether the project follows [Semantic Versioning](http://semver.org/).
-* Each version should:
-  * `List` its release date in the above format.
-  * `Group` changes to describe their impact on the project, as follows:
-    * `Added` for new features.
-    * `Changed` for changes in existing functionality.
-    * `Deprecated` for once-stable features removed in upcoming releases.
-    * `Removed` for deprecated features removed in this release.
-    * `Fixed` for any bug fixes.
-    * `Security` to invite users to upgrade in case of vulnerabilities.
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [1.4.2] - `2019-09-26`
+
+### Added
+* Installation instructions to [ReadMe file](README.md).
+
+### Changed
+* Update Changelog format to [1.0.0](https://keepachangelog.com/en/1.0.0/).
+* Stylesheet and font dependencies from Yarn to CDN sources.
+* Ignore `script/` folder, since it contains only Travis CI-related scripts.
+
+### Removed
+* [Yarn](https://yarnpkg.com/) dependency.
 
 ## [1.3.2] - `2019-09-06`
 
@@ -87,7 +81,8 @@ Principles of a change log, excerpted from [Keep a Changelog](http://keepachange
 ### Change
 * Bump `nokogiri` to `>= 1.10.4`.
 
-[Unreleased]: https://github.com/Nereare/Grimoire/compare/1.3.2...HEAD
+[Unreleased]: https://github.com/Nereare/Grimoire/compare/1.4.2...HEAD
+[1.4.2]: https://github.com/Nereare/Grimoire/compare/1.3.2...1.4.2
 [1.3.2]: https://github.com/Nereare/Grimoire/compare/1.2.1...1.3.2
 [1.2.1]: https://github.com/Nereare/Grimoire/compare/1.0.0...1.2.1
 [1.0.0]: https://github.com/Nereare/Grimoire/releases/tag/1.0.0
