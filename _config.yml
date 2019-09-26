@@ -1,8 +1,6 @@
 title            : Grimoire
 email            : igorpadoim@gmail.com
 description      : A jekyll quasi-wiki for RPG-oriented worldbuilding.
-twitter_username : nereare
-github_username  : nereare
 
 markdown         : kramdown
 plugins          :
