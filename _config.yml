@@ -8,7 +8,6 @@ markdown         : kramdown
 plugins          :
   - jekyll-feed
   - jekyll-redirect-from
-  - jekyll-relative-links
   - jekyll-seo-tag
   - jekyll-sitemap
   - jemoji

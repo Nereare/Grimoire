@@ -20,13 +20,12 @@ Gem::Specification.new do |spec|
   spec.platform = Gem::Platform::RUBY
   spec.required_ruby_version = '>= 2.5.0'
 
-  spec.add_development_dependency 'html-proofer', '~> 3.11.1'
+  spec.add_development_dependency 'html-proofer', '~> 3.13.0'
   spec.add_development_dependency 'nokogiri', '~> 1.10.4'
 
-  spec.add_dependency 'jekyll', '~> 3.8.6'
+  spec.add_dependency 'jekyll', '~> 4.0.0'
   spec.add_dependency 'jekyll-feed', '~> 0.12.1'
   spec.add_dependency 'jekyll-redirect-from', '~> 0.15.0'
-  spec.add_dependency 'jekyll-relative-links', '~> 0.6.0'
   spec.add_dependency 'jekyll-seo-tag', '~> 2.6.1'
   spec.add_dependency 'jekyll-sitemap', '~> 1.3.1'
   spec.add_dependency 'jemoji', '~> 0.11.1'

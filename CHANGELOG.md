@@ -16,9 +16,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Update Changelog format to [1.0.0](https://keepachangelog.com/en/1.0.0/).
 * Stylesheet and font dependencies from Yarn to CDN sources.
 * Ignore `script/` folder, since it contains only Travis CI-related scripts.
+* Bump [Jekyll](https://jekyllrb.com/) version to `4.0.0`.
+* Bump HTML-Proofer version to `3.13.0`.
 
 ### Removed
 * [Yarn](https://yarnpkg.com/) dependency.
+* [jekyll-relative-links](https://github.com/benbalter/jekyll-relative-links) plugin, due to incompatibility with Jekyll `4.0.0`.
 
 ## [1.3.2] - `2019-09-06`
 
