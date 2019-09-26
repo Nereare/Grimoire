@@ -70,7 +70,7 @@ exclude:
 
 The first block (the `Required Block`) you must fill with appropriate data. The remainder of the configuration file is settings required by the theme, such as collections' configurations and excludes.
 
-As of now, this theme supports the following page types, which you can read further on their respective documentation pages:
+As of now, this theme supports the following page types, which you can read further on their [respective documentation pages](layouts):
 
 * Adventure layout;
 * Chapter layout;
@@ -79,7 +79,7 @@ As of now, this theme supports the following page types, which you can read furt
 * Settlement layout; and
 * Spell layout.
 
-We also recommend you read first the [Introduction](introduction.md) guide.
+We also recommend you read first the [Introduction to Layouts](introduction) guide.
 
 [Grimoire]: https://github.com/Nereare/Grimoire
 [Jekyll]: https://jekyllrb.com/
