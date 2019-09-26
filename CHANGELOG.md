@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+* Moved documentation from makeshift `_drafts/` folder into proper `docs/` - see [them online](https://nereare.github.io/Grimoire/).
+
 ## [1.4.2] - `2019-09-26`
 
 ### Added
