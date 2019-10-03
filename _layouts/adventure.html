@@ -17,7 +17,7 @@ layout: default
     <p class="subtitle">An adventure for {{ page.adventure.char-num | default: 4 | pluralize: 'player character', 'player characters' }} of {% if page.adventure.lvl.range %}levels {{ page.adventure.lvl.min | ordinal }} through {{ page.adventure.lvl.max | ordinal }}{% else %}{{ page.adventure.lvl.lvl | ordinal }} level{% endif %}.</p>
     <p><strong>Max XP:</strong> {{ page.adventure.max-xp | pretty_number }} xp</p>
     <p><strong>Max Gold:</strong> {{ page.adventure.max-gp | pretty_number }} gp</p>
-    <p><strong>&#35; Encounters:</strong> {{ page.adventure.max-xp }} xp</p>
+    <p><strong>&#35; Encounters:</strong> {{ page.adventure.encounters }}</p>
     <p><strong>Type:</strong> {{ page.adventure.type }}</p>
     {% if page.adventure.questline %}
     <p><strong>Questline:</strong> <em>{{ page.adventure.questline.name }}</em>{% if page.adventure.questline.chapter %}, Chapter {{ page.adventure.questline.chapter }}{% endif %}</p>
