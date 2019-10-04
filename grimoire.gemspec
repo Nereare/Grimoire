@@ -12,6 +12,7 @@ Gem::Specification.new do |spec|
 
   spec.metadata['source_code_uri'] = spec.homepage
   spec.metadata['changelog_uri'] = 'https://github.com/Nereare/Grimoire/blob/master/CHANGELOG.md'
+  spec.metadata['github_repo'] = 'https://github.com/Nereare/Grimoire.git'
 
   spec.files         = `git ls-files -z`.split("\x0").select do |f|
     f.match(%r{^((_includes|_layouts|_plugins|_sass|assets|css)/|(LICENSE|README|404)((\.(txt|md|markdown|html|scss|css)|$)))}i)
