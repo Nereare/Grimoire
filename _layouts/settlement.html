@@ -81,7 +81,7 @@ layout: default
 <div class="five columns">
   <blockquote class="meta">
     <h5>{{ page.settlement.name | default: 'Settlement Name' }}</h5>
-    <p class="subtitle">{{ page.settlement.size | default: 'Small City' }}</p>
+    <p class="subtitle">{{ page.settlement.type | default: 'Small City' }}</p>
 
     <p><strong>Size:</strong> {{ page.settlement.size }}</p>
     <p><strong>Demographics:</strong> {% for race in page.settlement.demographics %}{{ race.percent }}% {{ race.race }}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
