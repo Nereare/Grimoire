@@ -1,6 +1,6 @@
 {
   "name"                         : "Grimoire",
-  "version"                      : "1.4.3",
+  "version"                      : "1.4.4",
   "description"                  : "A jekyll quasi-wiki for RPG-oriented worldbuilding.",
   "license"                      : "CC-BY-SA-4.0",
   "private"                      : false,
