@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.4.5] - `2019-11-02`
+* Changed license to [Hippocratic](https://firstdonoharm.dev/).
+
 ## [1.4.4] - `2019-10-04`
 
 ### Fixed
@@ -97,7 +100,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Change
 * Bump `nokogiri` to `>= 1.10.4`.
 
-[Unreleased]: https://github.com/Nereare/Grimoire/compare/1.4.4...HEAD
+[Unreleased]: https://github.com/Nereare/Grimoire/compare/1.4.5...HEAD
+[1.4.4]: https://github.com/Nereare/Grimoire/compare/1.4.4...1.4.5
 [1.4.4]: https://github.com/Nereare/Grimoire/compare/1.4.2...1.4.4
 [1.4.2]: https://github.com/Nereare/Grimoire/compare/1.3.2...1.4.2
 [1.3.2]: https://github.com/Nereare/Grimoire/compare/1.2.1...1.3.2
