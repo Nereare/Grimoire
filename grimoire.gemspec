@@ -2,10 +2,10 @@
 
 Gem::Specification.new do |spec|
   spec.name          = 'nereare_grimoire'
-  spec.version       = '1.4.4'
+  spec.version       = '1.4.5'
   spec.authors       = ['Igor Padoim']
   spec.email         = ['igorpadoim@gmail.com']
-  spec.license       = 'MIT'
+  spec.license       = 'Hippocratic'
 
   spec.summary       = 'A jekyll quasi-wiki for RPG-oriented worldbuilding.'
   spec.homepage      = 'https://github.com/Nereare/Grimoire'
