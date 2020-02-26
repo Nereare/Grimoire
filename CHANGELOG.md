@@ -7,7 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+* `nokogiri` version to `~> 1.10.8`.
+
 ## [1.4.5] - `2019-11-02`
+
+### Changed
 * Changed license to [Hippocratic](https://firstdonoharm.dev/).
 
 ## [1.4.4] - `2019-10-04`
