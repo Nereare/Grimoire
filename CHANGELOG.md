@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.6.5] - `2020-02-26`
+
 ### Added
 * Version displaying on header.
 * Copyright notice display on header.
@@ -113,7 +115,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Change
 * Bump `nokogiri` to `>= 1.10.4`.
 
-[Unreleased]: https://github.com/Nereare/Grimoire/compare/1.4.5...HEAD
+[Unreleased]: https://github.com/Nereare/Grimoire/compare/1.6.5...HEAD
+[1.6.5]: https://github.com/Nereare/Grimoire/compare/1.4.5...1.6.5
 [1.4.4]: https://github.com/Nereare/Grimoire/compare/1.4.4...1.4.5
 [1.4.4]: https://github.com/Nereare/Grimoire/compare/1.4.2...1.4.4
 [1.4.2]: https://github.com/Nereare/Grimoire/compare/1.3.2...1.4.2
