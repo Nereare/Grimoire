@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Copyright notice display on header.
 * License display on header.
 
+### Changed
+* [Hippocratic License](https://firstdonoharm.dev/) to version `2.0`.
+
 ### Fixed
 * `nokogiri` version to `~> 1.10.8`.
 
