@@ -33,6 +33,14 @@ Once all dependencies are installed, follow [Jekyll]'s tutorial on how to create
 title: Creation Name
 email: your@email.here
 description: Description of the creation
+# Optional Information
+version: 3.14.1592-6535
+copyright:
+  year: 2019-2020
+  name: Your Name
+license:
+  name: Some License
+  link: https://some.license.here/
 
 # Do-not-change Blocks
 theme: nereare_grimoire
@@ -77,7 +85,9 @@ exclude:
   - README.md
 ```
 
-The first block (the `Required Block`) you must fill with appropriate data. The remainder of the configuration file is settings required by the theme, such as collections' configurations and excludes.
+The first block (the `Required Block`) you must fill with appropriate data. Then there are some optional metadata you may fill or ignore altogether.
+
+The remainder of the configuration file is settings required by the theme, such as collections' configurations and excludes.
 
 As of now, this theme supports the following page types, which you can read further on their [respective documentation pages](layouts):
 
