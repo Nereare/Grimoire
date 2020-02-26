@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.7.6] - `2020-02-26`
+
+### Changed
+* Version, Copyright, and License texts now customizable.
+* Version, Copyright, and License now regular text.
+
+### Fixed
+* Liquid syntax for Version, Copyright and License display.
+
 ## [1.6.5] - `2020-02-26`
 
 ### Added
@@ -115,7 +124,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Change
 * Bump `nokogiri` to `>= 1.10.4`.
 
-[Unreleased]: https://github.com/Nereare/Grimoire/compare/1.6.5...HEAD
+[Unreleased]: https://github.com/Nereare/Grimoire/compare/1.7.6...HEAD
+[1.7.6]: https://github.com/Nereare/Grimoire/compare/1.6.5...1.7.6
 [1.6.5]: https://github.com/Nereare/Grimoire/compare/1.4.5...1.6.5
 [1.4.4]: https://github.com/Nereare/Grimoire/compare/1.4.4...1.4.5
 [1.4.4]: https://github.com/Nereare/Grimoire/compare/1.4.2...1.4.4
