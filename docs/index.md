@@ -34,11 +34,15 @@ title: Creation Name
 email: your@email.here
 description: Description of the creation
 # Optional Information
-version: 3.14.1592-6535
+version:
+  text: Version
+  version: 3.14.1592-6535
 copyright:
+  text: &copy;
   year: 2019-2020
   name: Your Name
 license:
+  text: Distributed under the
   name: Some License
   link: https://some.license.here/
 
