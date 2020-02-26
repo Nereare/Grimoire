@@ -87,6 +87,15 @@ header {
   background-position: bottom;
   background-size: auto 125%;
   margin-bottom: 3em;
+
+  p.version {
+    margin-top: -3.5em;
+    margin-bottom: 4em;
+
+    font-family: 'Noto Sans', sans-serif;
+    font-variant: small-caps;
+    font-size: .75em;
+  }
 }
 
 div.metadata {

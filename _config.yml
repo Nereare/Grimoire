@@ -1,6 +1,13 @@
 title            : Grimoire
 email            : igorpadoim@gmail.com
 description      : A jekyll quasi-wiki for RPG-oriented worldbuilding.
+version          : 3.14.1592-6535
+copyright        :
+  year           : 2019-2020
+  name           : Igor Padoim
+license          :
+  name           : Hippocratic License
+  link           : https://firstdonoharm.dev/
 
 markdown         : kramdown
 plugins          :

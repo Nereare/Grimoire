@@ -48,6 +48,17 @@
         <div class="row">
           <h1><a href="{{ '/' | absolute_url }}">{{ site.title }}</a></h1>
           <p class="subtitle">{{ site.description }}</p>
+          {% assign: copy = site.copyright | join: '' %}
+          {% assign: license = site.license | join: '' %}
+          {% if site.version or copy or license %}
+          <p class="version">
+            {% if site.version %}Version {{ site.version }}{% endif %}
+            {% if site.version and copy %} {% endif %}
+            {% if copy %}&copy; {{ site.copyright.year }} {{ site.copyright.name }}.{% endif %}
+            {% if (site.version or copy) and license %} {% endif %}
+            {% if license %}Distributed under the {% if site.license.link %}<a href="{{ site.license.link }}">{% endif %}{{ site.license.name }}{% if site.license.link %}</a>{% endif %}.{% endif %}
+          </p>
+          {% endif %}
         </div>
       </div>
     </header>

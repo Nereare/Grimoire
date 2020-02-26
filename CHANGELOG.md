@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+* Version displaying on header.
+* Copyright notice display on header.
+* License display on header.
+
 ### Fixed
 * `nokogiri` version to `~> 1.10.8`.
 
