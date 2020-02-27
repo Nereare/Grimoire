@@ -11,8 +11,9 @@ layout: default
 {% assign: posts = site.posts | join: '' %}
 {% assign: settlements = site.settlements | join: '' %}
 {% assign: spells = site.spells | join: '' %}
+{% assign: ages = site.ages | join: '' %}
 
-{% if adventures != '' or chapters != '' or monsters != '' or posts != '' or settlements != '' or spells != '' %}
+{% if adventures != '' or chapters != '' or monsters != '' or posts != '' or settlements != '' or spells != '' or ages != '' %}
 <h2 class="collections">Collections</h2>
 {% endif %}
 
@@ -83,6 +84,18 @@ layout: default
   <ul>
   {% for spell in site.spells %}
     <li><strong><a href="{{ spell.url }}">{{ spell.spell.name }}</a>:</strong> {{ spell.spell.school | articulate: true }}{% if spell.spell.subschool %} ({{ spell.spell.subschool }}){% endif %}{% assign: descs = spell.spell.descriptor | join: '' %}{% if descs != '' %} [{{ spell.spell.descriptor | join: ', ' }}]{% endif %} for {{ spell.spell.level | join: ', ' }}.</li>
+  {% endfor %}
+  </ul>
+</div>
+{% endif %}
+
+<!-- Age List -->
+{% if ages != '' %}
+<div class="collection">
+  <h5>Ages</h5>
+  <ul>
+  {% for age in site.ages %}
+    <li><strong><a href="{{ age.url }}">{{ age.title }}</a> ({{ age.age.abbr }})</li>
   {% endfor %}
   </ul>
 </div>

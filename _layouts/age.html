@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<div class="metadata">
+  <h1>{{ page.title | default: 'Age' }} ({{ page.age.abbr }})</h1>
+  <p class="meta">{{ page.author | default: 'Unknown' }} &bull; {{ page.date | default: '1938-07-27' | date: '%A, %B %e, %Y' }}</p>
+  <p class="chapter">{% if page.age.start %}Began {{ page.age.start | pretty_number }} {{ page.age.abbr }}{% else %}Unknown{% endif %} &bull; {% if page.age.end %}Ended {{ page.age.end | pretty_number }} {{ page.age.abbr }}{% else %}Current day{% endif %}</p>
+  <!-- -->
+</div>
+
+{{ content }}
+
+<div class="chapter links">
+  {% if page.age.previous != false %}
+  <a class="prev" href="{{ page.age.previous | prepend: 'ages/' | append: '.html' | absolute_url }}">Previous Age</a>
+  {% endif %}
+  {% if page.age.next != false %}
+  <a class="next" href="{{ page.age.next | prepend: 'ages/' | append: '.html' | absolute_url }}">Next Age</a>
+  {% endif %}
+</div>

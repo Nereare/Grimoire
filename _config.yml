@@ -28,7 +28,7 @@ collections      :
     sort_by      : title
   chapters       :
     output       : true
-    sort_by      : book
+    sort_by      : chapter.book
   monsters       :
     output       : true
     sort_by      : title
@@ -38,6 +38,9 @@ collections      :
   spells         :
     output       : true
     sort_by      : title
+  ages           :
+    output       : true
+    sort_by      : age.order
 
 exclude          :
   - Gemfile
