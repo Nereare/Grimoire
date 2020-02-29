@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 * Age layout.
+* To-do list with future plans to be implemented.
+
+### Removed
+* GitHub Actions CI.
 
 ## [1.7.6] - `2020-02-26`
 
