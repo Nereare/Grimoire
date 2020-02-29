@@ -41,6 +41,9 @@ collections      :
   ages           :
     output       : true
     sort_by      : age.order
+  animals        :
+    output       : true
+    sort_by      : title
 
 exclude          :
   - Gemfile
