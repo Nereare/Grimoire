@@ -12,8 +12,9 @@ layout: default
 {% assign: settlements = site.settlements | join: '' %}
 {% assign: spells = site.spells | join: '' %}
 {% assign: ages = site.ages | join: '' %}
+{% assign: animals = site.animals | join: '' %}
 
-{% if adventures != '' or chapters != '' or monsters != '' or posts != '' or settlements != '' or spells != '' or ages != '' %}
+{% if adventures != '' or chapters != '' or monsters != '' or posts != '' or settlements != '' or spells != '' or ages != '' or animals != '' %}
 <h2 class="collections">Collections</h2>
 {% endif %}
 
@@ -96,6 +97,18 @@ layout: default
   <ul>
   {% for age in site.ages %}
     <li><strong><a href="{{ age.url }}">{{ age.title }}</a> ({{ age.age.abbr }})</li>
+  {% endfor %}
+  </ul>
+</div>
+{% endif %}
+
+<!-- Animals List -->
+{% if animals != '' %}
+<div class="collection">
+  <h5>Animals</h5>
+  <ul>
+  {% for animal in site.animals %}
+    <li><strong><a href="{{ animal.url }}">{{ animal.title }}</a> (<em>{{ animal.animal.species }}</em>)</li>
   {% endfor %}
   </ul>
 </div>
