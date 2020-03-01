@@ -2,7 +2,7 @@
 
 [![GitHub package.json version](https://img.shields.io/github/package-json/v/Nereare/Grimoire)](https://github.com/Nereare/Grimoire)
 [![Gem](https://img.shields.io/gem/v/nereare_grimoire)](https://rubygems.org/gems/nereare_grimoire)
-[![License](https://img.shields.io/badge/license-Hippocratic%20License%20v1.2-red)](LICENSE.md)
+[![License](https://img.shields.io/badge/license-Hippocratic%20License-red)](LICENSE.md)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](CODE-OF-CONDUCT.md)
 
 [![Travis (.org)](https://img.shields.io/travis/Nereare/Grimoire)](https://travis-ci.org/Nereare/Grimoire)
