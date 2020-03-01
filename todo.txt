@@ -1,7 +1,12 @@
 x (A) 2020-02-29 2020-02-29 Animal +layout
 x (A) 2020-02-29 2020-02-29 Animal docs +docs
 (A) 2020-02-29 Plant +layout
+(A) 2020-02-29 Plant docs +docs
 (C) 2020-02-27 Condition +layout
+(C) 2020-02-29 Condition docs +docs
 (C) 2020-02-29 Biome +layout
+(C) 2020-02-29 Biome docs +docs
 (D) 2020-02-27 Material +layout
+(D) 2020-02-29 Material docs +docs
 (D) 2020-02-27 Race +layout +dnd
+(D) 2020-02-29 Race docs +docs
