@@ -53,6 +53,12 @@ module Jekyll
         output.push iucn
       end
 
+      # Note Parse
+      if input.key? "note"
+        note = input["note"].to_s
+        output.push note
+      end
+
       return output
     end
 
