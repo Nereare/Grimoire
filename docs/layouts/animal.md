@@ -33,6 +33,7 @@ This layout has a single column, which contains the first-level header, author n
 | `habitat.biome`   | :heavy_check_mark: | `string`             | The kind of environment the species calls home                             |
 | `habitat.plane`   | :x:                | `string`             | The plane of existance from where the species comes                        |
 | `iucn`            | :x:                | `string` from list   | The two-letter code of the conservation state of this species<sup>2</sup>  |
+| `domestic`        | :x:                | `boolean`            | Whether or not this species is domesticated                                |
 | `note`            | :x:                | `string`             | A short comment on the animal not under the above categories               |
 
 1. See the [taxonomic rank][wiki] for the Linnaean groups.

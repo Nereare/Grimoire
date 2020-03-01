@@ -46,6 +46,7 @@ animal:
   # IUCN refer to the IUCN Red List classification, version 3.1, 2001.
   # Please, use the two-letter abbreviation.
   iucn     : LC
+  domestic : false
   note     : Poisonous
 
 layout     : animal

@@ -53,6 +53,12 @@ module Jekyll
         output.push iucn
       end
 
+      # Domestication Parse
+      if input.key? "domestic"
+        domestic = input["domestic"] ? "Domesticated" : "Wild species"
+        output.push domestic
+      end
+
       # Note Parse
       if input.key? "note"
         note = input["note"].to_s
