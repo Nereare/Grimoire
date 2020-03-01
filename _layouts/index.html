@@ -13,8 +13,9 @@ layout: default
 {% assign: spells = site.spells | join: '' %}
 {% assign: ages = site.ages | join: '' %}
 {% assign: animals = site.animals | join: '' %}
+{% assign: plants = site.plants | join: '' %}
 
-{% if adventures != '' or chapters != '' or monsters != '' or posts != '' or settlements != '' or spells != '' or ages != '' or animals != '' %}
+{% if adventures != '' or chapters != '' or monsters != '' or posts != '' or settlements != '' or spells != '' or ages != '' or animals != '' or plants != '' %}
 <h2 class="collections">Collections</h2>
 {% endif %}
 
@@ -109,6 +110,18 @@ layout: default
   <ul>
   {% for animal in site.animals %}
     <li><strong><a href="{{ animal.url }}">{{ animal.title }}</a> (<em>{{ animal.animal.species }}</em>)</li>
+  {% endfor %}
+  </ul>
+</div>
+{% endif %}
+
+<!-- Plants List -->
+{% if plants != '' %}
+<div class="collection">
+  <h5>Plants</h5>
+  <ul>
+  {% for plant in site.plants %}
+    <li><strong><a href="{{ plant.url }}">{{ plant.title }}</a> (<em>{{ plant.plant.species }}</em>)</li>
   {% endfor %}
   </ul>
 </div>

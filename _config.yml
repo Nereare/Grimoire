@@ -44,6 +44,9 @@ collections      :
   animals        :
     output       : true
     sort_by      : title
+  plants         :
+    output       : true
+    sort_by      : title
 
 exclude          :
   - Gemfile

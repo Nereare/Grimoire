@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<div class="metadata">
+  <h1>{{ page.title | default: 'Plant' }}</h1>
+  <p class="meta">{{ page.author | default: 'Unknown' }} &bull; {{ page.date | default: '1938-07-27' | date: '%A, %B %e, %Y' }}</p>
+  <p class="species">{{ page.plant.species | default: 'Ignotum planta' }}</p>
+  {% if page.plant.linnaean %}<p class="chapter">{{ page.plant.linnaean | join: ' &raquo; ' }}</p>{% endif %}
+
+  {% if page.plant.feeding or page.plant.sizes or page.plant.habitat or page.plant.iucn or page.plant.domestic or page.plant.fruit or page.plant.seed or page.plant.note %}
+  <p class="chapter">{{ page.plant | plant_metadata | join: ' &bull; ' }}</p>
+  {% endif %}
+  <!-- -->
+</div>
+
+{{ content }}
