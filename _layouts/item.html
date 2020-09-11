@@ -1,0 +1,29 @@
+---
+layout: default
+---
+
+<div class="eight columns">
+  <div class="metadata">
+    <h1>{{ page.title | default: 'Item' }}</h1>
+    <p class="meta">{{ page.author | default: 'Unknown' }} &bull; {{ page.date | default: '1938-07-27' | date: '%A, %B %e, %Y' }}</p>
+  </div>
+
+  {{ content }}
+</div>
+
+<div class="four columns">
+  <h2>{{ page.item.name | default: 'Item' }}</h2>
+  <p>{{ page.item.type | default: 'Gadget' }}, {{ page.item.rarity | default: 'Unusual' }}{% if page.item.attunement %} (Requires attunement by {{ page.item.attunement }}){% endif %}</p>
+  <p><strong>Weight:</strong> {{ page.item.weight }}</p>
+  <p><strong>Base Value:</strong> {{ page.item.value }}gp</p>
+  {% if page.item.charges %}
+  <p><strong>Charges:</strong> {{ page.item.charges.number }} (Regains {{ page.item.charges.regain }} {{ page.item.charges.reset }})</p>
+  {% endif %}
+  {% if page.item.attributes %}
+  <ul>
+    {% for attr in page.item.attributes %}
+    <li>{{ attr }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</div>
