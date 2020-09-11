@@ -26,25 +26,31 @@ collections      :
   adventures     :
     output       : true
     sort_by      : title
+  ages           :
+    output       : true
+    sort_by      : title
+  animals        :
+    output       : true
+    sort_by      : title
   chapters       :
     output       : true
     sort_by      : chapter.book
+  items          :
+    output       : true
+    sort_by      : title
   monsters       :
+    output       : true
+    sort_by      : title
+  plants         :
+    output       : true
+    sort_by      : title
+  posts          :
     output       : true
     sort_by      : title
   settlements    :
     output       : true
     sort_by      : title
   spells         :
-    output       : true
-    sort_by      : title
-  ages           :
-    output       : true
-    sort_by      : age.order
-  animals        :
-    output       : true
-    sort_by      : title
-  plants         :
     output       : true
     sort_by      : title
 

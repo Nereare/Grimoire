@@ -61,10 +61,25 @@ collections:
   adventures:
     output: true
     sort_by: title
+  ages:
+    output: true
+    sort_by: title
+  animals:
+    output: true
+    sort_by: title
   chapters:
     output: true
-    sort_by: book
+    sort_by: chapter.book
+  items:
+    output: true
+    sort_by: title
   monsters:
+    output: true
+    sort_by: title
+  plants:
+    output: true
+    sort_by: title
+  posts:
     output: true
     sort_by: title
   settlements:
