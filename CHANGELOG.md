@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+* Documentation page display names.
+
 ## [1.13.10] - `2020-09-12`
 
 ### Added

@@ -1,5 +1,5 @@
 ---
-title: Item
+title: Weapon
 layout: default
 
 parent: Layouts Guide

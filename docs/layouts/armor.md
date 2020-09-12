@@ -1,5 +1,5 @@
 ---
-title: Item
+title: Armor
 layout: default
 
 parent: Layouts Guide
