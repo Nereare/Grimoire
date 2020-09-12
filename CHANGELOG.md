@@ -10,7 +10,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 * Age layout.
 * Animal layout.
+* Armor layout.
+* Item layout.
 * Plant layout.
+* Weapon layout.
 * To-do list with future plans to be implemented.
 
 ### Removed

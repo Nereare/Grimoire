@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+<div class="eight columns">
+  <div class="metadata">
+    <h1>{{ page.title | default: 'Armor' }}</h1>
+    <p class="meta">{{ page.author | default: 'Unknown' }} &bull; {{ page.date | default: '1938-07-27' | date: '%A, %B %e, %Y' }}</p>
+  </div>
+
+  {{ content }}
+</div>
+
+<div class="four columns">
+  <h2>{{ page.item.name | default: 'Armor' }}</h2>
+  <p>{{ page.item.type | default: 'Light' }} Armor{% if page.item.rarity %}, {{ page.item.rarity }}{% endif %}{% if page.item.attunement %} (Requires attunement by {{ page.item.attunement }}){% endif %}</p>
+  <p><strong>Weight:</strong> {{ page.item.weight }}</p>
+  <p><strong>Base Value:</strong> {{ page.item.value }}gp</p>
+  <p><strong>Armor Class:</strong> {{ page.item.ac.base }}{% if page.item.ac.dex > 0 %} + Dex Mod. (Max {{ page.item.ac.dex }}){% endif %}</p>
+  {% if page.item.str %}
+  <p><strong>Min Strength</strong> {{ page.item.str }}</p>
+  {% endif %}
+  {% if page.item.stealth %}
+  <p><strong>Disadvantage on Stealth rolls</strong></p>
+  {% endif %}
+  {% if page.item.charges %}
+  <p><strong>Charges:</strong> {{ page.item.charges.number }} (Regains {{ page.item.charges.regain }} {{ page.item.charges.reset }})</p>
+  {% endif %}
+  {% if page.item.attributes %}
+  <ul>
+    {% for attr in page.item.attributes %}
+    <li>{{ attr }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</div>
