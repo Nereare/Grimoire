@@ -20,7 +20,7 @@ This layout has two columns:
 |:------------------:|:------------------:|:--------------------:|:------------|
 | `name`             | :heavy_check_mark: | `string`             | Name of the weapon |
 | `type`             | :heavy_check_mark: | `string`             | The type of weapon (*i.e.* Melee or Ranged) |
-| `rarity`           | :heavy_check_mark: | `string`             | The rarity of the item (*e.g.* Common, Artifact, Unique) |
+| `rarity`           | :x:                | `string`             | The rarity of the item (*e.g.* Common, Artifact, Unique) |
 | `attunement`       | :x:                | `string`             | What kind of creature may attune to the item, see below |
 | `weight`           | :heavy_check_mark: | `string`             | The weight of the item, see below |
 | `value`            | :heavy_check_mark: | `float` or `integer` | The base value of the item, in *gold pieces* |
