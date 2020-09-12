@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = 'nereare_grimoire'
-  spec.version       = '1.13.9'
+  spec.version       = '1.13.10'
   spec.authors       = ['Igor Padoim']
   spec.email         = ['igorpadoim@gmail.com']
   spec.license       = 'Hippocratic'

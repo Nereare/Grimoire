@@ -16,6 +16,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * Weapon layout.
 * To-do list with future plans to be implemented.
 
+### Fixed
+* Miscellaneous dependencies.
+
 ### Removed
 * GitHub Actions CI.
 
