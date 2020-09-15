@@ -15,7 +15,7 @@ layout: default
   <h2>{{ page.item.name | default: 'Armor' }}</h2>
   <p>{{ page.item.type | default: 'Light' }} Armor{% if page.item.rarity %}, {{ page.item.rarity }}{% endif %}{% if page.item.attunement %} (Requires attunement by {{ page.item.attunement }}){% endif %}</p>
   <p><strong>Weight:</strong> {{ page.item.weight }}</p>
-  <p><strong>Base Value:</strong> {{ page.item.value }}gp</p>
+  <p><strong>Base Value:</strong> {{ page.item.value | pretty_number }}gp</p>
   <p><strong>Armor Class:</strong> {{ page.item.ac.base }}{% if page.item.ac.dex > 0 %} + Dex Mod. (Max {{ page.item.ac.dex }}){% endif %}</p>
   {% if page.item.str %}
   <p><strong>Min Strength</strong> {{ page.item.str }}</p>

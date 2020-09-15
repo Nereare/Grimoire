@@ -15,7 +15,7 @@ layout: default
   <h2>{{ page.item.name | default: 'Item' }}</h2>
   <p>{{ page.item.type | default: 'Gadget' }}{% if page.item.rarity %}, {{ page.item.rarity }}{% endif %}{% if page.item.attunement %} (Requires attunement by {{ page.item.attunement }}){% endif %}</p>
   <p><strong>Weight:</strong> {{ page.item.weight }}</p>
-  <p><strong>Base Value:</strong> {{ page.item.value }}gp</p>
+  <p><strong>Base Value:</strong> {{ page.item.value | pretty_number }}gp</p>
   {% if page.item.charges %}
   <p><strong>Charges:</strong> {{ page.item.charges.number }} (Regains {{ page.item.charges.regain }} {{ page.item.charges.reset }})</p>
   {% endif %}

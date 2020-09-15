@@ -15,7 +15,7 @@ layout: default
   <h2>{{ page.item.name | default: 'Weapon' }}</h2>
   <p>{{ page.item.type | default: 'Melee' }}{% if page.item.rarity %}, {{ page.item.rarity }}{% endif %}{% if page.item.attunement %} (Requires attunement by {{ page.item.attunement }}){% endif %}</p>
   <p><strong>Weight:</strong> {{ page.item.weight }}</p>
-  <p><strong>Base Value:</strong> {{ page.item.value }}gp</p>
+  <p><strong>Base Value:</strong> {{ page.item.value | pretty_number }}gp</p>
   {% assing: damages = page.item.damage | join: ' &bull; ' %}
   <p><strong>Damage:</strong> {{ damages }}</p>
   {% if page.item.charges %}
