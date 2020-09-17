@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+* Level for NPCs no Settlement layout now optional, for 5th-Edition compatibility.
+
 ### Fixed
 * Documentation page display names.
 

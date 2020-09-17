@@ -36,8 +36,8 @@ These are the metadata shown on the right column of the layout.
 | `centre.name`     | :heavy_check_mark: | `string`             | The name of the power structure |
 | `centre.align`    | :heavy_check_mark: | `string`             | The alignment of the power structure |
 | `authorities`     | :x:                | `array` of `object`s | An array of objects, each of which defines one authority figure of the settlement |
-| `authority.class` | :heavy_check_mark: | `string`             | The class of the authority |
-| `authority.level` | :heavy_check_mark: | `integer`            | The level of the authority |
+| `authority.class` | :heavy_check_mark: | `string`             | The class of the authority, or the 5E template |
+| `authority.level` | :x:                | `integer`            | The level of the authority |
 | `authority.title` | :heavy_check_mark: | `string`             | The title the authority holds |
 | `authority.name`  | :heavy_check_mark: | `string`             | The name of the authority |
 
