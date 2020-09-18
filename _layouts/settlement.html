@@ -22,7 +22,9 @@ layout: default
   <div class="building">
     <h5>{{ shop.name }}</h5>
     <p class="type">{{ shop.type }}</p>
+    {% if shop.owner %}
     <p><strong>Owner:</strong> {{ shop.owner.name }}, {{ shop.owner.gender }} {{ shop.owner.race }}, {% if shop.owner.level %}{{ shop.owner.level | ordinal }}-level{% endif %} {{ shop.owner.class }}</p>
+    {% endif %}
     <p><strong>Location:</strong> {{ shop.location }}</p>
     <p><strong>Description:</strong> {{ shop.desc }}</p>
     <h6>Transactions</h6>

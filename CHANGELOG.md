@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 * Level for NPCs no Settlement layout now optional, for 5th-Edition compatibility.
+* Shops' owner information is now optional.
 
 ### Fixed
 * Documentation page display names.

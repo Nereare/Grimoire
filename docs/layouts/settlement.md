@@ -51,7 +51,7 @@ Defining any shops is optional, but should you define them, most variables are r
 |:-----------------:|:------------------:|:----------------------:|:---------------------------------------------------------------------------------|
 | `type`            | :heavy_check_mark: | `string`               | The type of shop                                                                 |
 | `name`            | :heavy_check_mark: | `string`               | The name of the shop                                                             |
-| `owner`           | :heavy_check_mark: | `object`               | An object defining the owner of the shop                                         |
+| `owner`           | :x:                | `object`               | An object defining the owner of the shop                                         |
 | `owner.name`      | :heavy_check_mark: | `string`               | The name of the owner                                                            |
 | `owner.gender`    | :heavy_check_mark: | `string`               | The gender of the owner                                                          |
 | `owner.race`      | :heavy_check_mark: | `string`               | The race of the owner                                                            |
