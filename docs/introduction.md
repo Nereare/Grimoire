@@ -16,11 +16,17 @@ After you created what you want, you must move your creation to the adequate fol
 | Collection  | Sub-folder     | Layout       | Description                                                                              |
 |:-----------:|:--------------:|:------------:|:-----------------------------------------------------------------------------------------|
 | Adventures  | `_adventures`  | `adventure`  | Each individual adventure, with all its data, encounters and steps                       |
+| Ages        | `_ages`        | `age`        | Periods of time                                                                          |
+| Animals     | `_animals`     | `animal`     | Animals as biological data, when there is no stats block                                 |
+| Armors      | `_items`       | `armor`      | Armors and other protection gear                                                         |
 | Chapters    | `_chapters`    | `chapter`    | Texts, prose or otherwise, in a series or book                                           |
+| Items       | `_items`       | `item`       | Items that are not armor or weapons                                                      |
 | Monsters    | `_monsters`    | `monster`    | Individual monsters, NPCs, PCs or other creatures                                        |
+| Plants      | `_plants`      | `plant`      | Biological data regarding plants and fungi                                               |
 | Posts       | `_posts`       | `post`       | Generic post format with few metadata                                                    |
 | Settlements | `_settlements` | `settlement` | Cities, towns and other settlements, as well as their ruling structure, shops and houses |
 | Spells      | `_spells`      | `spell`      | Non-epic spells of any class and nature                                                  |
+| Weapons     | `_items`       | `weapon`     | Weapons                                                                                  |
 
 ## Common Aspects
 
