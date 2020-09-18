@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.13.13] - `2020-09-18`
+
 ### Changed
 * Level for NPCs no Settlement layout now optional, for 5th-Edition compatibility.
 * Shops' owner information is now optional.
@@ -148,7 +150,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Change
 * Bump `nokogiri` to `>= 1.10.4`.
 
-[Unreleased]: https://github.com/Nereare/Grimoire/compare/1.13.10...HEAD
+[Unreleased]: https://github.com/Nereare/Grimoire/compare/1.13.13...HEAD
+[1.13.13]: https://github.com/Nereare/Grimoire/compare/1.13.10...1.13.13
 [1.13.10]: https://github.com/Nereare/Grimoire/compare/1.7.6...1.13.10
 [1.7.6]: https://github.com/Nereare/Grimoire/compare/1.6.5...1.7.6
 [1.6.5]: https://github.com/Nereare/Grimoire/compare/1.4.5...1.6.5
