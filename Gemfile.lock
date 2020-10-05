@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    nereare_grimoire (1.13.10)
+    nereare_grimoire (1.13.13)
       jekyll (>= 4.0, < 4.2)
       jekyll-feed (>= 0.12.1, < 0.16.0)
       jekyll-redirect-from (>= 0.15, < 0.17)
@@ -22,7 +22,7 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     colorator (1.1.0)
     concurrent-ruby (1.1.7)
-    em-websocket (0.5.1)
+    em-websocket (0.5.2)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
     ethon (0.12.0)
@@ -62,7 +62,7 @@ GEM
       rouge (~> 3.0)
       safe_yaml (~> 1.0)
       terminal-table (~> 1.8)
-    jekyll-feed (0.15.0)
+    jekyll-feed (0.15.1)
       jekyll (>= 3.7, < 5.0)
     jekyll-redirect-from (0.16.0)
       jekyll (>= 3.3, < 5.0)
