@@ -7,6 +7,6 @@ end
 
 install_if -> { RUBY_PLATFORM =~ %r!mingw|mswin|java! } do
   gem 'tzinfo', '~> 1.2'
-  gem 'tzinfo-data', '~> 1.2020.1'
+  gem 'tzinfo-data', '~> 1.2020.2'
 end
 gem 'wdm', '~> 0.1.1', :install_if => Gem.win_platform?
