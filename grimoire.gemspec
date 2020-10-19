@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'jekyll-feed', '>= 0.12.1', '< 0.16.0'
   spec.add_dependency 'jekyll', '>= 4.0', '< 4.2'
   spec.add_dependency 'jekyll-redirect-from', '>= 0.15', '< 0.17'
-  spec.add_dependency 'jekyll-seo-tag', '~> 2.6.1'
+  spec.add_dependency 'jekyll-seo-tag', '>= 2.6.1', '< 2.8.0'
   spec.add_dependency 'jekyll-sitemap', '>= 1.3.1', '< 1.5.0'
   spec.add_dependency 'jemoji', '>= 0.11.1', '< 0.13.0'
 end
