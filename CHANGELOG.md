@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+* Bumped some dependency versions:
+  - `html-proofer` to `3.16.0`; and
+  - `zeitwerk` to `2.4.1`.
+* Bumped some `docs/` dependency versions:
+  - `activesupport` to `6.0.3.4`;
+  - `em-websocket` to `0.5.2`;
+  - `faraday` to `1.1.0`;
+  - `github-pages` to `209`;
+  - `jemoji` to `0.12.0`;
+  - `rouge` to `3.23.0`;
+  - `jekyll-feed` to `0.15.1`;
+  - `just-the-docs` to `0.3.3`;
+  - `octokit` to `4.19.0`; and
+  - `zeitwerk` to `2.4.1`.
+
 ## [1.13.13] - `2020-09-18`
 
 ### Changed
