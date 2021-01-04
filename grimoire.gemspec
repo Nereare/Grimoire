@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
   spec.platform = Gem::Platform::RUBY
   spec.required_ruby_version = '>= 2.5.0'
 
-  spec.add_development_dependency 'html-proofer', '~> 3.16.0'
+  spec.add_development_dependency 'html-proofer', '~> 3.18.5'
   spec.add_development_dependency 'nokogiri', '~> 1.11.0'
 
   spec.add_dependency 'jekyll-feed', '>= 0.12.1', '< 0.16.0'
