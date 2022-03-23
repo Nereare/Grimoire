@@ -87,12 +87,12 @@ GEM
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.4.0)
-    mini_portile2 (2.6.1)
+    mini_portile2 (2.8.0)
     minitest (5.14.4)
-    nokogiri (1.12.5)
-      mini_portile2 (~> 2.6.1)
+    nokogiri (1.13.2)
+      mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
-    nokogiri (1.12.5-x64-mingw32)
+    nokogiri (1.13.2-x64-mingw32)
       racc (~> 1.4)
     nokogumbo (2.0.5)
       nokogiri (~> 1.8, >= 1.8.4)
@@ -133,7 +133,7 @@ PLATFORMS
 DEPENDENCIES
   html-proofer (~> 3.18.5)
   nereare_grimoire!
-  nokogiri (~> 1.12.5)
+  nokogiri (~> 1.13.2)
   tzinfo (~> 1.2)
   tzinfo-data
   wdm (~> 0.1.0)
