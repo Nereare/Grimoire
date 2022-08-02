@@ -16,24 +16,37 @@ This layout has two columns:
 1. The left one contains the fist-level header, author name and date. Under which sits the description of the armor.
 2. The right column contains game statistics, which must be defined in the [front matter].
 
+### Global Front Matter
+
 | Metadata           | Required?          | Type                 | Description |
 |:------------------:|:------------------:|:--------------------:|:------------|
 | `name`             | :heavy_check_mark: | `string`             | Name of the item |
 | `type`             | :heavy_check_mark: | `string`             | The type of item (*e.g.* Ring, Wondrous Item, Staff) |
-| `rarity`           | :x:                | `string`             | The rarity of the item (*e.g.* Common, Artifact, Unique) |
-| `attunement`       | :x:                | `string`             | What kind of creature may attune to the item, see below |
 | `weight`           | :heavy_check_mark: | `string`             | The weight of the item, see below |
 | `value`            | :heavy_check_mark: | `float` or `integer` | The base value of the item, in *gold pieces* |
 | `ac`               | :heavy_check_mark: | `object`             | The Armor Class definitions |
 | `ac.base`          | :heavy_check_mark: | `integer`            | The base value for the Armor Class |
 | `ac.dex`           | :heavy_check_mark: | `integer`            | The maximum Dexterity bonus to the base AC, if not appliable, set to `0` |
-| `str`              | :x:                | `integer`            | The minimum Strength score to wear this armor |
-| `stealth`          | :x:                | `boolean`            | Whether or not this armor gives *disadvantage* on stealth rolls |
-| `charges`          | :x:                | `object`             | An object containing the charge definitions |
-| `charges.number`   | :heavy_check_mark: | `integer`            | The maximum number of charges |
-| `charges.reset`    | :heavy_check_mark: | `string`             | The time at which the item regains charges, with preposition (*i.e.* `after a long rest`, not `long rest`) |
-| `charges.regain`   | :heavy_check_mark: | `string`             | The number of charges regained after the reset condition (either an absolute number or a roll condition) |
 | `attributes`       | :x:                | `array` of `string`s | A list of strings with metadata the item grants |
+
+### 3.5e Specific Front Matter
+
+| Metadata            | Required?          | Type                 | Description |
+|:-------------------:|:------------------:|:--------------------:|:------------|
+| `e35.str`           | :x:                | `integer`            | The minimum Strength score to wear this armor |
+| `e35.penalty`       | :x:                | `integer`            | If there is any, the Armor Check Penalty when wearing this armor |
+
+### 5e Specific Front Matter
+
+| Metadata            | Required?          | Type                 | Description |
+|:-------------------:|:------------------:|:--------------------:|:------------|
+| `e5.rarity`         | :x:                | `string`             | The rarity of the item (*e.g.* Common, Artifact, Unique) |
+| `e5.attunement`     | :x:                | `string`             | What kind of creature may attune to the item, see below |
+| `e5.stealth`        | :x:                | `boolean`            | Whether or not this armor gives *disadvantage* on stealth rolls |
+| `e5.charges`        | :x:                | `object`             | An object containing the charge definitions |
+| `e5.charges.number` | :heavy_check_mark: | `integer`            | The maximum number of charges |
+| `e5.charges.reset`  | :x:                | `string`             | The time at which the item regains charges, with preposition (*i.e.* `after a long rest`, not `long rest`) |
+| `e5.charges.regain` | :x:                | `string`             | The number of charges regained after the reset condition (either an absolute number or a roll condition), required if `e5.charges.reset` is set |
 
 ## Attunement
 

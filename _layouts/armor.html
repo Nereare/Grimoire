@@ -17,14 +17,24 @@ layout: default
   <p><strong>Weight:</strong> {{ page.item.weight }}</p>
   <p><strong>Base Value:</strong> {{ page.item.value | pretty_number }}gp</p>
   <p><strong>Armor Class:</strong> {{ page.item.ac.base }}{% if page.item.ac.dex > 0 %} + Dex Mod. (Max {{ page.item.ac.dex }}){% endif %}</p>
-  {% if page.item.str %}
-  <p><strong>Min Strength</strong> {{ page.item.str }}</p>
-  {% endif %}
-  {% if page.item.stealth %}
+  {% if page.item.e5 %}
+  <!-- 5E Specifics -->
+  {% if page.item.e5.stealth %}
   <p><strong>Disadvantage on Stealth rolls</strong></p>
   {% endif %}
-  {% if page.item.charges %}
-  <p><strong>Charges:</strong> {{ page.item.charges.number }} (Regains {{ page.item.charges.regain }} {{ page.item.charges.reset }})</p>
+  {% if page.item.e5.charges %}
+  <p><strong>Charges:</strong> {{ page.item.e5.charges.number }} {% if page.item.e5.charges.regain %}(Regains {{ page.item.e5.charges.regain }} charges {{ page.item.e5.charges.reset }}){% else %}(Consumable){% endif %}</p>
+  {% endif %}
+  <!-- /5E Specifics -->
+  {% else %}
+  <!-- 3.5 Specifics -->
+  {% if page.item.e35.str %}
+  <p><strong>Min Strength</strong> {{ page.item.e35.str }}</p>
+  {% endif %}
+  {% if page.item.e35.penalty %}
+  <p><strong>Check Penalty</strong> {{ page.item.e35.penalty }}</p>
+  {% endif %}
+  <!-- /3.5 Specifics -->
   {% endif %}
   {% if page.item.attributes %}
   <ul>
