@@ -1,5 +1,5 @@
 ---
-title: Example
+title: 3.5e Example
 layout: default
 
 parent: Item
@@ -7,7 +7,7 @@ grand_parent: Layouts Guide
 nav_order: 1
 ---
 
-# Item Example
+# 3.5e Item Example
 
 Here is an example of an empty item entry.
 
@@ -20,14 +20,8 @@ date         : 2020-09-11
 item:
   name: Item Name
   type: Ring
-  rarity: Very Rare
-  attunement: by a Small creature
   weight: 2 lb.
   value: 50.5
-  charges:
-    number: 5
-    reset: at dawn
-    regain: 1d6
   attributes:
     - Advantage on Wisdom saving throws
     - +2 AC
