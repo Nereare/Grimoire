@@ -4,7 +4,7 @@ layout: default
 
 parent: Armor
 grand_parent: Layouts Guide
-nav_order: 1
+nav_order: 2
 ---
 
 # 5e Armor Example
