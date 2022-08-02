@@ -25,10 +25,10 @@ This layout has two columns:
 | `lvl.min`           | :x:                | `string`  | Minimum PC level suggested (*e.g.* `3`), required if `lvl.range` is `true`   |
 | `lvl.max`           | :x:                | `string`  | Maximum PC level suggested, required if `lvl.range` is `true`                |
 | `lvl.lvl`           | :x:                | `string`  | PC level suggested, required if `lvl.range` is `false`                       |
-| `max-xp`            | :heavy_check_mark: | `integer` | Maximum XP obtainable for the adventure                                      |
-| `max-gp`            | :heavy_check_mark: | `integer` | Maximum gold obtainable for the adventure                                    |
-| `encounters`        | :heavy_check_mark: | `integer` | Number of encounters available on the adventure                              |
-| `type`              | :heavy_check_mark: | `string`  | Type of adventure (*e.g.* `Dungeon Delve`)                                   |
+| `max-xp`            | :x:                | `integer` | Maximum XP obtainable for the adventure                                      |
+| `max-gp`            | :x:                | `integer` | Maximum gold obtainable for the adventure                                    |
+| `encounters`        | :x:                | `integer` | Number of encounters available on the adventure                              |
+| `type`              | :x:                | `string`  | Type of adventure (*e.g.* `Dungeon Delve`)                                   |
 | `questline`         | :x:                | `object`  | An object describing the questline to which this adventure pertains          |
 | `questline.name`    | :x:                | `string`  | The name of the questline or campaign                                        |
 | `questline.chapter` | :x:                | `string`  | The chapter of the questline or campaign                                     |

@@ -15,10 +15,18 @@ layout: default
   <blockquote class="meta">
     <h5>{{ page.adventure.name | default: 'Adventure Name' }}</h5>
     <p class="subtitle">An adventure for {{ page.adventure.char-num | default: 4 | pluralize: 'player character', 'player characters' }} of {% if page.adventure.lvl.range %}levels {{ page.adventure.lvl.min | ordinal }} through {{ page.adventure.lvl.max | ordinal }}{% else %}{{ page.adventure.lvl.lvl | ordinal }} level{% endif %}.</p>
+    {% if page.adventure.max-xp %}
     <p><strong>Max XP:</strong> {{ page.adventure.max-xp | pretty_number }} xp</p>
+    {% endif %}
+    {% if page.adventure.max-gp %}
     <p><strong>Max Gold:</strong> {{ page.adventure.max-gp | pretty_number }} gp</p>
-    <p><strong>&#35; Encounters:</strong> {{ page.adventure.encounters }}</p>
+    {% endif %}
+    {% if page.adventure.encounters %}
+    <p><strong>&#35; Encounters:</strong> {{ page.adventure.encounters | pretty_number }}</p>
+    {% endif %}
+    {% if page.adventure.type %}
     <p><strong>Type:</strong> {{ page.adventure.type }}</p>
+    {% endif %}
     {% if page.adventure.questline %}
     <p><strong>Questline:</strong> <em>{{ page.adventure.questline.name }}</em>{% if page.adventure.questline.chapter %}, Chapter {{ page.adventure.questline.chapter }}{% endif %}</p>
     {% endif %}
