@@ -7,38 +7,69 @@ layout: default
   <p class="meta">{{ page.author | default: 'Unknown' }} &bull; {{ page.date | default: '1938-07-27' | date: '%A, %B %e, %Y' }}</p>
   <!-- -->
   <div>
-    {% assign: descs = page.spell.descriptor | join: '' %}
-    <p>{{ page.spell.school }}{% if page.spell.subschool != '' %} ({{ page.spell.subschool }}){% endif %}{% if descs != '' %} [{{ page.spell.descriptor | join: ', ' }}]{% endif %}</p>
+    <h3>{{ page.spell.name }}</h3>
+    {% if page.spell.e5 %}
+    <!-- 5e Specific -->
+    <p>{{ page.spell.e5.level | ordinal }}-level {{ page.spell.school }}</p>
 
-    <p><strong>Level:</strong> {{ page.spell.level | join: ', ' }}</p>
-    <p><strong>Components:</strong> {{ page.spell.components.list | join: ', ' }}</p>
+    <p><strong>Components:</strong> {{ page.spell.e5.components.list | join: ', ' }}{% if page.spell.e5.components.material %} ({{ page.spell.e5.components.material }}{% if page.spell.e5.components.consumed %}, which is consumed{% endif %}){% endif %}</p>
+    <p><strong>Casting Time:</strong> {{ page.spell.cast-time | default: '1 action' }}</p>
+    <p><strong>Range:</strong> {{ page.spell.range | default: 'Touch' }}</p>
+    <p><strong>Target:</strong> {{ page.spell.target | default: 'Self' }}</p>
+    <p><strong>Duration:</strong> {{ page.spell.e5.duration | default: 'Instantaneous' }}</p>
+    <p><strong>Save:</strong> {% if page.spell.e5.save %}{{ page.spell.e5.save }}{% else %}&mdash;{% endif %}</p>
+    <!-- /5e Specific -->
+    {% else %}
+    <!-- 3.5e Specific -->
+    {% assign: descs = page.spell.e35.descriptor | join: '' %}
+    <p>{{ page.spell.school }}{% if page.spell.e35.subschool != '' %} ({{ page.spell.e35.subschool }}){% endif %}{% if descs != '' %} [{{ page.spell.e35.descriptor | join: ', ' }}]{% endif %}</p>
+
+    <p><strong>Level:</strong> {{ page.spell.e35.level | join: ', ' }}</p>
+    <p><strong>Components:</strong> {{ page.spell.e35.components.list | join: ', ' }}</p>
     <p><strong>Casting Time:</strong> {{ page.spell.cast-time | default: '1 standard action' }}</p>
     <p><strong>Range:</strong> {{ page.spell.range | default: 'Touch' }}</p>
     <p><strong>Target:</strong> {{ page.spell.target | default: 'Self' }}</p>
-    <p><strong>Duration:</strong> {{ page.spell.duration.desc | default: 'Instantaneous' }}{% if page.spell.duration.dismiss %} (D){% endif %}</p>
-    <p><strong>Saving Throw:</strong> {% if page.spell.save.type != 'None' %}{{ page.spell.save.type | default: 'Will' }} {{ page.spell.save.effect | default: 'negates' }}{% else %}None{% endif %}{% if page.spell.save.harmless %} (harmless){% endif %}</p>
-    <p><strong>Spell Resistance:</strong> {% if page.spell.resistance %}Yes{% else %}No{% endif %}</p>
+    <p><strong>Duration:</strong> {{ page.spell.e35.duration.desc | default: 'Instantaneous' }}{% if page.spell.e35.duration.dismiss %} (D){% endif %}</p>
+    <p><strong>Saving Throw:</strong> {% if page.spell.e35.save.type != 'None' %}{{ page.spell.e35.save.type | default: 'Will' }} {{ page.spell.e35.save.effect | default: 'negates' }}{% else %}None{% endif %}{% if page.spell.e35.save.harmless %} (harmless){% endif %}</p>
+    <p><strong>Spell Resistance:</strong> {% if page.spell.e35.resistance %}Yes{% else %}No{% endif %}</p>
+    <!-- /3.5e Specific -->
+    {% endif %}
   </div>
 </div>
 
 {{ content }}
 
 <div class="spell components">
+  <!-- 3.5e Specific -->
   <!-- Material Components, if applicable -->
-  {% if page.spell.components.material != '' %}
+  {% if page.spell.e35.components.material != '' %}
   <h6>Material Component</h6>
-  <p>{{ page.spell.components.material }}</p>
+  <p>{{ page.spell.e35.components.material }}</p>
   {% endif %}
 
   <!-- Arcane Focus, if applicable -->
-  {% if page.spell.components.focus != '' %}
+  {% if page.spell.e35.components.focus != '' %}
   <h6>Arcane Focus</h6>
-  <p>{{ page.spell.components.focus }}</p>
+  <p>{{ page.spell.e35.components.focus }}</p>
   {% endif %}
 
   <!-- XP Cost, if applicable -->
-  {% if page.spell.components.xp != '' %}
+  {% if page.spell.e35.components.xp != '' %}
   <h6>XP Cost</h6>
-  <p>{{ page.spell.components.xp }}</p>
+  <p>{{ page.spell.e35.components.xp }}</p>
   {% endif %}
+  <!-- /3.5e Specific -->
+
+  <!-- 5e Specific -->
+  <!-- Classes to which the spell is available -->
+  {% if page.spell.e5.classes %}
+  <h6>Classes</h6>
+  <p>{{ page.spell.e5.classes | join: ', ' }}</p>
+  {% endif %}
+  <!-- Subclasses to which the spell is available -->
+  {% if page.spell.e5.subclasses %}
+  <h6>Subclasses</h6>
+  <p>{{ page.spell.e5.subclasses | join: ', ' }}</p>
+  {% endif %}
+  <!-- /5e Specific -->
 </div>
