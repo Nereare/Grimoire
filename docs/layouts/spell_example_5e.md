@@ -1,5 +1,5 @@
 ---
-title: Example
+title: 5e Example
 layout: default
 
 parent: Spell
@@ -7,7 +7,7 @@ grand_parent: Layouts Guide
 nav_order: 1
 ---
 
-# Spell Example
+# 5e Spell Example
 
 Here is an example of an empty spell entry.
 
