@@ -23,6 +23,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency 'html-proofer', '>= 3.18.5'
   spec.add_development_dependency 'nokogiri', '>= 1.12.5'
+  spec.add_development_dependency 'webrick'
 
   spec.add_dependency 'jekyll-feed', '>= 0.12.1'
   spec.add_dependency 'jekyll', '>= 4.0'

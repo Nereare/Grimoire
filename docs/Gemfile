@@ -2,12 +2,13 @@ source 'https://rubygems.org'
 
 group :jekyll_plugins do
   gem 'github-pages'
-  gem 'just-the-docs', '~> 0.3.3'
+  gem 'just-the-docs', '>= 0.3.3'
   gem "kramdown", ">= 2.3.1"
+  gem "webrick"
 end
 
 install_if -> { RUBY_PLATFORM =~ %r!mingw|mswin|java! } do
-  gem 'tzinfo', '~> 1.2'
-  gem 'tzinfo-data', '~> 1.2021.1'
+  gem 'tzinfo', '>= 1.2'
+  gem 'tzinfo-data'
 end
-gem 'wdm', '~> 0.1.1', :install_if => Gem.win_platform?
+gem 'wdm', '>= 0.1.1', :install_if => Gem.win_platform?
