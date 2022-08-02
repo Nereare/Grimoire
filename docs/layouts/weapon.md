@@ -20,19 +20,31 @@ This layout has two columns:
 |:------------------:|:------------------:|:--------------------:|:------------|
 | `name`             | :heavy_check_mark: | `string`             | Name of the weapon |
 | `type`             | :heavy_check_mark: | `string`             | The type of weapon (*i.e.* Melee or Ranged) |
-| `rarity`           | :x:                | `string`             | The rarity of the item (*e.g.* Common, Artifact, Unique) |
-| `attunement`       | :x:                | `string`             | What kind of creature may attune to the item, see below |
 | `weight`           | :heavy_check_mark: | `string`             | The weight of the item, see below |
 | `value`            | :heavy_check_mark: | `float` or `integer` | The base value of the item, in *gold pieces* |
 | `damage`           | :heavy_check_mark: | `array` of `string`s | A list of damage descriptors |
-| `charges`          | :x:                | `object`             | An object containing the charge definitions |
-| `charges.number`   | :heavy_check_mark: | `integer`            | The maximum number of charges |
-| `charges.reset`    | :heavy_check_mark: | `string`             | The time at which the item regains charges, with preposition (*i.e.* `after a long rest`, not `long rest`) |
-| `charges.regain`   | :heavy_check_mark: | `string`             | The number of charges regained after the reset condition (either an absolute number or a roll condition) |
 | `props`            | :x:                | `array` of `string`s | A list of strings with weapon properties, if appliable (*e.g.* Two-hands, Light) |
 | `attributes`       | :x:                | `array` of `string`s | A list of strings with metadata the item grants |
 
-## Attunement
+### 5e Specific Front Matter
+
+| Metadata            | Required?          | Type                 | Description |
+|:-------------------:|:------------------:|:--------------------:|:------------|
+| `e35.critical`      | :x:                | `string`             | The critical modifier to damage, defaults to `×2` |
+| `e35.range`         | :x:                | `string`             | By how far the weapon increments its wielder's reach, see below |
+
+### 5e Specific Front Matter
+
+| Metadata            | Required?          | Type                 | Description |
+|:-------------------:|:------------------:|:--------------------:|:------------|
+| `e5.rarity`         | :x:                | `string`             | The rarity of the item (*e.g.* Common, Artifact, Unique) |
+| `e5.attunement`     | :x:                | `string`             | What kind of creature may attune to the item, see below |
+| `e5.charges`        | :x:                | `object`             | An object containing the charge definitions |
+| `e5.charges.number` | :heavy_check_mark: | `integer`            | The maximum number of charges |
+| `e5.charges.reset`  | :x:                | `string`             | The time at which the item regains charges, with preposition (*i.e.* `after a long rest`, not `long rest`) |
+| `e5.charges.regain` | :x:                | `string`             | The number of charges regained after the reset condition (either an absolute number or a roll condition), required if `e5.charges.reset` is set |
+
+#### Attunement
 
 The `attunement` variable is optional. If you set it, keep in mind that:
 
