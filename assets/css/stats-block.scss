@@ -76,28 +76,34 @@ $bar      : $h-line;
   padding-left: 1.1em;
   line-height: 1.4em;
 
-  &.first{ margin: 8px 0 0; }
-  &.last{ margin: 0 0 10px; }
+  &:first-child { margin-top: 8px; }
+  &:last-child { margin-bottom: 10px; }
 
   h4, p {
     display: inline;
     margin: 0;
-    color: $header;
+    color: $body;
     font-size: 13.5px;
     line-height: 1.2em;
   }
   h4{
     font-family: 'Montserrat', sans-serif;
     font-variant: normal;
-    color: $header;
-    &:after { content: ':'; }
+    color: $body;
+    font-weight: 900;
+    &:after { content: '.'; }
   }
   p { color: black; }
+
+  ul {
+    list-style-type: none;
+    text-indent: 2px;
+  }
 }
 
 .abilities {
   text-align: center;
-  color: $header;
+  color: $body;
 
   & > div {
     display: inline-block;
@@ -113,7 +119,8 @@ $bar      : $h-line;
     font-size: 14px;
     line-height: 1.2em;
     text-transform: uppercase;
-    color: $header;
+    color: $body;
+    font-weight: bold;
   }
   & p {
     margin: 0 0 10px;
@@ -133,27 +140,28 @@ $bar      : $h-line;
   & h4 {
     font-family: 'Montserrat', sans-serif;
     font-variant: none;
-    &:after { content: ':'; }
+    color: $body;
+    &:after { content: '.'; }
   }
 }
 
 .actions {
   margin: 0 0 20px;
-
-  & h3 {
+  p {
+    text-indent: 10px;
+    margin-top: 5px;
+  }
+  h3 {
     border-bottom: 1px solid $header;
     color: $header;
     font-size: 21px;
     font-variant: small-caps;
     font-weight: normal;
-    letter-spacing: 1px;
-    margin: 20px 0 0;
-    padding: 0 0 10px;
     text-indent: 5px;
   }
-  &:last-child{ margin: 0; }
+  &:last-child { margin: 0; }
 }
 
-@media screen and (max-width: 575px){
+@media screen and (max-width: 575px) {
 	.stat-block { margin: 20px 0; }
 }

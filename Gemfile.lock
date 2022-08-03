@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    nereare_grimoire (1.13.13)
+    nereare_grimoire (1.18.0)
       jekyll (>= 4.0)
       jekyll-feed (>= 0.12.1)
       jekyll-redirect-from (>= 0.15)
