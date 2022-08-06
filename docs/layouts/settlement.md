@@ -29,8 +29,8 @@ These are the metadata shown on the right column of the layout.
 | `race.race`       | :heavy_check_mark: | `string`             | The race of this fraction |
 | `race.percent`    | :heavy_check_mark: | `integer`            | How much of the population is this fractions (without `%`) |
 | `population`      | :heavy_check_mark: | `integer`            | Total number of people on this settlement |
-| `gp-limit`        | :heavy_check_mark: | `integer`            | The maximum price any single item may cost |
-| `wealth`          | :heavy_check_mark: | `integer`            | The total wealth of the settlement |
+| `gp-limit`        | :x:                | `integer`            | The maximum price any single item may cost |
+| `wealth`          | :x:                | `integer`            | The total wealth of the settlement |
 | `centres`         | :x:                | `array` of `object`s | An array of objects, each of which defines a single center of power. |
 | `centre.type`     | :heavy_check_mark: | `string`             | The type of power structure |
 | `centre.name`     | :heavy_check_mark: | `string`             | The name of the power structure |
