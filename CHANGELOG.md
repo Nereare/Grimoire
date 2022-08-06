@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.18.2] - `2022-08-05`
+### Fixed
+- Missing CSS rule for image width.
+- Change the `wealth` and `gp-limit` parameters in settlements to optional.
+
 ## [1.18.0] - `2022-08-02`
 ### Added
 - Support for 5th Edition on all available layouts.
@@ -146,7 +151,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Change
 - Bump `nokogiri` to `>= 1.10.4`.
 
-[Unreleased]: https://github.com/Nereare/Grimoire/compare/1.18.0...HEAD
+[Unreleased]: https://github.com/Nereare/Grimoire/compare/1.18.2...HEAD
+[1.18.2]: https://github.com/Nereare/Grimoire/compare/1.18.0...1.18.2
 [1.18.0]: https://github.com/Nereare/Grimoire/compare/1.13.13...1.18.0
 [1.13.13]: https://github.com/Nereare/Grimoire/compare/1.13.10...1.13.13
 [1.13.10]: https://github.com/Nereare/Grimoire/compare/1.7.6...1.13.10
