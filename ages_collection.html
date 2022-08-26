@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+{% assign: ages = site.ages | join: '' %}
+{% if ages != '' %}
+<div class="collection">
+  <h1>Ages</h1>
+  <ul>
+  {% for age in site.ages %}
+    <li><strong><a href="{{ age.url }}">{{ age.title }}</a> ({{ age.age.abbr }})</li>
+  {% endfor %}
+  </ul>
+</div>
+{% endif %}

@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+{% assign: settlements = site.settlements | join: '' %}
+{% if settlements != '' %}
+<div class="collection">
+  <h1>Settlements</h1>
+  <ul>
+  {% for settlement in site.settlements %}
+    <li><strong><a href="{{ settlement.url }}">{{ settlement.settlement.name }}</a>:</strong> {{ settlement.settlement.type | articulate }} with {{ settlement.settlement.population | pretty_number }} souls.</li>
+  {% endfor %}
+  </ul>
+</div>
+{% endif %}

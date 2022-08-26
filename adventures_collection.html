@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+{% assign: adventures = site.adventures | join: '' %}
+{% if adventures != '' %}
+<div class="collection">
+  <h1>Adventures</h1>
+  <ul>
+  {% for adventure in site.adventures %}
+    <li><strong><a href="{{ adventure.url }}">{{ adventure.adventure.name }}</a>:</strong> {{ adventure.adventure.type | articulate }} for {{ adventure.adventure.char-num | default: 4 | pluralize: 'player character', 'player characters' }} of {% if adventure.adventure.lvl.range %}levels {{ adventure.adventure.lvl.min | ordinal }} through {{ adventure.adventure.lvl.max | ordinal }}{% else %}{{ adventure.adventure.lvl.lvl | ordinal }} level{% endif %}.</li>
+  {% endfor %}
+  </ul>
+</div>
+{% endif %}

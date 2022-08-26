@@ -33,6 +33,7 @@ Once all dependencies are installed, follow [Jekyll]'s tutorial on how to create
 title: Creation Name
 email: your@email.here
 description: Description of the creation
+collect_short: true
 # Optional Information
 version:
   text: Version
@@ -110,14 +111,22 @@ The remainder of the configuration file is settings required by the theme, such 
 
 As of now, this theme supports the following page types, which you can read further on their [respective documentation pages](layouts):
 
-* Adventure layout;
-* Chapter layout;
-* Monster layout;
-* Post layout;
-* Settlement layout; and
-* Spell layout.
+- Adventure layout;
+- Age layout;
+- Animal layout
+- Chapter layout;
+- Item layout;
+- Monster layout;
+- Plant layout;
+- Post layout;
+- Settlement layout; and
+- Spell layout.
 
 We also recommend you read first the [Introduction to Layouts](introduction) guide.
+
+## Collections Showing
+
+The index page has the capability to show the collections' contents either in-page (when set to `true`) or as standalone pages for each collection (when set to `false`).
 
 ## Restriction
 

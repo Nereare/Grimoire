@@ -14,18 +14,21 @@ layout: default
 {% assign: ages = site.ages | join: '' %}
 {% assign: animals = site.animals | join: '' %}
 {% assign: plants = site.plants | join: '' %}
+{% assign: items = site.items | join: '' %}
 
-{% if adventures != '' or chapters != '' or monsters != '' or posts != '' or settlements != '' or spells != '' or ages != '' or animals != '' or plants != '' %}
+{% if adventures != '' or chapters != '' or monsters != '' or posts != '' or settlements != '' or spells != '' or ages != '' or animals != '' or plants != '' or items != '' %}
 <h2 class="collections">Collections</h2>
 {% endif %}
 
+{% if site.collect_short %}
+<!-- Collection In-Page Display  -->
 <!-- Adventure List -->
 {% if adventures != '' %}
 <div class="collection">
   <h5>Adventures</h5>
   <ul>
   {% for adventure in site.adventures %}
-    <li><strong><a href="{{ adventure.url }}">{{ adventure.adventure.name }}</a>:</strong> {{ adventure.adventure.type | articulate: true }} for {{ adventure.adventure.char-num | default: 4 | pluralize: 'player character', 'player characters' }} of {% if adventure.adventure.lvl.range %}levels {{ adventure.adventure.lvl.min | ordinal }} through {{ adventure.adventure.lvl.max | ordinal }}{% else %}{{ adventure.adventure.lvl.lvl | ordinal }} level{% endif %}.</li>
+    <li><strong><a href="{{ adventure.url }}">{{ adventure.adventure.name }}</a>:</strong> {{ adventure.adventure.type | articulate }} for {{ adventure.adventure.char-num | default: 4 | pluralize: 'player character', 'player characters' }} of {% if adventure.adventure.lvl.range %}levels {{ adventure.adventure.lvl.min | ordinal }} through {{ adventure.adventure.lvl.max | ordinal }}{% else %}{{ adventure.adventure.lvl.lvl | ordinal }} level{% endif %}.</li>
   {% endfor %}
   </ul>
 </div>
@@ -37,7 +40,7 @@ layout: default
   <h5>Chapters</h5>
   <ul>
   {% for chapter in site.chapters %}
-    <li><strong><a href="{{ chapter.url }}">{{ chapter.title }}</a>:</strong> Chapter {{ chapter.chapter.number }} from {{ chapter.chapter.book }}.</li>
+    <li><strong><a href="{{ chapter.url }}">{{ chapter.title }}</a>:</strong> chapter {{ chapter.chapter.number }} from {{ chapter.chapter.book }}.</li>
   {% endfor %}
   </ul>
 </div>
@@ -49,7 +52,8 @@ layout: default
   <h5>Monsters</h5>
   <ul>
   {% for monster in site.monsters %}
-    <li><strong><a href="{{ monster.url }}">{{ monster.monster.name }}</a>:</strong> {{ monster.monster.size | articulate: true }} {{ monster.monster.type }}, CR {{ monster.monster.cr }}.</li>
+    {% if monster.monster.e5.cr %}{% assign: cr = monster.monster.e5.cr %}{% else %}{% assign: cr = monster.monster.e35.cr %}{% endif %}
+    <li><strong><a href="{{ monster.url }}">{{ monster.monster.name }}</a>:</strong> {{ monster.monster.size | articulate }} {{ monster.monster.type }}, CR {{ cr }}.</li>
   {% endfor %}
   </ul>
 </div>
@@ -61,7 +65,7 @@ layout: default
   <h5>Posts</h5>
   <ul>
   {% for post in site.posts %}
-    <li><strong><a href="{{ post.url }}">{{ post.title }}</a>:</strong> {{ post.excerpt | strip_html | truncatewords: 50 }}(...)</li>
+    <li><strong><a href="{{ post.url }}">{{ post.title }}</a>:</strong> {{ post.excerpt | strip_html | truncatewords: 50 }}</li>
   {% endfor %}
   </ul>
 </div>
@@ -73,7 +77,7 @@ layout: default
   <h5>Settlements</h5>
   <ul>
   {% for settlement in site.settlements %}
-    <li><strong><a href="{{ settlement.url }}">{{ settlement.settlement.name }}</a>:</strong> {{ settlement.settlement.type | articulate: true }}.</li>
+    <li><strong><a href="{{ settlement.url }}">{{ settlement.settlement.name }}</a>:</strong> {{ settlement.settlement.type | articulate }}.</li>
   {% endfor %}
   </ul>
 </div>
@@ -85,7 +89,7 @@ layout: default
   <h5>Spells</h5>
   <ul>
   {% for spell in site.spells %}
-    <li><strong><a href="{{ spell.url }}">{{ spell.spell.name }}</a>:</strong> {{ spell.spell.school | articulate: true }}{% if spell.spell.subschool %} ({{ spell.spell.subschool }}){% endif %}{% assign: descs = spell.spell.descriptor | join: '' %}{% if descs != '' %} [{{ spell.spell.descriptor | join: ', ' }}]{% endif %} for {{ spell.spell.level | join: ', ' }}.</li>
+    <li><strong><a href="{{ spell.url }}">{{ spell.spell.name }}</a>:</strong> {% if spell.spell.e5.level %}{{ spell.spell.e5.level | ordinal }}-level {% endif %}{{ spell.spell.school }}{% if spell.spell.subschool %} ({{ spell.spell.subschool }}){% endif %}{% assign: descs = spell.spell.descriptor | join: '' %}{% if descs != '' %} [{{ spell.spell.descriptor | join: ', ' }}]{% endif %}{% if spell.spell.e35.level %} for {{ spell.spell.e35.level | join: ', ' }}{% endif %}.</li>
   {% endfor %}
   </ul>
 </div>
@@ -123,6 +127,57 @@ layout: default
   {% for plant in site.plants %}
     <li><strong><a href="{{ plant.url }}">{{ plant.title }}</a> (<em>{{ plant.plant.species }}</em>)</li>
   {% endfor %}
+  </ul>
+</div>
+{% endif %}
+
+<!-- Items List -->
+{% if items != '' %}
+<div class="collection">
+  <h5>Items</h5>
+  <ul>
+  {% for item in site.items %}
+    <li><strong><a href="{{ item.url }}">{{ item.title }}</a></li>
+  {% endfor %}
+  </ul>
+</div>
+{% endif %}
+
+{% else %}
+
+<!-- Collection Standalone Display  -->
+<div class="collection long">
+  <ul>
+  {% if adventures %}
+    <li><a href="adventures_collection.html">Adventures</a></li>
+  {% endif %}
+  {% if chapters %}
+    <li><a href="chapters_collection.html">Chapters</a></li>
+  {% endif %}
+  {% if monsters %}
+    <li><a href="monsters_collection.html">Monsters</a></li>
+  {% endif %}
+  {% if posts %}
+    <li><a href="posts_collection.html">Posts</a></li>
+  {% endif %}
+  {% if settlements %}
+    <li><a href="settlements_collection.html">Settlements</a></li>
+  {% endif %}
+  {% if spells %}
+    <li><a href="spells_collection.html">Spells</a></li>
+  {% endif %}
+  {% if ages %}
+    <li><a href="ages_collection.html">Ages</a></li>
+  {% endif %}
+  {% if animals %}
+    <li><a href="animals_collection.html">Animals</a></li>
+  {% endif %}
+  {% if plants %}
+    <li><a href="plants_collection.html">Plants</a></li>
+  {% endif %}
+  {% if items %}
+    <li><a href="items_collection.html">Items</a></li>
+  {% endif %}
   </ul>
 </div>
 {% endif %}

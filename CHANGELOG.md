@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - First letter golden gradient.
+- Standalone page option for displaying collections.
 ### Changed
 - Change the demographics' class and subclass to customizable.
 

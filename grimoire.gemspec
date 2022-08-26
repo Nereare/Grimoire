@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = 'nereare_grimoire'
-  spec.version       = '1.19.0'
+  spec.version       = '1.20.0'
   spec.authors       = ['Igor Padoim']
   spec.email         = ['igorpadoim@gmail.com']
   spec.license       = 'Hippocratic'
@@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
   spec.metadata['github_repo'] = 'https://github.com/Nereare/Grimoire.git'
 
   spec.files         = `git ls-files -z`.split("\x0").select do |f|
-    f.match(%r{^((_includes|_layouts|_plugins|_sass|assets|css)/|(LICENSE|README|404)((\.(txt|md|markdown|html|scss|css)|$)))}i)
+    f.match(%r{^((_includes|_layouts|_plugins|_sass|assets|css)/|(LICENSE|README|404adventures_collection|chapters_collection|monsters_collection|posts_collection|settlements_collection|spells_collection|ages_collection|animals_collection|plants_collection|items_collection)((\.(txt|md|markdown|html|scss|css|js)|$)))}i)
   end
 
   spec.platform = Gem::Platform::RUBY

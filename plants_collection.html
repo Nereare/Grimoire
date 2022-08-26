@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+{% assign: plants = site.plants | join: '' %}
+{% if plants != '' %}
+<div class="collection">
+  <h1>Plants</h1>
+  <ul>
+  {% for plant in site.plants %}
+    <li><strong><a href="{{ plant.url }}">{{ plant.title }}</a> (<em>{{ plant.plant.species }}</em>)</li>
+  {% endfor %}
+  </ul>
+</div>
+{% endif %}

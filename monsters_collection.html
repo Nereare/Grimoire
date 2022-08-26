@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+{% assign: monsters = site.monsters | join: '' %}
+{% if monsters != '' %}
+<div class="collection">
+  <h1>Monsters</h1>
+  <ul>
+  {% for monster in site.monsters %}
+    {% if monster.monster.e5.cr %}{% assign: cr = monster.monster.e5.cr %}{% else %}{% assign: cr = monster.monster.e35.cr %}{% endif %}
+    <li><strong><a href="{{ monster.url }}">{{ monster.monster.name }}</a>:</strong> {{ monster.monster.size | articulate }} {{ monster.monster.type }}, CR {{ cr }}.</li>
+  {% endfor %}
+  </ul>
+</div>
+{% endif %}

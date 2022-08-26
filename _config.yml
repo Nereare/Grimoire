@@ -1,6 +1,7 @@
 title            : Grimoire
 email            : igorpadoim@gmail.com
 description      : A jekyll quasi-wiki for RPG-oriented worldbuilding.
+collect_short    : false
 version          :
   text           : V.
   version        : 3.14.1592-6535

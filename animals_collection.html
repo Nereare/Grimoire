@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+{% assign: animals = site.animals | join: '' %}
+{% if animals != '' %}
+<div class="collection">
+  <h1>Animals</h1>
+  <ul>
+  {% for animal in site.animals %}
+    <li><strong><a href="{{ animal.url }}">{{ animal.title }}</a> (<em>{{ animal.animal.species }}</em>)</li>
+  {% endfor %}
+  </ul>
+</div>
+{% endif %}

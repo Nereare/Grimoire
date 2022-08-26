@@ -1,0 +1,47 @@
+---
+layout: default
+---
+
+{% assign: posts = site.posts | join: '' %}
+{% if posts != '' %}
+<h1>Posts</h1>
+<nav class="posts">
+  <ul class="columns">
+    <li class="four columns"><button class="u-full-width button-primary" id="go-alphabetical">Alphabetical</button></li>
+    <li class="four columns"><button class="u-full-width" id="go-tags">Tags</button></li>
+    <li class="four columns"><button class="u-full-width" id="go-categories">Categories</button></li>
+  </ul>
+</nav>
+<div class="collection" id="alphabetical">
+  <ul>
+  {% for post in site.posts %}
+    <li><strong><a href="{{ post.url }}">{{ post.title }}</a>:</strong> {{ post.excerpt | strip_html | truncatewords: 50 }}</li>
+  {% endfor %}
+  </ul>
+</div>
+<div class="collection" id="tags">
+  <h2>Tags</h2>
+  {% for tag in site.tags %}
+    <h3>{{ tag[0] }}</h3>
+    <ul>
+    {% for post in tag[1] %}
+      <li><strong><a href="{{ post.url }}">{{ post.title }}</a>:</strong> {{ post.excerpt | strip_html | truncatewords: 50 }}</li>
+    {% endfor %}
+    </ul>
+  {% endfor %}
+</div>
+<div class="collection" id="categories">
+  <h2>Categories</h2>
+  {% for cat in site.categories %}
+    <h3>{{ cat[0] }}</h3>
+    <ul>
+    {% for post in cat[1] %}
+      <li><strong><a href="{{ post.url }}">{{ post.title }}</a>:</strong> {{ post.excerpt | strip_html | truncatewords: 50 }}</li>
+    {% endfor %}
+    </ul>
+  {% endfor %}
+</div>
+{% endif %}
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script type="text/javascript" src="/assets/posts_collection.js"></script>

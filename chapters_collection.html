@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+{% assign: chapters = site.chapters | join: '' %}
+{% if chapters != '' %}
+<div class="collection">
+  <h1>Chapters</h1>
+  <ul>
+  {% for chapter in site.chapters %}
+    <li><strong><a href="{{ chapter.url }}">{{ chapter.title }}</a>:</strong> chapter {{ chapter.chapter.number }} from {{ chapter.chapter.book }}.</li>
+  {% endfor %}
+  </ul>
+</div>
+{% endif %}
