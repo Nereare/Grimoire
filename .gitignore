@@ -208,3 +208,15 @@ _site/
 
 ### Gems ###
 *.gem
+
+### Internal Ignores ###
+_adventures/*
+_ages/*
+_animals/*
+_chapters/*
+_items/*
+_monsters/*
+_plants/*
+_posts/*
+_settlements/*
+_spells/*
