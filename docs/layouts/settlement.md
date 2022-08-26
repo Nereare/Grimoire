@@ -113,6 +113,15 @@ Each class of demographic can contain any number of subclasses. Each subclass co
 | `title`                      | :heavy_check_mark: | `string`  | Name of the subclass of demographic |
 | `qtt`                        | :heavy_check_mark: | `integer` | The number of members of this subclass of demographic |
 
+## Buildings Metadata
+
+The quantity of buildings is now also customizable. Under the `buildings` variable, which is optional, one may define any number of building count.
+
+| Metadata                     | Required?          | Type      | Description |
+|:----------------------------:|:------------------:|:---------:|:------------|
+| `title`                      | :heavy_check_mark: | `string`  | Name of the class of building |
+| `qtt`                        | :heavy_check_mark: | `integer` | The number of buildings of this class |
+
 [Jekyll]: https://jekyllrb.com/
 [front matter]: https://jekyllrb.com/docs/front-matter/
 [ISO 8601]: https://www.iso.org/iso-8601-date-and-time-format.html
