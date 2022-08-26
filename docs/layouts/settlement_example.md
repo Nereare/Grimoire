@@ -87,79 +87,152 @@ houses:
         desc       : 2 gp, 11 sp and 45 cp
 
 demographics:
-  overview:
-    nobles         : 31
-    officers       : 11
-    clergy         : 8
-    freeholders    : 70
-    citizens       : 876
-    hirelings      : 4
-  ruling-house:
-    nobles         : 7
-    relatives      : 3
-    servants       : 1
-    guards         : 2
-    serjaants      : 1
-  other-houses:
-    houses         : 3
-    population     : 24
-  officers:
-    reeves         : 1
-    messors        : 1
-    woodwards      : 1
-    constables     : 1
-    guards         : 7
-  clergy:
-    clerics        : 8
-    priests        : 0
-  freeholders:
-    adventures     : 1
-    apothecaries   : 0
-    armourers      : 0
-    artists        : 1
-    butchers       : 1
-    chandlers      : 2
-    charcoalers    : 3
-    cobblers       : 7
-    entertainers   : 1
-    foresters      : 1
-    furriers       : 5
-    glassworkers   : 1
-    innkeepers     : 1
-    jewelers       : 2
-    litigants      : 1
-    locksmiths     : 1
-    masons         : 3
-    metalsmiths    : 3
-    bakers         : 5
-    ostlers        : 1
-    outfitters     : 0
-    physicians     : 2
-    potters        : 2
-    roofers        : 1
-    ropemakers     : 0
-    sages          : 0
-    salters        : 2
-    scribes        : 1
-    shipwrights    : 1
-    tailors        : 5
-    tanners        : 1
-    taverners      : 2
-    teamsters      : 0
-    timberwrights  : 1
-    tinkers        : 1
-    vintners       : 1
-    weaponcrafters : 2
-    weavers        : 2
-    woodcrafters   : 4
-    yeomen         : 2
-  buildings:
-    mansions       : 4
-    churches       : 2
-    businesses     : 87
-    municipal      : 1
-    homes          : 126
-    total          : 220
+  - title          : Overview
+    desc:
+    - title        : Nobles
+      qtt          : 31
+    - title        : Officers
+      qtt          : 11
+    - title        : Clergy
+      qtt          : 8
+    - title        : Freeholders
+      qtt          : 70
+    - title        : Citizens
+      qtt          : 876
+    - title        : Hirelings
+      qtt          : 4
+  - title          : Ruling House
+    desc:
+    - title        : Nobles
+      qtt          : 7
+    - title        : Relatives
+      qtt          : 3
+    - title        : Servants
+      qtt          : 1
+    - title        : Guards
+      qtt          : 2
+    - title        : Serjaants
+      qtt          : 1
+  - title          : Nobility
+    desc:
+    - title        : Other Houses
+      qtt          : 3
+    - title        : Total Population
+      qtt          : 24
+  - title          : Officers
+    desc:
+    - title        : Reeves
+      qtt          : 1
+    - title        : Messors
+      qtt          : 1
+    - title        : Woodwards
+      qtt          : 1
+    - title        : Constables
+      qtt          : 1
+    - title        : Guards
+      qtt          : 7
+  - title          : Clergy
+    desc:
+    - title        : Clerics
+      qtt          : 8
+    - title        : Priests
+      qtt          : 0
+  - title          : Freeholders
+    desc:
+    - title        : Adventures
+      qtt          : 1
+    - title        : Apothecaries
+      qtt          : 0
+    - title        : Armourers
+      qtt          : 0
+    - title        : Artists
+      qtt          : 1
+    - title        : Butchers
+      qtt          : 1
+    - title        : Chandlers
+      qtt          : 2
+    - title        : Charcoalers
+      qtt          : 3
+    - title        : Cobblers
+      qtt          : 7
+    - title        : Entertainers
+      qtt          : 1
+    - title        : Foresters
+      qtt          : 1
+    - title        : Furriers
+      qtt          : 5
+    - title        : Glassworkers
+      qtt          : 1
+    - title        : Innkeepers
+      qtt          : 1
+    - title        : Jewelers
+      qtt          : 2
+    - title        : Litigants
+      qtt          : 1
+    - title        : Locksmiths
+      qtt          : 1
+    - title        : Masons
+      qtt          : 3
+    - title        : Metalsmiths
+      qtt          : 3
+    - title        : Bakers
+      qtt          : 5
+    - title        : Ostlers
+      qtt          : 1
+    - title        : Outfitters
+      qtt          : 0
+    - title        : Physicians
+      qtt          : 2
+    - title        : Potters
+      qtt          : 2
+    - title        : Roofers
+      qtt          : 1
+    - title        : Ropemakers
+      qtt          : 0
+    - title        : Sages
+      qtt          : 0
+    - title        : Salters
+      qtt          : 2
+    - title        : Scribes
+      qtt          : 1
+    - title        : Shipwrights
+      qtt          : 1
+    - title        : Tailors
+      qtt          : 5
+    - title        : Tanners
+      qtt          : 1
+    - title        : Taverners
+      qtt          : 2
+    - title        : Teamsters
+      qtt          : 0
+    - title        : Timberwrights
+      qtt          : 1
+    - title        : Tinkers
+      qtt          : 1
+    - title        : Vintners
+      qtt          : 1
+    - title        : Weaponcrafters
+      qtt          : 2
+    - title        : Weavers
+      qtt          : 2
+    - title        : Woodcrafters
+      qtt          : 4
+    - title        : Yeomen
+      qtt          : 2
+
+buildings:
+  - title        : Mansions
+    qtt          : 4
+  - title        : Churches
+    qtt          : 2
+  - title        : Businesses
+    qtt          : 87
+  - title        : Municipal
+    qtt          : 1
+  - title        : Homes
+    qtt          : 126
+  - title        : Total
+    qtt          : 220
 
 layout             : settlement
 ---
