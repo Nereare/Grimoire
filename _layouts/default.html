@@ -46,20 +46,27 @@
     <header>
       <div class="container">
         <div class="row">
-          <h1><a href="{{ '/' | absolute_url }}">{{ site.title }}</a></h1>
-          <p class="subtitle">{{ site.description }}</p>
-          {% if site.version or copy or site.license %}
-          <p class="version">
-            {% if site.version %}{{ site.version.text | default: 'Version' }} {{ site.version.version }}.{% endif %}
-            {% if site.version and site.copyright %} {% endif %}
-            {% if site.copyright %}{{ site.copyright.text | default: '&copy;' }} {{ site.copyright.year }} {{ site.copyright.name }}.{% endif %}
-            {% if site.version or site.copyright %}
-              {% assign: version-or-copy = true %}
+          <div class="eight columns">
+            <h1><a href="{{ '/' | absolute_url }}">{{ site.title }}</a></h1>
+            <p class="subtitle">{{ site.description }}</p>
+            {% if site.version or copy or site.license %}
+            <p class="version">
+              {% if site.version %}{{ site.version.text | default: 'Version' }} {{ site.version.version }}.{% endif %}
+              {% if site.version and site.copyright %} {% endif %}
+              {% if site.copyright %}{{ site.copyright.text | default: '&copy;' }} {{ site.copyright.year }} {{ site.copyright.name }}.{% endif %}
+              {% if site.version or site.copyright %}
+                {% assign: version-or-copy = true %}
+              {% endif %}
+              {% if version-or-copy and site.license %} {% endif %}
+              {% if site.license %}{{ site.license.text | default: 'Distributed under the' }} {% if site.license.link %}<a href="{{ site.license.link }}">{% endif %}{{ site.license.name }}{% if site.license.link %}</a>{% endif %}.{% endif %}
+            </p>
             {% endif %}
-            {% if version-or-copy and site.license %} {% endif %}
-            {% if site.license %}{{ site.license.text | default: 'Distributed under the' }} {% if site.license.link %}<a href="{{ site.license.link }}">{% endif %}{{ site.license.name }}{% if site.license.link %}</a>{% endif %}.{% endif %}
-          </p>
-          {% endif %}
+          </div>
+          <div class="four columns">
+            <form action="search.html" method="get">
+              <input type="text" class="u-full-width" name="text" placeholder="Search...">
+            </form>
+          </div>
         </div>
       </div>
     </header>
