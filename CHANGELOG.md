@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [1.21.0] - `2022-08-31`
 ### Added
 - First letter golden gradient.
 - Standalone page option for displaying collections.
@@ -157,7 +159,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Change
 - Bump `nokogiri` to `>= 1.10.4`.
 
-[Unreleased]: https://github.com/Nereare/Grimoire/compare/1.18.2...HEAD
+[Unreleased]: https://github.com/Nereare/Grimoire/compare/1.21.0...HEAD
+[1.21.0]: https://github.com/Nereare/Grimoire/compare/1.18.2...1.21.0
 [1.18.2]: https://github.com/Nereare/Grimoire/compare/1.18.0...1.18.2
 [1.18.0]: https://github.com/Nereare/Grimoire/compare/1.13.13...1.18.0
 [1.13.13]: https://github.com/Nereare/Grimoire/compare/1.13.10...1.13.13
