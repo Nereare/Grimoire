@@ -1,16 +1,17 @@
 {
   "name"                         : "Grimoire",
-  "version"                      : "1.21.0",
-  "description"                  : "A jekyll quasi-wiki for RPG-oriented worldbuilding.",
+  "version"                      : "2.0.0",
+  "description"                  : "A pseudo-wiki for RPG-oriented worldbuilding.",
   "license"                      : "Hippocratic",
   "private"                      : false,
   "keywords"                     : [
     "rpg",
     "worldbuilding",
-    "jekyll",
-    "yarn"
+    "php",
+    "yarn",
+    "wiki"
   ],
-  "main"                         : "index.md",
+  "main"                         : "index.php",
   "repository"                   : {
     "type"                       : "git",
     "url"                        : "https://github.com/Nereare/Grimoire.git"
@@ -23,12 +24,12 @@
     "url"                        : "https://github.com/Nereare"
   },
   "dependencies"                 : {
-    "@mdi/font"                  : "^4.1.95",
-    "getskeleton"                : "^2.0.4",
-    "normalize.css"              : "^8.0.1",
-    "typeface-libre-baskerville" : "^0.0.72",
-    "typeface-montserrat"        : "^0.0.75",
-    "typeface-noto-sans"         : "^0.0.72",
-    "typeface-unifrakturcook"    : "^0.0.71"
+    "@mdi/font"                  : "^7.0.96",
+    "bulma"                      : "^0.9.4",
+    "jquery"                     : "^3.6.1",
+    "typeface-libre-baskerville" : "^1.1.13",
+    "typeface-montserrat"        : "^1.1.13",
+    "typeface-noto-sans"         : "^1.1.13",
+    "typeface-unifrakturcook"    : "^1.1.13"
   }
 }

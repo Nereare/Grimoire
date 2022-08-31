@@ -2,15 +2,13 @@
 
 [![GitHub package.json version](https://img.shields.io/github/package-json/v/Nereare/Grimoire)](https://github.com/Nereare/Grimoire)
 [![Gem](https://img.shields.io/gem/v/nereare_grimoire)](https://rubygems.org/gems/nereare_grimoire)
-[![License](https://img.shields.io/badge/license-Hippocratic%20License-red)](LICENSE.md)
+[![Hippocratic License HL3-FULL](https://img.shields.io/static/v1?label=Hippocratic%20License&message=HL3-FULL&labelColor=5e2751&color=bc8c3d)](https://firstdonoharm.dev/version/3/0/full.html)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](CODE-OF-CONDUCT.md)
 
 [![Travis (.org)](https://img.shields.io/travis/Nereare/Grimoire)](https://travis-ci.org/Nereare/Grimoire)
 [![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/Nereare/Grimoire)](https://libraries.io/github/Nereare/Grimoire)
 
-A jekyll quasi-wiki for RPG-oriented worldbuilding.
-
-Read our [documentation](https://nereare.github.io/Grimoire/) on how to install and run this project!
+A pseudo-wiki for RPG-oriented worldbuilding.
 
 ## Contributing
 

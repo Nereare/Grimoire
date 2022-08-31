@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Changed
+- Styles to be Bulma-complacent.
+- Favicons to include more files - and, hence, more compatibilities.
+- `.gitignore` and `.gitattributes` files.
+- Bumped [Code of Conduct](CODE-OF-CONDUCT.md) to version `2.1`.
+- Bumped [License](LICENSE.md) to version `3.0`.
+### Removed
+- Most unused Jekyll-related files.
+- [Skeleton](http://getskeleton.com/) compatibility.
 
 ## [1.21.0] - `2022-08-31`
 ### Added

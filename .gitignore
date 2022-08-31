@@ -1,18 +1,11 @@
-# Created by https://www.gitignore.io/api/osx,node,less,sass,code,grunt,linux,bower,windows,dropbox
-# Edit at https://www.gitignore.io/?templates=osx,node,less,sass,code,grunt,linux,bower,windows,dropbox
+# Created by https://www.toptal.com/developers/gitignore/api/windows,macos,linux,dropbox,sass,less,bower,node,grunt
+# Edit at https://www.toptal.com/developers/gitignore?templates=windows,macos,linux,dropbox,sass,less,bower,node,grunt
 
 ### Bower ###
 bower_components
 .bower-cache
 .bower-registry
 .bower-tmp
-
-### Code ###
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
 
 ### Dropbox ###
 # Dropbox settings and caches
@@ -45,6 +38,39 @@ dist/
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
 
+### macOS ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+### macOS Patch ###
+# iCloud generated files
+*.icloud
+
 ### Node ###
 # Logs
 logs
@@ -53,6 +79,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
+.pnpm-debug.log*
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
@@ -88,8 +115,8 @@ build/Release
 node_modules/
 jspm_packages/
 
-# TypeScript v1 declaration files
-typings/
+# Snowpack dependency directory (https://snowpack.dev/)
+web_modules/
 
 # TypeScript cache
 *.tsbuildinfo
@@ -100,6 +127,15 @@ typings/
 # Optional eslint cache
 .eslintcache
 
+# Optional stylelint cache
+.stylelintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
 # Optional REPL history
 .node_repl_history
 
@@ -109,21 +145,39 @@ typings/
 # Yarn Integrity file
 .yarn-integrity
 
-# dotenv environment variables file
+# dotenv environment variable files
 .env
-.env.test
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
+.parcel-cache
 
-# next.js build output
+# Next.js build output
 .next
+out
 
-# nuxt.js build output
+# Nuxt.js build / generate output
 .nuxt
+dist
+
+# Gatsby files
+.cache/
+# Comment in the public line in if your project uses Gatsby and not Next.js
+# https://nextjs.org/blog/next-9-1#public-directory-support
+# public
 
 # vuepress build output
 .vuepress/dist
+
+# vuepress v2.x temp and cache directory
+.temp
+
+# Docusaurus cache and generated files
+.docusaurus
 
 # Serverless directories
 .serverless/
@@ -134,36 +188,31 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 
-### OSX ###
-# General
-.DS_Store
-.AppleDouble
-.LSOverride
+# TernJS port file
+.tern-port
 
-# Icon must end with two \r
-Icon
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test
 
-# Thumbnails
-._*
+# yarn v2
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
 
-# Files that might appear in the root of a volume
-.DocumentRevisions-V100
-.fseventsd
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-.VolumeIcon.icns
-.com.apple.timemachine.donotpresent
+### Node Patch ###
+# Serverless Webpack directories
+.webpack/
 
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
+# Optional stylelint cache
+
+# SvelteKit build / generate output
+.svelte-kit
 
 ### Sass ###
 .sass-cache/
+*.css
 *.css.map
 *.sass.map
 *.scss.map
@@ -194,29 +243,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-### Jekyll ###
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
-
-# End of https://www.gitignore.io/api/osx,node,less,sass,code,grunt,linux,bower,windows,dropbox
-
-### Adobe Suite Files, Some ###
-*.psd
-*.ai
-
-### Gems ###
-*.gem
-
-### Internal Ignores ###
-_adventures/*
-_ages/*
-_animals/*
-_chapters/*
-_items/*
-_monsters/*
-_plants/*
-_posts/*
-_settlements/*
-_spells/*
+# End of https://www.toptal.com/developers/gitignore/api/windows,macos,linux,dropbox,sass,less,bower,node,grunt
