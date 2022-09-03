@@ -27,11 +27,17 @@ $text              : $body;
 @import "./boxes.scss";
 @import "./stats-block.scss";
 @import "../node_modules/bulma/bulma.sass";
+@import "../node_modules/bulma-checkradio/dist/css/bulma-checkradio.min.css";
+@import "../node_modules/bulma-switch/dist/css/bulma-switch.min.css";
+@import "../node_modules/@creativebulma/bulma-divider/dist/bulma-divider.min.css";
+@import "../node_modules/@creativebulma/bulma-tagsinput/dist/css/bulma-tagsinput.min.css";
 
 html, body {
   text-align: justify;
   color: $body;
 }
+
+.navbar-burger { color: $white; }
 
 .content {
   h1, h2, h3, h4 {

@@ -1,0 +1,12 @@
+{
+  "autoload": {
+    "psr-4": {
+      "Nereare\\Grimoire\\": "src/"
+    }
+  },
+  "require": {
+    "delight-im/auth": "^8.3",
+    "erusev/parsedown": "^1.7",
+    "phpmailer/phpmailer": "^6.6"
+  }
+}
