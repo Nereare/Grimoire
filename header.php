@@ -1,19 +1,36 @@
 <?php
-require_once "meta.php";
+require "vendor/autoload.php";
+require "meta.php";
+session_start();
+
+// Try and reach the configuration file
+if ( is_readable( "config.php" ) ) {
+  // Include configuration file
+  require_once( "config.php" );
+  $title = constant( "INSTANCE_TITLE" );
+
+  // Try and connect to the database
+  try {
+    $db = new \PDO(
+      "mysql:dbname=" . constant( "INSTANCE_DB_NAME" ) . ";host=localhost;charset=utf8mb4",
+      constant( "INSTANCE_DB_USER" ),
+      constant( "INSTANCE_DB_PASSWORD" )
+    );
+  } catch (\PDOException $e) { $notInstalled = true; }
+} else {
+  $notInstalled = true;
+  $title = "Grimoire";
+}
+
+if ( !isset($notInstalled) ) {
+  $auth = new \Delight\Auth\Auth($db);
+  $md   = new Parsedown();
+  $md->setSafeMode(true);
+}
 ?>
 <!DOCTYPE html>
-<html lang="<?php echo "FOO"; ?>">
+<html lang="en-US">
   <head>
-    <?php if ( false ) { ?>
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', '{{ site.google_analytics }}');
-    </script>
-    <?php } ?>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -30,34 +47,80 @@ require_once "meta.php";
     <meta name="msapplication-config" content="/favicon/browserconfig.xml">
     <meta name="theme-color" content="#922610">
 
-    <title><?php echo "FOO"; ?></title>
+    <title><?php echo $title; ?></title>
 
-    <link rel="stylesheet" href="node_modules/@mdi/font/css/materialdesignicons.min.css" />
-    <link rel="stylesheet" href="node_modules/typeface-libre-baskerville/index.css" />
-    <link rel="stylesheet" href="node_modules/typeface-montserrat/index.css" />
-    <link rel="stylesheet" href="node_modules/typeface-noto-sans/index.css" />
-    <link rel="stylesheet" href="node_modules/typeface-unifrakturcook/index.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="node_modules/@mdi/font/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="node_modules/typeface-libre-baskerville/index.css">
+    <link rel="stylesheet" href="node_modules/typeface-montserrat/index.css">
+    <link rel="stylesheet" href="node_modules/typeface-noto-sans/index.css">
+    <link rel="stylesheet" href="node_modules/typeface-unifrakturcook/index.css">
+    <link rel="stylesheet" href="node_modules/simplemde/dist/simplemde.min.css">
+    <link rel="stylesheet" href="css/style.css">
 
-    <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="node_modules/simplemde/dist/simplemde.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="node_modules/@creativebulma/bulma-tagsinput/dist/js/bulma-tagsinput.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/common.js" charset="utf-8"></script>
   </head>
 
   <body>
+    <?php
+    if ( isset($notInstalled) ) { // If the instance is not installed:
+    ?>
+    <section class="hero is-primary is-fullheight">
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns mb-0 is-centered">
+            <div class="column is-6">
+              <div class="box">
+                <div class="has-text-centered">
+                  <figure class="image is-128x128 is-inline-block">
+                    <img src="assets/404.png">
+                  </figure>
+                </div>
+
+                <h2 class="title is-4">
+                  <span class="icon-text has-text-primary">
+                    <span class="icon">
+                      <i class="mdi mdi-alert-circle"></i>
+                    </span>
+                    <span>Oopsie...</span>
+                  </span>
+                </h2>
+
+                <div class="content">
+                  <p>
+                    We apologize for the inconvenience, but it seems this application is not yet installed.
+                  </p>
+                  <p>
+                    Please, contact the domain manager for further information.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <?php
+    exit(0);
+    } // If it is installed, show the page
+    ?>
     <header class="hero is-primary">
       <div class="hero-head">
         <nav class="navbar">
           <div class="container">
             <div class="navbar-brand">
-              <a class="navbar-item">
+              <a class="navbar-item" href=".">
                 <img src="assets/favicon-white.png" alt="Logo">
               </a>
-              <span class="navbar-burger" data-target="navbarMenuHeroB">
+              <span class="navbar-burger" data-target="navbar">
                 <span></span>
                 <span></span>
                 <span></span>
               </span>
             </div>
-            <div id="navbarMenuHeroB" class="navbar-menu">
+            <div id="navbar" class="navbar-menu has-text-centered">
               <div class="navbar-end">
                 <span class="navbar-item">
                   <a class="button is-info is-inverted">
@@ -76,10 +139,10 @@ require_once "meta.php";
       <div class="hero-body">
         <div class="container has-text-centered">
           <p class="title">
-            <?php echo "FOO"; ?>
+            <?php echo $title; ?>
           </p>
           <p class="subtitle">
-            <?php echo "FOO"; ?>
+            <?php echo constant( "INSTANCE_SUBTITLE" ); ?>
           </p>
         </div>
       </div>

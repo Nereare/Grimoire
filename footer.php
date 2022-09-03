@@ -1,7 +1,7 @@
     <footer class="footer">
       <div class="content has-text-centered">
         <p>
-          <strong><?php echo "FOO"; ?></strong> by <a href="<?php echo "FOO"; ?>"><?php echo "FOO"; ?></a>
+          <strong><?php echo $title; ?></strong> by <a href="<?php echo constant( "INSTANCE_ADMIN_EMAIL" ); ?>"><?php echo constant( "INSTANCE_ADMIN_NAME" ); ?></a>
         </p>
         <p>
           <a href="<?php echo constant("APP_REPO"); ?>">
@@ -10,8 +10,7 @@
           &copy;
           <?php echo constant("APP_YEAR"); ?>
           <?php echo constant("APP_AUTHOR"); ?>
-        </p>
-        <p>
+          &bull;
           Licensed under the
           <a href="<?php echo constant("APP_LICENSE_URI"); ?>">
             <?php echo constant("APP_LICENSE_NAME"); ?>
