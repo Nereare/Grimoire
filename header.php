@@ -123,23 +123,41 @@ if ( !isset($notInstalled) ) {
             </div>
             <div id="navbar" class="navbar-menu has-text-centered">
               <div class="navbar-end">
+              <?php if ( $auth->isLoggedIn() ) { ?>
                 <span class="navbar-item">
-                <?php if ( $auth->isLoggedIn() ) { ?>
+                  <a href="setup.php">
+                    <span class="icon">
+                      <i class="mdi mdi-cog"></i>
+                    </span>
+                    <span>Config</span>
+                  </a>
+                </span>
+                <span class="navbar-item">
+                  <a id="logout">
+                    <span class="icon">
+                      <i class="mdi mdi-logout"></i>
+                    </span>
+                    <span>Logout</span>
+                  </a>
+                </span>
+                <span class="navbar-item">
                   <a class="button is-info is-inverted" href="profile.php">
                     <span class="icon">
                       <i class="mdi mdi-account mdi-24px"></i>
                     </span>
                     <span><?php echo $auth->getUsername(); ?></span>
                   </a>
-                <?php } else { ?>
+                </span>
+              <?php } else { ?>
+                <span class="navbar-item">
                   <a class="button is-info is-inverted" id="login-button">
                     <span class="icon">
                       <i class="mdi mdi-account mdi-24px"></i>
                     </span>
                     <span>Login</span>
                   </a>
-                <?php } ?>
                 </span>
+              <?php } ?>
               </div>
             </div>
           </div>

@@ -90,6 +90,14 @@ $(document).ready(function() {
     }
   });
 
+  // Logout
+  $("#logout").on("click", function() {
+    $.ajax({
+      method: "GET",
+      url: "do/logout.php"
+    }).always(function(r) { location.reload(); });
+  });
+
 });
 
 function resetNotification(elem) {
