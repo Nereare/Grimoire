@@ -124,12 +124,21 @@ if ( !isset($notInstalled) ) {
             <div id="navbar" class="navbar-menu has-text-centered">
               <div class="navbar-end">
                 <span class="navbar-item">
+                <?php if ( $auth->isLoggedIn() ) { ?>
                   <a class="button is-info is-inverted">
                     <span class="icon">
                       <i class="mdi mdi-account mdi-24px"></i>
                     </span>
-                    <span><?php echo "FOO"; ?></span>
+                    <span><?php echo $auth->getUsername(); ?></span>
                   </a>
+                <?php } else { ?>
+                  <a class="button is-info is-inverted" id="login-button">
+                    <span class="icon">
+                      <i class="mdi mdi-account mdi-24px"></i>
+                    </span>
+                    <span>Login</span>
+                  </a>
+                <?php } ?>
                 </span>
               </div>
             </div>
