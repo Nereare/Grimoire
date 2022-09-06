@@ -125,7 +125,7 @@ if ( !isset($notInstalled) ) {
               <div class="navbar-end">
                 <span class="navbar-item">
                 <?php if ( $auth->isLoggedIn() ) { ?>
-                  <a class="button is-info is-inverted">
+                  <a class="button is-info is-inverted" href="profile.php">
                     <span class="icon">
                       <i class="mdi mdi-account mdi-24px"></i>
                     </span>
