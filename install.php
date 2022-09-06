@@ -9,17 +9,17 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="194x194" href="/favicon/favicon-194x194.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
-    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#922610">
-    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="194x194" href="favicon/favicon-194x194.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#922610">
+    <link rel="shortcut icon" href="favicon/favicon.ico">
     <meta name="msapplication-TileColor" content="#922610">
-    <meta name="msapplication-TileImage" content="/favicon/mstile-144x144.png">
-    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="msapplication-TileImage" content="favicon/mstile-144x144.png">
+    <meta name="msapplication-config" content="favicon/browserconfig.xml">
     <meta name="theme-color" content="#922610">
 
     <title>Grimoire</title>
@@ -141,6 +141,45 @@ session_start();
               <input class="input required" id="mysql-password" type="password" placeholder="MySQL User password">
             </div>
           </div>
+
+          <div class="notification is-info is-light">
+            <p>
+              If you want to host more than one instance of the <code>Grimoire</code>
+              project under the same MySQL service, give each one a different
+              database name, user, and password.
+            </p>
+            <p>
+              The data below is set to the default <code>grimoire</code> value,
+              and a random password.
+            </p>
+          </div>
+
+          <div class="field has-addons">
+            <div class="control">
+              <button class="button is-static" tabindex="-1">Database Name*</button>
+            </div>
+            <div class="control is-expanded">
+              <input class="input required" id="db-name" type="text" placeholder="The name of the MySQL database" value="grimoire">
+            </div>
+          </div>
+
+          <div class="field has-addons">
+            <div class="control">
+              <button class="button is-static" tabindex="-1">Database User*</button>
+            </div>
+            <div class="control is-expanded">
+              <input class="input required" id="db-user" type="text" placeholder="The name of the MySQL user..." value="grimoire">
+            </div>
+          </div>
+
+          <div class="field has-addons">
+            <div class="control">
+              <button class="button is-static" tabindex="-1">Database Password*</button>
+            </div>
+            <div class="control is-expanded">
+              <input class="input required" id="db-password" type="password" placeholder="...and its password">
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -213,6 +252,42 @@ session_start();
             </span>
           </h2>
           <p class="subtitle">Settings about the site itself and its hosting.</p>
+
+          <div class="field has-addons">
+            <div class="control">
+              <button class="button is-static" tabindex="-1">Name*</button>
+            </div>
+            <div class="control is-expanded">
+              <input class="input required" id="site-name" type="text" placeholder="The name of the site">
+            </div>
+          </div>
+
+          <div class="field has-addons">
+            <div class="control">
+              <button class="button is-static" tabindex="-1">Subtitle*</button>
+            </div>
+            <div class="control is-expanded">
+              <input class="input required" id="site-subtitle" type="text" placeholder="A short description or subtitle">
+            </div>
+          </div>
+
+          <div class="field has-addons">
+            <div class="control">
+              <button class="button is-static" tabindex="-1">Admin Name*</button>
+            </div>
+            <div class="control is-expanded">
+              <input class="input required" id="site-admin-name" type="text" placeholder="The name or pseudonym of the site's admin...">
+            </div>
+          </div>
+
+          <div class="field has-addons">
+            <div class="control">
+              <button class="button is-static" tabindex="-1">Admin Email*</button>
+            </div>
+            <div class="control is-expanded">
+              <input class="input required" id="site-admin-email" type="text" placeholder="...and their email">
+            </div>
+          </div>
 
           <div class="field has-addons">
             <div class="control">
@@ -333,7 +408,7 @@ session_start();
 
           <div class="field">
             <div class="control is-expanded">
-              <input type="text" class="input" id="tags" data-type="tags" placeholder="Comma-separated systems">
+              <input type="text" class="input" id="user-systems" data-type="tags" placeholder="Comma-separated systems">
             </div>
           </div>
 

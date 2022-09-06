@@ -60,6 +60,7 @@ if ( !isset($notInstalled) ) {
     <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="node_modules/simplemde/dist/simplemde.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="node_modules/@creativebulma/bulma-tagsinput/dist/js/bulma-tagsinput.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="node_modules/uuid/dist/umd/uuidv4.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="js/common.js" charset="utf-8"></script>
   </head>
 
