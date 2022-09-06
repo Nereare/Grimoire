@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - Installation wizard.
+- Tables SQL schematics.
 ### Changed
 - Styles to be Bulma-complacent.
 - Favicons to include more files - and, hence, more compatibilities.
