@@ -18,5 +18,10 @@
         </p>
       </div>
     </footer>
+
+    <div class="notification is-hidden" id="notification">
+      <button class="delete"></button>
+      <p>Foo</p>
+    </div>
   </body>
 </html>

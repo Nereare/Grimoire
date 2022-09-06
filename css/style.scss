@@ -37,6 +37,14 @@ html, body {
   color: $body;
 }
 
+#notification {
+  width: 20em;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  z-index: 1000000;
+}
+
 .navbar-burger { color: $white; }
 
 .content {
