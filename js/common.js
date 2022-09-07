@@ -37,7 +37,6 @@ $(document).ready(function() {
     let password = $("#login-password").val();
 
     if ( username != "" && password != "" ) {
-      //
       let reply = null;
       $.ajax({
         method: "GET",
