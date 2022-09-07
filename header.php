@@ -189,19 +189,19 @@ if ( !isset( $group ) ) {
           <div class="container">
             <ul>
               <li<?php if ( $group == "home" ) { ?> class="is-active"<?php } ?>>
-                <a>Home</a>
+                <a href=".">Home</a>
               </li>
               <li<?php if ( $group == "beings" ) { ?> class="is-active"<?php } ?>>
-                <a>Beings</a>
+                <a href="beings.php">Beings</a>
               </li>
               <li<?php if ( $group == "settlements" ) { ?> class="is-active"<?php } ?>>
-                <a>Settlements</a>
+                <a href="settlements.php">Settlements</a>
               </li>
               <li<?php if ( $group == "items" ) { ?> class="is-active"<?php } ?>>
-                <a>Items</a>
+                <a href="items.php">Items</a>
               </li>
               <li<?php if ( $group == "other" ) { ?> class="is-active"<?php } ?>>
-                <a>Other</a>
+                <a href="other.php">Other</a>
               </li>
             </ul>
           </div>

@@ -12,11 +12,27 @@ try {
   $stmt->execute();
   $home = $stmt->fetch(\PDO::FETCH_ASSOC);
 } catch (\Exception $e) { $home = false; }
+// Retrieve other pages
+try {
+  $stmt = $db->prepare("SELECT * FROM `pages` WHERE `name` NOT LIKE \"Home\"");
+  $stmt->execute();
+  $pages = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+} catch (\Exception $e) { $pages = false; }
 ?>
 
 <main class="section">
   <div class="container">
     <div class="box">
+      <?php if ( $pages ) { ?>
+      <div class="tabs is-centered">
+        <ul>
+          <?php foreach ($pages as $p) { ?>
+          <li><a href="page.php?id=<?php echo $p["id"]; ?>"><?php echo $p["name"]; ?></a></li>
+          <?php } ?>
+        </ul>
+      </div>
+      <?php } ?>
+
       <div class="content">
       <?php if ( $home ) { ?>
         <h1>
