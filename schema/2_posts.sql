@@ -35,7 +35,6 @@ CREATE TABLE IF NOT EXISTS `pages` (
   `name`          VARCHAR(100) NOT NULL,
   `published`     DATE NOT NULL,
   `edited`        DATE,
-  `title`         VARCHAR(100) NOT NULL,
   `body`          MEDIUMTEXT NOT NULL,
   PRIMARY KEY (`id`)
 );
