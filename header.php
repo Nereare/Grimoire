@@ -22,10 +22,16 @@ if ( is_readable( "config.php" ) ) {
   $title = "Grimoire";
 }
 
+// Load Auth and Parsedown only if installed
 if ( !isset($notInstalled) ) {
   $auth = new \Delight\Auth\Auth($db);
   $md   = new Parsedown();
   $md->setSafeMode(true);
+}
+
+// Parse if there is a group set
+if ( !isset( $group ) ) {
+  $group = null;
 }
 ?>
 <!DOCTYPE html>
@@ -179,23 +185,20 @@ if ( !isset($notInstalled) ) {
         <nav class="tabs is-boxed is-fullwidth">
           <div class="container">
             <ul>
-              <li class="is-active">
-                <a>Overview</a>
+              <li<?php if ( $group == "home" ) { ?> class="is-active"<?php } ?>>
+                <a>Home</a>
               </li>
-              <li>
-                <a>Modifiers</a>
+              <li<?php if ( $group == "beings" ) { ?> class="is-active"<?php } ?>>
+                <a>Beings</a>
               </li>
-              <li>
-                <a>Grid</a>
+              <li<?php if ( $group == "settlements" ) { ?> class="is-active"<?php } ?>>
+                <a>Settlements</a>
               </li>
-              <li>
-                <a>Elements</a>
+              <li<?php if ( $group == "items" ) { ?> class="is-active"<?php } ?>>
+                <a>Items</a>
               </li>
-              <li>
-                <a>Components</a>
-              </li>
-              <li>
-                <a>Layout</a>
+              <li<?php if ( $group == "other" ) { ?> class="is-active"<?php } ?>>
+                <a>Other</a>
               </li>
             </ul>
           </div>

@@ -1,4 +1,9 @@
 <?php
+/**
+ * To which of the five group of pages this one pertains.
+ * @var string
+ */
+$group = "home";
 require_once "header.php";
 ?>
 
