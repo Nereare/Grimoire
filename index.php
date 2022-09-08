@@ -11,6 +11,7 @@ try {
   $stmt = $db->prepare("SELECT * FROM `pages` WHERE `name` LIKE \"Home\"");
   $stmt->execute();
   $home = $stmt->fetch(\PDO::FETCH_ASSOC);
+  $profile = new \Nereare\Grimoire\Profile($db, $home["id"]);
 } catch (\Exception $e) { $home = false; }
 // Retrieve other pages
 try {
@@ -23,11 +24,16 @@ try {
 <main class="section">
   <div class="container">
     <div class="box">
-      <?php if ( $pages ) { ?>
+      <?php if ( $pages || $auth->isLoggedIn() ) { ?>
       <div class="tabs is-centered">
         <ul>
+          <?php if ( $auth->isLoggedIn() ) { ?>
+          <li><a href="pages.php?action=create">Create Page</a></li>
+          <?php } ?>
+          <?php if ( $pages ) { ?>
           <?php foreach ($pages as $p) { ?>
           <li><a href="page.php?id=<?php echo $p["id"]; ?>"><?php echo $p["name"]; ?></a></li>
+          <?php } ?>
           <?php } ?>
         </ul>
       </div>
@@ -46,6 +52,16 @@ try {
           <span><?php echo $home["name"]; ?></span>
         </h1>
         <?php echo $md->text( $home["body"] ); ?>
+      </div>
+      <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
+        <ul>
+          <li class="is-active"><a>By <?php echo $profile->get("first_name") . " " . $profile->get("last_name"); ?></a></li>
+          <li class="is-active"><a>Created <?php echo (date("Y-m-d") == $home["published"]) ? "today" : date("l, F j, Y", strtotime( $home["published"] ) ); ?></a></li>
+          <?php if ( $home["edited"] ) { ?>
+          <li class="is-active"><a>Last edited <?php echo (date("Y-m-d") == $home["edited"]) ? "today" : date("l, F j, Y", strtotime( $home["edited"] ) ); ?></a></li>
+          <?php } ?>
+        </ul>
+      </nav>
       <?php } else { ?>
         <h1>
           <?php if ( $auth->isLoggedIn() ) { ?>
