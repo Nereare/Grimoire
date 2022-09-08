@@ -299,6 +299,48 @@ $install[$step] = [
   "state" => "success"
 ];
 
+// Step 6c - Create placeholder Home page
+$step++;
+$count = 0;
+try {
+  $stmt = $db->prepare( "INSERT INTO `pages`
+                           (`author`, `name`, `published`, `body`)
+                           VALUES (
+                             1,
+                             \"Home\",
+                             :now,
+                             \"Lorem ipsum dolor sit amet.\"
+                           )" );
+  $now = date("Y-m-d");
+  $stmt->bindParam(":now", $now);
+  $res = $stmt->execute();
+  if ( !$res ) {
+    // Step 6c - Query Error
+    $install[$step] = [
+      "title" => "Home Not Created",
+      "msg" => "The Home placeholder was not created.",
+      "state" => "danger",
+      "fail" => true
+    ];
+  }
+} catch (\PDOException $e) {
+  // Step 6c - Database Error
+  $install[$step] = [
+    "title" => "Database Error",
+    "msg" => $e->getMessage(),
+    "state" => "danger",
+    "fail" => true
+  ];
+}
+// Step 6c - Query Error
+$install[$step] = [
+  "title" => "Home Page Created",
+  "msg" => "The Home placeholder was created.",
+  "state" => "success",
+  "fail" => false
+];
+if ( $install[$step]["fail"] ) { die( json_encode($install) ); }
+
 $auth = new \Delight\Auth\Auth($db);
 
 try {
