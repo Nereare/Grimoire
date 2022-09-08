@@ -1,11 +1,11 @@
 <?php
 namespace Nereare\Grimoire;
 
-use Nereare\Grimoire\InvalidUidException;
-use Nereare\Grimoire\NoUidException;
-use Nereare\Grimoire\ProfileException;
-use Nereare\Grimoire\UnknownFieldException;
-use Nereare\Grimoire\UnknownUidException;
+use \Nereare\Grimoire\InvalidUidException;
+use \Nereare\Grimoire\NoUidException;
+use \Nereare\Grimoire\ProfileException;
+use \Nereare\Grimoire\UnknownFieldException;
+use \Nereare\Grimoire\UnknownUidException;
 
 final class Profile {
 
@@ -43,8 +43,8 @@ final class Profile {
         );
         $stmt->bindParam(":uid", $this->uid);
         $stmt->execute();
-        if ( !$stmt->fetch() ) { throw new Nereare\Grimoire\InvalidUidException("No such user."); }
-      } catch(\PDOException $e) { throw new Nereare\Grimoire\ProfileException("Database execution error."); }
+        if ( !$stmt->fetch() ) { throw new \Nereare\Grimoire\InvalidUidException("No such user."); }
+      } catch(\PDOException $e) { throw new \Nereare\Grimoire\ProfileException("Database execution error."); }
     }
   }
 
@@ -72,7 +72,7 @@ final class Profile {
    */
   private function getInData($field) {
     if ( !in_array( $field, ["email", "username"] ) ) {
-      throw new Nereare\Grimoire\UnknownFieldException("No such field.");
+      throw new \Nereare\Grimoire\UnknownFieldException("No such field.");
     }
 
     if ( $this->uid != null ) {
@@ -84,11 +84,11 @@ final class Profile {
         $stmt->bindParam(":uid", $this->uid);
         $stmt->execute();
         $result = $stmt->fetch(\PDO::FETCH_ASSOC);
-        if ( !$result ) { throw new Nereare\Grimoire\InvalidUidException("User ID is invalid."); }
+        if ( !$result ) { throw new \Nereare\Grimoire\InvalidUidException("User ID is invalid."); }
         return $result[$field];
-      } catch(\PDOException $e) { throw new Nereare\Grimoire\ProfileException("Database execution error."); }
+      } catch(\PDOException $e) { throw new \Nereare\Grimoire\ProfileException("Database execution error."); }
     } else {
-      throw new Nereare\Grimoire\NoUidException("No user ID set.");
+      throw new \Nereare\Grimoire\NoUidException("No user ID set.");
     }
   }
 
@@ -158,9 +158,9 @@ final class Profile {
         $stmt->bindParam(":player", $player, \PDO::PARAM_BOOL);
         $stmt->bindParam(":homebrewer", $homebrewer, \PDO::PARAM_BOOL);
         $stmt->execute();
-      } catch(\PDOException $e) { throw new Nereare\Grimoire\ProfileException("Database execution error."); }
+      } catch(\PDOException $e) { throw new \Nereare\Grimoire\ProfileException("Database execution error."); }
     } else {
-      throw new Nereare\Grimoire\NoUidException("No user ID set.");
+      throw new \Nereare\Grimoire\NoUidException("No user ID set.");
     }
   }
 
@@ -214,9 +214,9 @@ final class Profile {
         $stmt->bindParam(":player", $player, \PDO::PARAM_BOOL);
         $stmt->bindParam(":homebrewer", $homebrewer, \PDO::PARAM_BOOL);
         $stmt->execute();
-      } catch(\PDOException $e) { throw new Nereare\Grimoire\ProfileException("Database execution error."); }
+      } catch(\PDOException $e) { throw new \Nereare\Grimoire\ProfileException("Database execution error."); }
     } else {
-      throw new Nereare\Grimoire\NoUidException("No user ID set.");
+      throw new \Nereare\Grimoire\NoUidException("No user ID set.");
     }
   }
 
@@ -247,11 +247,11 @@ final class Profile {
         $stmt->bindParam(":uid", $fid, \PDO::PARAM_INT);
         $stmt->execute();
         $result = $stmt->fetch(\PDO::FETCH_ASSOC);
-        if ( !$result ) { throw new Nereare\Grimoire\InvalidUidException("User ID is invalid."); }
+        if ( !$result ) { throw new \Nereare\Grimoire\InvalidUidException("User ID is invalid."); }
         return $result;
-      } catch(\PDOException $e) { throw new Nereare\Grimoire\ProfileException("Database execution error."); }
+      } catch(\PDOException $e) { throw new \Nereare\Grimoire\ProfileException("Database execution error."); }
     } else {
-      throw new Nereare\Grimoire\NoUidException("No user ID set.");
+      throw new \Nereare\Grimoire\NoUidException("No user ID set.");
     }
   }
 
@@ -273,7 +273,7 @@ final class Profile {
     else { $fid = $uid; }
 
     if ( !in_array( $field, $this::FIELDS ) ) {
-      throw new Nereare\Grimoire\UnknownFieldException("No such field.");
+      throw new \Nereare\Grimoire\UnknownFieldException("No such field.");
     }
 
     if ( $fid != null ) {
@@ -285,11 +285,11 @@ final class Profile {
         $stmt->bindParam(":uid", $fid);
         $stmt->execute();
         $result = $stmt->fetch(\PDO::FETCH_ASSOC);
-        if ( !$result ) { throw new Nereare\Grimoire\InvalidUidException("User ID is invalid."); }
+        if ( !$result ) { throw new \Nereare\Grimoire\InvalidUidException("User ID is invalid."); }
         return $result[$field];
-      } catch(\PDOException $e) { throw new Nereare\Grimoire\ProfileException("Database execution error."); }
+      } catch(\PDOException $e) { throw new \Nereare\Grimoire\ProfileException("Database execution error."); }
     } else {
-      throw new Nereare\Grimoire\NoUidException("No user ID set.");
+      throw new \Nereare\Grimoire\NoUidException("No user ID set.");
     }
   }
 
@@ -310,7 +310,7 @@ final class Profile {
     else { $fid = $uid; }
 
     if ( !in_array( $field, $this::FIELDS ) ) {
-      throw new Nereare\Grimoire\UnknownFieldException("No such field.");
+      throw new \Nereare\Grimoire\UnknownFieldException("No such field.");
     }
 
     if ( $fid != null ) {
@@ -325,9 +325,9 @@ final class Profile {
         $stmt->execute();
         $result = $stmt->rowCount();
         return $result ? true : false;
-      } catch(\PDOException $e) { throw new Nereare\Grimoire\ProfileException("Database execution error."); }
+      } catch(\PDOException $e) { throw new \Nereare\Grimoire\ProfileException("Database execution error."); }
     } else {
-      throw new Nereare\Grimoire\NoUidException("No user ID set.");
+      throw new \Nereare\Grimoire\NoUidException("No user ID set.");
     }
   }
 
