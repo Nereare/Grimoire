@@ -224,41 +224,6 @@ final class Profile {
   }
 
   /**
-   * Retrieves the user's data, given an user ID was set.
-   *
-   * @param  int    $uid               The user's ID.
-   *
-   * @throws InvalidUidException       Thrown if the given user ID is not present in the database.
-   * @throws ProfileException          Thrown if the SQL query is invalid, usually when you try to create duplicate entries.
-   * @throws NoUidException            Thrown if you try to invoke this method from a profile manager with no user ID set.
-   *
-   * @return array                     An array containing the user data. Array indexes are named after the corresponding tables' columns.
-   */
-  public function fetch($uid = null) {
-    if ( $this->uid != null ) { $fid = $this->uid; }
-    else { $fid = $uid; }
-
-    if ( $fid != null ) {
-      try {
-        $stmt = $this->conn->prepare(
-          "SELECT `users`.`id`, `email`, `username`, `first_name`, `last_name`, `location`, `birth`, `systems`, `about`, `gm`, `player`, `homebrewer`
-            FROM `users`, `users_profiles`
-            WHERE
-              `users`.`id` = `users_profiles`.`id` AND
-              `users`.`id` LIKE :uid"
-        );
-        $stmt->bindParam(":uid", $fid, \PDO::PARAM_INT);
-        $stmt->execute();
-        $result = $stmt->fetch(\PDO::FETCH_ASSOC);
-        if ( !$result ) { throw new \Nereare\Grimoire\InvalidUidException("User ID is invalid."); }
-        return $result;
-      } catch(\PDOException $e) { throw new \Nereare\Grimoire\ProfileException("Database execution error."); }
-    } else {
-      throw new \Nereare\Grimoire\NoUidException("No user ID set.");
-    }
-  }
-
-  /**
    * Retrieves an user's specific data, given an user ID was set.
    *
    * @param  string $field               The data to be retrieved. Either: "first_name", "last_name", "location", "birth", or "about".
