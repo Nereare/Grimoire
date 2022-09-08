@@ -406,6 +406,15 @@ session_start();
             </div>
           </div>
 
+          <div class="field has-addons">
+            <div class="control">
+              <button class="button is-static" tabindex="-1">Header Image</button>
+            </div>
+            <div class="control is-expanded">
+              <input type="text" class="input" id="user-header" placeholder="URI to the image">
+            </div>
+          </div>
+
           <div class="field">
             <div class="control is-expanded">
               <input type="text" class="input" id="user-systems" data-type="tags" placeholder="Comma-separated systems">

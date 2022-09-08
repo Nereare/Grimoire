@@ -55,6 +55,7 @@ $user_data["user_firstname"]       = $_GET["user_firstname"];
 $user_data["user_lastname"]        = $_GET["user_lastname"];
 $user_data["user_location"]        = $_GET["user_location"];
 $user_data["user_birth"]           = $_GET["user_birth"];
+$user_data["user_header"]          = $_GET["user_header"];
 $user_data["user_systems"]         = $_GET["user_systems"];
 $user_data["user_about"]           = $_GET["user_about"];
 $user_data["is_gm"]                = $_GET["is_gm"];
@@ -472,7 +473,8 @@ try {
     $user_data["user_about"],
     $user_data["is_gm"],
     $user_data["is_player"],
-    $user_data["is_homebrewer"]
+    $user_data["is_homebrewer"],
+    $user_data["user_header"]
   );
 } catch (\Exception $e) {
   // Step 10 - Error

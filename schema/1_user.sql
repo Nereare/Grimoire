@@ -69,5 +69,6 @@ CREATE TABLE IF NOT EXISTS `users_profiles` (
   `gm`          BOOLEAN NOT NULL DEFAULT FALSE,
   `player`      BOOLEAN NOT NULL DEFAULT FALSE,
   `homebrewer`  BOOLEAN NOT NULL DEFAULT FALSE,
+  `header`      VARCHAR(512),
   PRIMARY KEY (`id`)
 );

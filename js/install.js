@@ -72,6 +72,7 @@ $(document).ready(function() {
     var user_lastname       = $("#user-lastname").val();
     var user_location       = $("#user-location").val();
     var user_birth          = $("#user-birth").val();
+    var user_header         = $("#user-header").val();
     var user_systems        = $("#user-systems").val();
     var user_about          = simplemde.value();
     var is_gm               = $("#is-gm").is(":checked");
@@ -118,6 +119,7 @@ $(document).ready(function() {
           user_lastname        : user_lastname,
           user_location        : user_location,
           user_birth           : user_birth,
+          user_header          : user_header,
           user_systems         : user_systems,
           user_about           : user_about,
           is_gm                : is_gm,

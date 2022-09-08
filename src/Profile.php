@@ -135,7 +135,7 @@ final class Profile {
    *
    * @return void
    */
-  public function create($firstName, $lastName, $location, $birth, $systems, $about, $gm, $player, $homebrewer) {
+  public function create($firstName, $lastName, $location, $birth, $systems, $about, $gm, $player, $homebrewer, $header) {
     if ( $this->uid != null ) {
       try { $dob = new \DateTime( $birth ); }
       catch (Exception $e) { $dob = new \DateTime(); }
@@ -144,8 +144,8 @@ final class Profile {
       try {
         $stmt = $this->conn->prepare(
           "INSERT INTO `users_profiles`
-            (`id`, `first_name`, `last_name`, `location`, `birth`, `systems`, `about`, `gm`, `player`, `homebrewer`)
-            VALUES (:uid, :firstname, :lastname, :location, :birth, :systems, :about, :gm, :player, :homebrewer)"
+            (`id`, `first_name`, `last_name`, `location`, `birth`, `systems`, `about`, `gm`, `player`, `homebrewer`, `header`)
+            VALUES (:uid, :firstname, :lastname, :location, :birth, :systems, :about, :gm, :player, :homebrewer, :header)"
         );
         $stmt->bindParam(":uid", $this->uid, \PDO::PARAM_INT);
         $stmt->bindParam(":firstname", $firstName);
@@ -157,6 +157,7 @@ final class Profile {
         $stmt->bindParam(":gm", $gm, \PDO::PARAM_BOOL);
         $stmt->bindParam(":player", $player, \PDO::PARAM_BOOL);
         $stmt->bindParam(":homebrewer", $homebrewer, \PDO::PARAM_BOOL);
+        $stmt->bindParam(":header", $header);
         $stmt->execute();
       } catch(\PDOException $e) { throw new \Nereare\Grimoire\ProfileException("Database execution error."); }
     } else {
@@ -183,7 +184,7 @@ final class Profile {
    *
    * @return void
    */
-  public function update($firstName, $lastName, $location, $birth, $systems, $about, $gm, $player, $homebrewer) {
+  public function update($firstName, $lastName, $location, $birth, $systems, $about, $gm, $player, $homebrewer, $header) {
     if ( $this->uid != null ) {
       try { $dob = new \DateTime( $birth ); }
       catch (Exception $e) { $dob = new \DateTime(); }
@@ -200,7 +201,8 @@ final class Profile {
             `about` = :about,
             `gm` = :gm,
             `player` = :player,
-            `homebrewer` = :homebrewer
+            `homebrewer` = :homebrewer,
+            `header` = :header
             WHERE `id` = :uid"
         );
         $stmt->bindParam(":uid", $this->uid, \PDO::PARAM_INT);
@@ -213,6 +215,7 @@ final class Profile {
         $stmt->bindParam(":gm", $gm, \PDO::PARAM_BOOL);
         $stmt->bindParam(":player", $player, \PDO::PARAM_BOOL);
         $stmt->bindParam(":homebrewer", $homebrewer, \PDO::PARAM_BOOL);
+        $stmt->bindParam(":header", $header);
         $stmt->execute();
       } catch(\PDOException $e) { throw new \Nereare\Grimoire\ProfileException("Database execution error."); }
     } else {
