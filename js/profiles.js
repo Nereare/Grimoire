@@ -21,8 +21,8 @@ $(document).ready(function() {
       data["action"] = "create";
     }
     // Get profile data
-    $data["first_name"]   = $("#firstname").val();
-    $data["last_name"]    = $("#lastname").val();
+    $data["first_name"]  = $("#firstname").val();
+    $data["last_name"]   = $("#lastname").val();
     $data["location"]    = $("#location").val();
     $data["birth"]       = $("#birth").val();
     $data["header"]      = $("#header").val();
