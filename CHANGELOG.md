@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Installation wizard.
 - Tables SQL schematics.
 - Page-creating and -editing structure.
+- Setup page and methods.
 ### Changed
 - Styles to be Bulma-complacent.
 - Favicons to include more files - and, hence, more compatibilities.
