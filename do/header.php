@@ -15,3 +15,14 @@ try {
 
 // Load PHP Auth
 $auth = new \Delight\Auth\Auth($db);
+
+// Load PHPMailer
+$mail = new \PHPMailer\PHPMailer\PHPMailer();
+$mail->isSMTP();
+$mail->Host       = constant("APP_MAIL_HOST");
+$mail->SMTPAuth   = true;
+$mail->Username   = constant("APP_MAIL_USERNAME");
+$mail->Password   = constant("APP_MAIL_PASSWORD");
+$mail->SMTPSecure = PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_SMTPS;
+$mail->Port       = constant("APP_MAIL_PORT");
+$mail->setFrom(constant("APP_MAIL_USERNAME"), constant("APP_NAME"));
