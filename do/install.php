@@ -302,7 +302,6 @@ $install[$step] = [
 
 // Step 6c - Create placeholder Home page
 $step++;
-$count = 0;
 try {
   $stmt = $db->prepare( "INSERT INTO `pages`
                            (`author`, `name`, `published`, `body`)
@@ -337,6 +336,46 @@ try {
 $install[$step] = [
   "title" => "Home Page Created",
   "msg" => "The Home placeholder was created.",
+  "state" => "success",
+  "fail" => false
+];
+if ( $install[$step]["fail"] ) { die( json_encode($install) ); }
+
+// Step 6d - Create SQL exerpt function
+$step++;
+try {
+  $res = $db->exec( "CREATE FUNCTION GET_EXERPT(str MEDIUMTEXT) #, delim VARCHAR(12), pos INT)
+                     RETURNS MEDIUMTEXT
+                     RETURN REPLACE(
+                       SUBSTRING(
+                         SUBSTRING_INDEX(str, '<!-- Read More -->', 1),
+                         CHAR_LENGTH(
+                           SUBSTRING_INDEX(str, '<!-- Read More -->', 0)
+                         ) + 1),
+                       '<!-- Read More -->',
+                       '')" );
+  if ( !$res ) {
+    // Step 6c - Query Error
+    $install[$step] = [
+      "title" => "Function Not Created",
+      "msg" => "The function was not created.",
+      "state" => "danger",
+      "fail" => true
+    ];
+  }
+} catch (\PDOException $e) {
+  // Step 6c - Database Error
+  $install[$step] = [
+    "title" => "Database Error",
+    "msg" => $e->getMessage(),
+    "state" => "danger",
+    "fail" => true
+  ];
+}
+// Step 6c - Query Error
+$install[$step] = [
+  "title" => "Function Created",
+  "msg" => "The exerpt MySQL function was created.",
   "state" => "success",
   "fail" => false
 ];
