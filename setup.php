@@ -141,7 +141,12 @@ if ( $auth->isLoggedIn() ) {
                   <?php } ?>
                   </span>
                 </span>
-                <span><?php echo $u["username"]; ?></span>
+                <span>
+                  <?php echo $u["username"]; ?>
+                  <?php if ( $u["id"] == $auth->getUserID() ) { ?>
+                  <span class="has-text-grey-lighter">(You)</span>
+                  <?php } ?>
+                </span>
               </td>
               <td>
                 <div class="field has-addons">
