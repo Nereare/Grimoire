@@ -494,7 +494,6 @@ $install[$step] = [
 
 // Step 11 - Set PHPMailer data
 $step++;
-$admin_code = \Delight\Auth\Auth::createRandomString(64);
 $config_file = fopen( "../config.php", "w" );
 $config = "<?php
 // Site instance data
