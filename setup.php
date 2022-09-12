@@ -159,13 +159,6 @@ if ( $auth->isLoggedIn() ) {
                       </span>
                     </a>
                   </div>
-                  <div class="control">
-                    <a class="button is-small" href="chat.php?to=<?php echo $u["id"]; ?>">
-                      <span class="icon">
-                        <i class="mdi mdi-message"></i>
-                      </span>
-                    </a>
-                  </div>
                   <?php if ( $auth->hasRole( \Delight\Auth\Role::ADMIN ) && !$auth->admin()->doesUserHaveRole($u["id"], \Delight\Auth\Role::ADMIN) ) { ?>
                   <?php if ( $status == \Delight\Auth\Status::BANNED ) { ?>
                   <div class="control">
