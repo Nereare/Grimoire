@@ -24,9 +24,9 @@ try {
 <main class="section">
   <div class="container">
     <div class="box">
-      <?php if ( $pages || $auth->isLoggedIn() ) { ?>
       <div class="tabs is-centered">
         <ul>
+          <li><a href="post.php">Posts</a></li>
           <?php if ( $auth->isLoggedIn() ) { ?>
           <li><a href="pages.php?action=create">Create Page</a></li>
           <?php } ?>
@@ -37,7 +37,6 @@ try {
           <?php } ?>
         </ul>
       </div>
-      <?php } ?>
 
       <div class="content">
       <?php if ( $home ) { ?>

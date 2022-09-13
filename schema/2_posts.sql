@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `edited`        DATE,
   `title`         VARCHAR(100) NOT NULL,
   `tags`          VARCHAR(255),
-  `categories`    VARCHAR(255),
+  `category`      VARCHAR(64),
   `body`          MEDIUMTEXT NOT NULL,
   PRIMARY KEY (`id`)
 );
