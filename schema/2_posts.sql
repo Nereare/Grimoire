@@ -6,6 +6,7 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `title`         VARCHAR(100) NOT NULL,
   `tags`          VARCHAR(255),
   `category`      VARCHAR(64),
+  `header`        VARCHAR(512),
   `body`          MEDIUMTEXT NOT NULL,
   PRIMARY KEY (`id`)
 );

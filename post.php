@@ -11,7 +11,7 @@ if ( isset( $_GET["id"] ) ) {
   $id = $_GET["id"];
   // Retrieve selected post
   try {
-    $stmt = $db->prepare("SELECT `posts`.`id`, `published`, `edited`, `title`, `tags`, `category`, `body`, `header`, CONCAT(`users_profiles`.`first_name`, ' ', `users_profiles`.`last_name`) AS `author`, `posts`.`author` AS `author_id` FROM `posts`, `users_profiles` WHERE `posts`.`author` LIKE `users_profiles`.`id` AND `posts`.`id` LIKE :id");
+    $stmt = $db->prepare("SELECT `posts`.`id`, `published`, `edited`, `title`, `tags`, `category`, `body`, `posts`.`header`, CONCAT(`users_profiles`.`first_name`, ' ', `users_profiles`.`last_name`) AS `author`, `posts`.`author` AS `author_id` FROM `posts`, `users_profiles` WHERE `posts`.`author` LIKE `users_profiles`.`id` AND `posts`.`id` LIKE :id");
     $stmt->bindParam(":id", $id, \PDO::PARAM_INT);
     $stmt->execute();
     $post = $stmt->fetch(\PDO::FETCH_ASSOC);
@@ -22,7 +22,7 @@ if ( isset( $_GET["id"] ) ) {
   $tag_q = "%" . $tag . "%";
   // Retrieve posts with given tag
   try {
-    $stmt = $db->prepare("SELECT `posts`.`id`, `published`, `edited`, `title`, `tags`, `category`, TRIM(GET_EXERPT(`body`)) AS `exerpt`, `header`, CONCAT(`users_profiles`.`first_name`, ' ', `users_profiles`.`last_name`) AS `author`, `posts`.`author` AS `author_id` FROM `posts`, `users_profiles` WHERE `posts`.`author` LIKE `users_profiles`.`id` AND `tags` LIKE :tag ORDER BY `published` DESC");
+    $stmt = $db->prepare("SELECT `posts`.`id`, `published`, `edited`, `title`, `tags`, `category`, TRIM(GET_EXERPT(`body`)) AS `exerpt`, `posts`.`header`, CONCAT(`users_profiles`.`first_name`, ' ', `users_profiles`.`last_name`) AS `author`, `posts`.`author` AS `author_id` FROM `posts`, `users_profiles` WHERE `posts`.`author` LIKE `users_profiles`.`id` AND `tags` LIKE :tag ORDER BY `published` DESC");
     $stmt->bindParam(":tag", $tag_q);
     $stmt->execute();
     $posts = $stmt->fetchAll(\PDO::FETCH_ASSOC);
@@ -33,7 +33,7 @@ if ( isset( $_GET["id"] ) ) {
   $category_q = "%" . $category . "%";
   // Retrieve posts with given category
   try {
-    $stmt = $db->prepare("SELECT `posts`.`id`, `published`, `edited`, `title`, `tags`, `category`, TRIM(GET_EXERPT(`body`)) AS `exerpt`, `header`, CONCAT(`users_profiles`.`first_name`, ' ', `users_profiles`.`last_name`) AS `author`, `posts`.`author` AS `author_id` FROM `posts`, `users_profiles` WHERE `posts`.`author` LIKE `users_profiles`.`id` AND `category` LIKE :category ORDER BY `published` DESC");
+    $stmt = $db->prepare("SELECT `posts`.`id`, `published`, `edited`, `title`, `tags`, `category`, TRIM(GET_EXERPT(`body`)) AS `exerpt`, `posts`.`header`, CONCAT(`users_profiles`.`first_name`, ' ', `users_profiles`.`last_name`) AS `author`, `posts`.`author` AS `author_id` FROM `posts`, `users_profiles` WHERE `posts`.`author` LIKE `users_profiles`.`id` AND `category` LIKE :category ORDER BY `published` DESC");
     $stmt->bindParam(":category", $category_q);
     $stmt->execute();
     $posts = $stmt->fetchAll(\PDO::FETCH_ASSOC);
@@ -41,7 +41,7 @@ if ( isset( $_GET["id"] ) ) {
 } else {
   // Retrieve posts
   try {
-    $stmt = $db->prepare("SELECT `posts`.`id`, `published`, `edited`, `title`, `tags`, `category`, TRIM(GET_EXERPT(`body`)) AS `exerpt`, `header`, CONCAT(`users_profiles`.`first_name`, ' ', `users_profiles`.`last_name`) AS `author`, `posts`.`author` AS `author_id` FROM `posts`, `users_profiles` WHERE `posts`.`author` = `users_profiles`.`id` ORDER BY `published` DESC");
+    $stmt = $db->prepare("SELECT `posts`.`id`, `published`, `edited`, `title`, `tags`, `category`, TRIM(GET_EXERPT(`body`)) AS `exerpt`, `posts`.`header`, CONCAT(`users_profiles`.`first_name`, ' ', `users_profiles`.`last_name`) AS `author`, `posts`.`author` AS `author_id` FROM `posts`, `users_profiles` WHERE `posts`.`author` = `users_profiles`.`id` ORDER BY `published` DESC");
     $stmt->execute();
     $posts = $stmt->fetchAll(\PDO::FETCH_ASSOC);
   } catch (\Exception $e) { $posts = false; }
