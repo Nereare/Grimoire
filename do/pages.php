@@ -53,11 +53,6 @@ if ( $auth->isLoggedIn() ) {
       // If success
       echo "0";
       exit();
-    } else {
-      // If failure
-      die("1");
-    }
-  }
-} else {
-  die("1");
-}
+    } else { die("1"); }
+  } else { die("1"); }
+} else { die("1"); }
