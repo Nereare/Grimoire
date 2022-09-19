@@ -27,6 +27,7 @@ try {
       <div class="tabs is-centered">
         <ul>
           <li><a href="post.php">Posts</a></li>
+          <li><a href="chapter.php">Books</a></li>
           <?php if ( $auth->isLoggedIn() ) { ?>
           <li><a href="pages.php?action=create">Create Page</a></li>
           <?php } ?>
