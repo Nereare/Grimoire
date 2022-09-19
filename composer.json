@@ -7,6 +7,7 @@
   "require": {
     "delight-im/auth": "^8.3",
     "erusev/parsedown": "^1.7",
-    "phpmailer/phpmailer": "^6.6"
+    "phpmailer/phpmailer": "^6.6",
+    "monolog/monolog": "^3.2"
   }
 }
