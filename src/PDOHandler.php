@@ -30,6 +30,13 @@ class PDOHandler extends \Monolog\Handler\AbstractProcessingHandler {
     } else {
       $user = null;
     }
+    // Check if context includes IP
+    if ( isset( $context["ip"] ) ) {
+      $ip = $context["ip"];
+      unset( $context["ip"] );
+    } else {
+      $ip = null;
+    }
     // Check if context includes target
     if ( isset( $context["target"] ) ) {
       $target = $context["target"];
@@ -53,6 +60,7 @@ class PDOHandler extends \Monolog\Handler\AbstractProcessingHandler {
       "user"     => $user,
       "target"   => $target,
       "action"   => $action,
+      "ip"       => $ip,
       "context"  => json_encode($context)
     ));
   }
@@ -69,6 +77,7 @@ class PDOHandler extends \Monolog\Handler\AbstractProcessingHandler {
         `user`     INT UNSIGNED,
         `target`   VARCHAR(64),
         `action`   VARCHAR(64),
+        `ip`       VARCHAR(64),
         `context`  JSON,
         PRIMARY KEY (`id`)
       )"
@@ -76,7 +85,7 @@ class PDOHandler extends \Monolog\Handler\AbstractProcessingHandler {
     // Set \PDOStatement for later use
     $this->stmt = $this->db->prepare(
       "INSERT INTO " . $this->table . "
-        (`channel`, `level`, `message`, `user`, `target`, `action`, `context`)
+        (`channel`, `level`, `message`, `user`, `target`, `action`, `ip`, `context`)
         VALUES (
           :channel,
           :level,
@@ -84,6 +93,7 @@ class PDOHandler extends \Monolog\Handler\AbstractProcessingHandler {
           :user,
           :target,
           :action,
+          :ip,
           :context
         )"
     );

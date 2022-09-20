@@ -49,20 +49,18 @@ $logger->pushHandler(
  * @param string  $msg      The text to register
  * @param array   $context  An array with miscellaneous data to save
  * @param string  $target   The section of Grimoire the log is about (e.g. "chapter", "page")
- * @param string  $action   The action being taken (e.g. "create", "edit", "delete")
- * @param integer $user     The user ID
+ * @param string  $action   The action being taken (e.g. "create", "edit", "delete", "access")
  */
-function loggy(string $level, string $msg, string $target = "?", string $action = "?", array $context = [], int $user = 0):void {
+function loggy(string $level, string $msg, string $target = "?", string $action = "?", array $context = []):void {
   global $auth;
   global $logger;
   // Set context
   $context["target"] = $target;
   $context["action"] = $action;
-  $context["user"]   = $user;
-  // Check if user is placeholder (0) - if not set to current one
-  if ( $context["user"] == 0 ) {
-    $context["user"] = $auth->getUserId();
-  }
+  // Set user ID
+  $context["user"]   = $auth->getUserId();
+  // Set current IP
+  $context["ip"]     = $auth->getIpAddress();
 
   // Run appropriate Monolog method
   switch ($level) {
