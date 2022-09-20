@@ -201,7 +201,7 @@ if ( isset( $_GET["id"] ) ) {
           </div>
         </div>
       </div>
-    <?php if ( ($i % 2) == 0 ) { ?>
+    <?php if ( ($i % 2) == 0 || $i == $len ) { ?>
     </div>
     <?php } ?>
     <?php } ?>
