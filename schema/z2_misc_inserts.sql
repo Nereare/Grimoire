@@ -57,3 +57,16 @@ INSERT INTO `meta_licenses`
   ("The Unlicense", "Unlicense", "https://unlicense.org/"),
   ("Universal Permissive License v1.0", "UPL-1.0", "https://spdx.org/licenses/UPL-1.0.html"),
   ("Do What The F*ck You Want To Public License", "WTFPL", "http://www.wtfpl.net/");
+
+INSERT INTO `iucn`
+  (`name`, `abbr`)
+  VALUES
+  ("Extinct", "EX"),
+  ("Extinct in the wild", "EW"),
+  ("Critically endangered", "CR"),
+  ("Endangered", "EN"),
+  ("Vulnerable", "VU"),
+  ("Near threatened", "NT"),
+  ("Leas concern", "LC"),
+  ("Data deficient", "DD"),
+  ("Not evaluated", "NE");

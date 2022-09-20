@@ -163,7 +163,9 @@ if ( $install[$step]["fail"] ) { die( json_encode($install) ); }
 // Step 6a: Create tables
 $step++;
 if ( is_readable( "../schema/1_user.sql" ) &&
-     is_readable( "../schema/2_posts.sql" ) ) {
+     is_readable( "../schema/2_posts.sql" ) &&
+     is_readable( "../schema/3_beings.sql" ) &&
+     is_readable( "../schema/z1_misc_tables.sql" ) ) {
   // Get user tables
   $contents = file_get_contents( "../schema/1_user.sql" );
   $contents = rtrim($contents, ";" . PHP_EOL);
@@ -172,12 +174,16 @@ if ( is_readable( "../schema/1_user.sql" ) &&
   $contents = file_get_contents( "../schema/2_posts.sql" );
   $contents = rtrim($contents, ";" . PHP_EOL);
   $posts = explode(";" . PHP_EOL . PHP_EOL, $contents);
+  // Get beings tables
+  $contents = file_get_contents( "../schema/3_beings.sql" );
+  $contents = rtrim($contents, ";" . PHP_EOL);
+  $beings = explode(";" . PHP_EOL . PHP_EOL, $contents);
   // Get misc tables
   $contents = file_get_contents( "../schema/z1_misc_tables.sql" );
   $contents = rtrim($contents, ";" . PHP_EOL);
   $misc = explode(";" . PHP_EOL . PHP_EOL, $contents);
   // Merge all tables for parsing:
-  $tables = array_merge($user, $posts, $misc);
+  $tables = array_merge($user, $posts, $beings, $misc);
   // Step 6a: Success
   $install[$step] = [
     "title" => "Schema Files Read",
@@ -279,7 +285,7 @@ try {
       // Step 6b - Query Error
       $install[$step] = [
         "title" => "Query Error",
-        "msg" => "The query affected no rows.",
+        "msg" => "The query (#{$count}) affected no rows.",
         "state" => "danger"
       ];
       die( json_encode($install) );
@@ -294,6 +300,52 @@ try {
   ];
 }
 // Step 6b - Query Error
+$install[$step] = [
+  "title" => "Table Populated",
+  "msg" => "The query affected {$count} row(s).",
+  "state" => "success"
+];
+
+// Step 6b1: Populate `iucn` table
+$inserts = [
+  ["Extinct", "EX"],
+  ["Extinct in the wild", "EW"],
+  ["Critically endangered", "CR"],
+  ["Endangered", "EN"],
+  ["Vulnerable", "VU"],
+  ["Near threatened", "NT"],
+  ["Leas concern", "LC"],
+  ["Data deficient", "DD"],
+  ["Not evaluated", "NE"]
+];
+
+$step++;
+$count = 0;
+try {
+  $stmt = $db->prepare( "INSERT INTO `iucn` (`name`, `abbr`) VALUES (:name, :abbr)" );
+  foreach($inserts as $v) {
+    $count++;
+    $stmt->bindParam(":name", $v[0]);
+    $stmt->bindParam(":abbr", $v[1]);
+    if ( !$stmt->execute() ) {
+      // Step 6b1 - Query Error
+      $install[$step] = [
+        "title" => "Query Error",
+        "msg" => "The query (#{$count}) affected no rows.",
+        "state" => "danger"
+      ];
+      die( json_encode($install) );
+    }
+  }
+} catch (\PDOException $e) {
+  // Step 6b1 - Database Error
+  $install[$step] = [
+    "title" => "Database Error",
+    "msg" => $e->getMessage(),
+    "state" => "danger"
+  ];
+}
+// Step 6b1 - Query Error
 $install[$step] = [
   "title" => "Table Populated",
   "msg" => "The query affected {$count} row(s).",
