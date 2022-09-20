@@ -80,7 +80,7 @@ if ( isset( $_GET["id"] ) ) {
                           FROM
                             `books`
                           LEFT JOIN `chapters` ON `books`.`id` = `chapters`.`book`
-                          GROUP BY `books`.`id`, `chapters`.`book`;");
+                          GROUP BY `books`.`id`, `chapters`.`book`");
     $stmt->execute();
     $books = $stmt->fetchAll(\PDO::FETCH_ASSOC);
   } catch (\Exception $e) { $books = false; }
