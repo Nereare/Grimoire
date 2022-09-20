@@ -61,11 +61,21 @@ if ( $auth->isLoggedIn() ) {
             " . constant("INSTANCE_TITLE") . "
             An instance of " . constant("APP_NAME") . " &mdash; version " . constant("APP_VERSION");
             $mail->send();
+            loggy("debug", "Request executed", "setup", "add-user", ["added-user" => $user["id"]]);
             echo "0";
             exit();
-          } catch (\Exception $e) { die(1); }
-        } else { die("1"); }
-      } else { die("1"); }
+          } catch (\Exception $e) {
+            loggy("warning", "Could not execute request", "setup", "add-user");
+            die(1);
+          }
+        } else {
+          loggy("warning", "Request does not offer the minimum required fields", "setup", "add-user");
+          die("1");
+        }
+      } else {
+        loggy("warning", "Requesting user is not Admin", "setup", "add-user");
+        die("1");
+      }
       break;
     case "ban":
       // Check if required field was sent
@@ -81,12 +91,22 @@ if ( $auth->isLoggedIn() ) {
                                   WHERE `id` LIKE :id");
             $stmt->bindParam(":id", $uid, \PDO::PARAM_INT);
             $stmt->execute();
+            loggy("debug", "Request executed", "setup", "ban", ["target-user" => $uid]);
             echo "0";
             exit();
           }
-          catch (\Exception $e) { die("1"); }
-        } else { die("1"); }
-      } else { die("1"); }
+          catch (\Exception $e) {
+            loggy("warning", "Could not execute request", "setup", "ban", ["target-user" => $uid]);
+            die("1");
+          }
+        } else {
+          loggy("warning", "Requesting user is not Admin, or user to delete is", "setup", "ban", ["target-user" => $uid]);
+          die("1");
+        }
+      } else {
+        loggy("warning", "Request does not offer the minimum required fields", "setup", "ban");
+        die("1");
+      }
       break;
     case "unban":
       // Check if required field was sent
@@ -102,12 +122,22 @@ if ( $auth->isLoggedIn() ) {
                                   WHERE `id` LIKE :id");
             $stmt->bindParam(":id", $uid, \PDO::PARAM_INT);
             $stmt->execute();
+            loggy("debug", "Request executed", "setup", "unban", ["target-user" => $uid]);
             echo "0";
             exit();
           }
-          catch (\Exception $e) { die("1"); }
-        } else { die("1"); }
-      } else { die("1"); }
+          catch (\Exception $e) {
+            loggy("warning", "Could not execute request", "setup", "unban", ["target-user" => $uid]);
+            die("1");
+          }
+        } else {
+          loggy("warning", "Requesting user is not Admin, or user to delete is", "setup", "unban", ["target-user" => $uid]);
+          die("1");
+        }
+      } else {
+        loggy("warning", "Request does not offer the minimum required fields", "setup", "unban");
+        die("1");
+      }
       break;
     case "delete":
       // Check if required field was sent
@@ -116,15 +146,26 @@ if ( $auth->isLoggedIn() ) {
         // Check if the user requesting the delete is an Admin,
         // but the user to be deleted is NOT an Admin
         if ( $auth->hasRole(\Delight\Auth\Role::ADMIN) &&
-             $auth->admin()->doesUserHaveRole($uid, \Delight\Auth\Role::ADMIN) ) {
+             !$auth->admin()->doesUserHaveRole($uid, \Delight\Auth\Role::ADMIN) ) {
           try {
+            // Delete user
             $auth->admin()->deleteUserById( $uid );
+            loggy("debug", "Request executed", "setup", "delete-user");
             echo "0";
             exit();
           }
-          catch (\Exception $e) { die("1"); }
-        } else { die("1"); }
-      } else { die("1"); }
+          catch (\Exception $e) {
+            loggy("warning", "Could not execute request", "setup", "delete-user");
+            die("1");
+          }
+        } else {
+          loggy("warning", "Requesting user is not Admin, or user to delete is", "setup", "delete-user");
+          die("1");
+        }
+      } else {
+        loggy("warning", "Request does not offer the minimum required fields", "setup", "delete-user");
+        die("1");
+      }
       break;
     case "password":
       // Change password
@@ -145,17 +186,31 @@ if ( $auth->isLoggedIn() ) {
              preg_match($pw["pattern"], $pw["new_1"]) &&
              $pw["old"] != "" ) {
           try {
+            // Change password
             $auth->changePassword($pw["old"], $pw["new_1"]);
+            loggy("debug", "Request executed", "setup", "password");
             echo "0";
-          } catch (\Exception $e) { die("1"); }
+            exit();
+          } catch (\Exception $e) {
+            loggy("warning", "Could not execute request", "setup", "password");
+            die("1");
+          }
+        } else {
+          loggy("warning", "Request does not offer the minimum required fields", "setup", "password");
+          die("1");
         }
-      } else { die("1"); }
+      } else {
+        loggy("warning", "Request does not offer the minimum required fields", "setup", "password");
+        die("1");
+      }
       break;
     default:
       // There MUST be an action
+      loggy("warning", "The request did not include an action", "setup", "access");
       die("1");
       break;
   }
 } else {
+  loggy("warning", "The user is not logged in", "setup", "access");
   die("1");
 }

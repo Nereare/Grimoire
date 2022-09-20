@@ -32,7 +32,10 @@ if ( $auth->isLoggedIn() ) {
           $stmt->bindParam(":id", $post["id"], \PDO::PARAM_INT);
           $stmt->execute();
           $post["author"] = (int) $stmt->fetch(\PDO::FETCH_ASSOC)["author"];
-        } catch (\Exception $e) { echo $e->getMessage(); }
+        } catch (\Exception $e) {
+          loggy("warning", "Could not retrieve post's original author", "post", "access");
+          die("1");
+        }
         if ( $post["editor"] == $post["author"] ) {
           try {
             // Set edit query
@@ -54,39 +57,50 @@ if ( $auth->isLoggedIn() ) {
             $stmt->bindValue(":body", $post["body"]);
             $stmt->bindValue(":edited", $post["now"]);
           } catch (\Exception $e) { echo $e->getMessage(); }
-        } else { die("1"); }
+        } else {
+          loggy("warning", "User requesting edit is not the author", "post", "edit");
+          die("1");
+        }
         break;
       default:
         // Get user ID
         $post["author"] = $auth->getUserId();
-        try {
-          // Set create query
-          $stmt = $db->prepare("INSERT INTO `posts`
-                                (`author`, `published`, `title`, `tags`, `category`, `header`, `body`)
-                                VALUES (
-                                  :author,
-                                  :published,
-                                  :title,
-                                  :tags,
-                                  :category,
-                                  :header,
-                                  :body
-                                )");
-          $stmt->bindValue(":author", $post["author"], \PDO::PARAM_INT);
-          $stmt->bindValue(":published", $post["now"]);
-          $stmt->bindValue(":title", $post["title"]);
-          $stmt->bindValue(":tags", $post["tags"]);
-          $stmt->bindValue(":category", $post["category"]);
-          $stmt->bindValue(":header", $post["header"]);
-          $stmt->bindValue(":body", $post["body"]);
-        } catch (\Exception $e) { die("1"); }
+        // Set create query
+        $stmt = $db->prepare("INSERT INTO `posts`
+                              (`author`, `published`, `title`, `tags`, `category`, `header`, `body`)
+                              VALUES (
+                                :author,
+                                :published,
+                                :title,
+                                :tags,
+                                :category,
+                                :header,
+                                :body
+                              )");
+        $stmt->bindValue(":author", $post["author"], \PDO::PARAM_INT);
+        $stmt->bindValue(":published", $post["now"]);
+        $stmt->bindValue(":title", $post["title"]);
+        $stmt->bindValue(":tags", $post["tags"]);
+        $stmt->bindValue(":category", $post["category"]);
+        $stmt->bindValue(":header", $post["header"]);
+        $stmt->bindValue(":body", $post["body"]);
         break;
     }
     // Execute query
     if ( $stmt->execute() ) {
       // If success
+      loggy("debug", "Request executed", "post", $_GET["action"]);
       echo "0";
       exit();
-    } else { die("1"); }
-  } else { die("1"); }
-} else { die("1"); }
+    } else {
+      loggy("warning", "Could not execute request", "post", $_GET["action"]);
+      die("1");
+    }
+  } else {
+    loggy("warning", "Request does not offer the minimum required fields", "post", "access");
+    die("1");
+  }
+} else {
+  loggy("warning", "The user is not logged in", "post", "access");
+  die("1");
+}

@@ -51,8 +51,18 @@ if ( $auth->isLoggedIn() ) {
     // Execute query
     if ( $stmt->execute() ) {
       // If success
+      loggy("debug", "Request executed", "page", $_GET["action"]);
       echo "0";
       exit();
-    } else { die("1"); }
-  } else { die("1"); }
-} else { die("1"); }
+    } else {
+      loggy("warning", "Could not execute request", $target["target"], $target["action"]);
+      die("1");
+    }
+  } else {
+    loggy("warning", "Request does not offer the minimum required fields", "page", "access");
+    die("1");
+  }
+} else {
+  loggy("warning", "The user is not logged in", "page", "access");
+  die("1");
+}

@@ -23,7 +23,10 @@ if ( $auth->isLoggedIn() ) {
       if ( !isset( $_GET["book"] ) ||
            !isset( $_GET["body"] ) ||
            !isset( $_GET["previous"] ) ||
-           !isset( $_GET["next"] ) ) { die("1"); }
+           !isset( $_GET["next"] ) ) {
+        loggy("warning", "Request does not offer the minimum required fields", $target["target"], $target["action"]);
+        die("1");
+      }
       // Get remaining chapter data
       $target["book"]     = $_GET["book"];
       $target["body"]     = $_GET["body"];
@@ -33,7 +36,10 @@ if ( $auth->isLoggedIn() ) {
       switch ( $target["action"] ) {
         case "edit":
           // Check if there is an ID - die if not
-          if ( !isset( $_GET["id"] ) ) { die("1"); }
+          if ( !isset( $_GET["id"] ) ) {
+            loggy("warning", "Request does not set an ID", $target["target"], $target["action"]);
+            die("1");
+          }
           // Get chapter and editor user IDs
           $target["id"] = $_GET["id"];
           $target["editor"] = $auth->getUserId();
@@ -45,7 +51,10 @@ if ( $auth->isLoggedIn() ) {
             $target["author"] = $stmt->fetch(\PDO::FETCH_ASSOC)["author"];
           } catch (\Exception $e) { $target["author"] = null; }
           // Exit if the editor is not the author
-          if ( $target["editor"] != $target["author"] ) { die("1"); }
+          if ( $target["editor"] != $target["author"] ) {
+            loggy("warning", "User requesting edit is not the author", $target["target"], $target["action"]);
+            die("1");
+          }
           // Set edit query
           $stmt = $db->prepare("UPDATE `chapters`
                                 SET
@@ -95,7 +104,10 @@ if ( $auth->isLoggedIn() ) {
       switch ( $target["action"] ) {
         case "edit":
           // Check if there is an ID - die if not
-          if ( !isset( $_GET["id"] ) ) { die("1"); }
+          if ( !isset( $_GET["id"] ) ) {
+            loggy("warning", "User requesting edit is not the author", $target["target"], $target["action"]);
+            die("1");
+          }
           // Get book ID
           $target["id"] = $_GET["id"];
           // Set edit query
@@ -119,8 +131,18 @@ if ( $auth->isLoggedIn() ) {
     // Execute query
     if ( $stmt->execute() ) {
       // If success
+      loggy("debug", "Request executed", $target["target"], $target["action"]);
       echo "0";
       exit();
-    } else { die("1"); }
-  } else { die("1"); }
-} else { die("1"); }
+    } else {
+      loggy("warning", "Could not execute request", $target["target"], $target["action"]);
+      die("1");
+    }
+  } else {
+    loggy("warning", "Request does not offer the minimum required fields", "chapter", "access");
+    die("1");
+  }
+} else {
+  loggy("warning", "The user is not logged in", "chapter", "access");
+  die("1");
+}
