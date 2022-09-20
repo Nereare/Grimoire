@@ -52,7 +52,7 @@ $logger->pushHandler(
  * @param string  $action   The action being taken (e.g. "create", "edit", "delete")
  * @param integer $user     The user ID
  */
-function loggy(string $level, string $msg, array $context = [], string $target = "?", string $action = "?", int $user = 0):void {
+function loggy(string $level, string $msg, string $target = "?", string $action = "?", array $context = [], int $user = 0):void {
   global $auth;
   global $logger;
   // Set context
