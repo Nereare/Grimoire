@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS `animals` (
   `species`       VARCHAR(32),
   `subspecies`    VARCHAR(32),
   -- Linnaean classification - end
-  `feeding`       ENUM("autotroph", "heterotroph"),
+  `feeding`       ENUM("autotroph", "heterotroph") DEFAULT "heterotroph",
   -- Size - begin
   `size_type`     VARCHAR(64),
   `size_unit`     VARCHAR(4),
