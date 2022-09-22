@@ -165,7 +165,8 @@ $step++;
 if ( is_readable( "../schema/1_user.sql" ) &&
      is_readable( "../schema/2_posts.sql" ) &&
      is_readable( "../schema/3_beings.sql" ) &&
-     is_readable( "../schema/z1_misc_tables.sql" ) ) {
+     is_readable( "../schema/z1_misc_tables.sql" ) &&
+     is_readable( "../schema/z3_misc_functions.sql" ) ) {
   // Get user tables
   $contents = file_get_contents( "../schema/1_user.sql" );
   $contents = rtrim($contents, ";" . PHP_EOL);
@@ -182,8 +183,12 @@ if ( is_readable( "../schema/1_user.sql" ) &&
   $contents = file_get_contents( "../schema/z1_misc_tables.sql" );
   $contents = rtrim($contents, ";" . PHP_EOL);
   $misc = explode(";" . PHP_EOL . PHP_EOL, $contents);
+  // Get functions
+  $contents = file_get_contents( "../schema/z3_misc_functions.sql" );
+  $contents = rtrim($contents, ";" . PHP_EOL);
+  $funcs = explode(";" . PHP_EOL . PHP_EOL, $contents);
   // Merge all tables for parsing:
-  $tables = array_merge($user, $posts, $beings, $misc);
+  $tables = array_merge($user, $posts, $beings, $misc, $funcs);
   // Step 6a: Success
   $install[$step] = [
     "title" => "Schema Files Read",
@@ -388,46 +393,6 @@ try {
 $install[$step] = [
   "title" => "Home Page Created",
   "msg" => "The Home placeholder was created.",
-  "state" => "success",
-  "fail" => false
-];
-if ( $install[$step]["fail"] ) { die( json_encode($install) ); }
-
-// Step 6d - Create SQL exerpt function
-$step++;
-try {
-  $res = $db->exec( "CREATE FUNCTION GET_EXERPT(str MEDIUMTEXT) #, delim VARCHAR(12), pos INT)
-                     RETURNS MEDIUMTEXT
-                     RETURN REPLACE(
-                       SUBSTRING(
-                         SUBSTRING_INDEX(str, '<!-- Read More -->', 1),
-                         CHAR_LENGTH(
-                           SUBSTRING_INDEX(str, '<!-- Read More -->', 0)
-                         ) + 1),
-                       '<!-- Read More -->',
-                       '')" );
-  if ( !$res ) {
-    // Step 6c - Query Error
-    $install[$step] = [
-      "title" => "Function Not Created",
-      "msg" => "The function was not created.",
-      "state" => "danger",
-      "fail" => true
-    ];
-  }
-} catch (\PDOException $e) {
-  // Step 6c - Database Error
-  $install[$step] = [
-    "title" => "Database Error",
-    "msg" => $e->getMessage(),
-    "state" => "danger",
-    "fail" => true
-  ];
-}
-// Step 6c - Query Error
-$install[$step] = [
-  "title" => "Function Created",
-  "msg" => "The exerpt MySQL function was created.",
   "state" => "success",
   "fail" => false
 ];
