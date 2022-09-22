@@ -18,3 +18,15 @@ RETURN CASE
   WHEN cr LIKE 0.5 THEN "&frac12;"
   ELSE ROUND(cr, 0)
 END;
+
+CREATE FUNCTION AS_MOD(val INT)
+RETURNS VARCHAR(16)
+RETURN IF(
+  val < 0,
+  CONCAT("&ndash;", ABS(val)),
+  CONCAT("&plus;", ABS(val))
+);
+
+CREATE FUNCTION GET_MOD(val INT)
+RETURNS INT
+RETURN FLOOR( (val - 10) / 2 );
