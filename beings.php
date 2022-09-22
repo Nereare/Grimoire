@@ -95,7 +95,7 @@ try {
                           `plants`.`iucn`,
                           `plants`.`domestic`,
                           `plants`.`notes`,
-                          GET_EXERPT(`animals`.`body`) AS `exerpt`,
+                          GET_EXERPT(`plants`.`body`) AS `exerpt`,
                           CONCAT_WS(',', `plants`.`title`, `plants`.`domain`, `plants`.`kingdom`, `plants`.`clade`, `plants`.`order`, `plants`.`suborder`, `plants`.`family`, `plants`.`subfamily`, `plants`.`genus`, `plants`.`species`, `plants`.`subspecies`, `plants`.`habitat`, `plants`.`home_plane`, `plants`.`notes`) AS `search_terms`
                         FROM
                           `plants`, `users_profiles`
@@ -202,6 +202,11 @@ try {
           </div>
         </div>
         <?php } ?>
+        <div class="field">
+          <div class="control is-expanded">
+            <input type="text" class="input" id="search-plants" placeholder="Enter search terms...">
+          </div>
+        </div>
       </div>
 
       <div<?php if ( $page != "monsters" ) { ?> class="is-hidden"<?php } ?> id="title-monsters">

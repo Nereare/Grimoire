@@ -43,4 +43,17 @@ $(document).ready(function() {
       }
     });
   });
+
+  // Search plants
+  $("#search-plants").on("input change", function() {
+    let search = $(this).val();
+    $(".plant").each(function() {
+      if ( search == "" ) { $(this).removeClass("is-hidden"); }
+      else {
+        let terms = $(this).attr("data-search-terms");
+        if ( terms.includes(search) ) { $(this).removeClass("is-hidden"); }
+        else { $(this).addClass("is-hidden"); }
+      }
+    });
+  });
 });
