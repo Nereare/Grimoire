@@ -67,6 +67,6 @@ INSERT INTO `iucn`
   ("Endangered", "EN"),
   ("Vulnerable", "VU"),
   ("Near threatened", "NT"),
-  ("Leas concern", "LC"),
+  ("Least concern", "LC"),
   ("Data deficient", "DD"),
   ("Not evaluated", "NE");
