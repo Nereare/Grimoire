@@ -9,6 +9,9 @@ $bar      : $h-line;
   font-size: 13.5px;
   line-height: 1.2em;
   max-width: 100%;
+  box-shadow: 0 0 0.75em rgba(10, 10, 10, 0.5);
+  margin-bottom: 1.5em;
+  &:last-child { margin-bottom: 0; }
   * {
     box-sizing: border-box;
     max-width: 100%;
@@ -18,13 +21,12 @@ $bar      : $h-line;
 }
 .stat-block {
   text-align: justify;
-  margin: 1.5em 0;
+  margin: 0;
   display: inline-block;
   vertical-align: top;
   min-width: 280px;
   background: $back;
   padding: 5px 10px 20px;
-  box-shadow: 0 0 1.5em $body;
 }
 .orange-border {
   display: block;
