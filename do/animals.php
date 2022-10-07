@@ -59,7 +59,7 @@ if ( $auth->isLoggedIn() ) {
     $animal["habitat"] = trim( $_GET["habitat"] );
     $animal["home_plane"] = trim( $_GET["home_plane"] );
     $animal["iucn"] = trim( $_GET["iucn"] );
-    $animal["domestic"] = (bool) $_GET["domestic"];
+    $animal["domestic"] = trim( $_GET["domestic"] ) == "false" ? false : true;
     $animal["notes"] = str_replace( array(" ,", ", ", " , "), ",", trim( $_GET["notes"] ) );
     $animal["body"] = trim( $_GET["body"] );
     // Catch $_GET["action"]
