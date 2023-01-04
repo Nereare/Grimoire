@@ -37,7 +37,7 @@ $(document).ready(function() {
     $(".animal").each(function() {
       if ( search == "" ) { $(this).removeClass("is-hidden"); }
       else {
-        let terms = $(this).attr("data-search-terms");
+        let terms = $(this).attr("data-search-terms").toLowerCase();
         if ( terms.includes(search) ) { $(this).removeClass("is-hidden"); }
         else { $(this).addClass("is-hidden"); }
       }
@@ -50,7 +50,31 @@ $(document).ready(function() {
     $(".plant").each(function() {
       if ( search == "" ) { $(this).removeClass("is-hidden"); }
       else {
-        let terms = $(this).attr("data-search-terms");
+        let terms = $(this).attr("data-search-terms").toLowerCase();
+        if ( terms.includes(search) ) { $(this).removeClass("is-hidden"); }
+        else { $(this).addClass("is-hidden"); }
+      }
+    });
+  });
+
+  // Search monsters
+  $("#search-monster-infos").on("input change", function() {
+    let search = $(this).val();
+    $(".monster").each(function() {
+      if ( search == "" ) { $(this).removeClass("is-hidden"); }
+      else {
+        let terms = $(this).attr("data-search-terms").toLowerCase();
+        if ( terms.includes(search) ) { $(this).removeClass("is-hidden"); }
+        else { $(this).addClass("is-hidden"); }
+      }
+    });
+  });
+  $("#search-monster-stats").on("input change", function() {
+    let search = $(this).val();
+    $(".statblock").each(function() {
+      if ( search == "" ) { $(this).removeClass("is-hidden"); }
+      else {
+        let terms = $(this).attr("data-search-terms").toLowerCase();
         if ( terms.includes(search) ) { $(this).removeClass("is-hidden"); }
         else { $(this).addClass("is-hidden"); }
       }

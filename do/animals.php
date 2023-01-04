@@ -7,60 +7,36 @@ if ( $auth->isLoggedIn() ) {
   if ( isset( $_GET["action"] ) &&
        isset( $_GET["title"] ) &&
        $_GET["title"] != "" &&
-       isset( $_GET["domain"] ) &&
-       isset( $_GET["kingdom"] ) &&
-       isset( $_GET["phylum"] ) &&
-       isset( $_GET["class"] ) &&
-       isset( $_GET["order"] ) &&
-       isset( $_GET["suborder"] ) &&
-       isset( $_GET["family"] ) &&
-       isset( $_GET["subfamily"] ) &&
-       isset( $_GET["genus"] ) &&
-       isset( $_GET["species"] ) &&
-       isset( $_GET["subspecies"] ) &&
-       isset( $_GET["feeding"] ) &&
-       isset( $_GET["size_type"] ) &&
-       isset( $_GET["size_min"] ) &&
-       isset( $_GET["size_max"] ) &&
-       isset( $_GET["size_unit"] ) &&
-       isset( $_GET["weight_min"] ) &&
-       isset( $_GET["weight_max"] ) &&
-       isset( $_GET["weight_unit"] ) &&
-       isset( $_GET["habitat"] ) &&
-       isset( $_GET["home_plane"] ) &&
-       isset( $_GET["iucn"] ) &&
-       isset( $_GET["domestic"] ) &&
-       isset( $_GET["notes"] ) &&
        isset( $_GET["body"] ) &&
        $_GET["body"] != "" ) {
     // Get today's date
     $animal["now"] = date("Y-m-d");
     // Get post data
     $animal["title"] = trim( $_GET["title"] );
-    $animal["domain"] = trim( $_GET["domain"] );
-    $animal["kingdom"] = trim( $_GET["kingdom"] );
-    $animal["phylum"] = trim( $_GET["phylum"] );
-    $animal["class"] = trim( $_GET["class"] );
-    $animal["order"] = trim( $_GET["order"] );
-    $animal["suborder"] = trim( $_GET["suborder"] );
-    $animal["family"] = trim( $_GET["family"] );
-    $animal["subfamily"] = trim( $_GET["subfamily"] );
-    $animal["genus"] = trim( $_GET["genus"] );
-    $animal["species"] = trim( $_GET["species"] );
-    $animal["subspecies"] = trim( $_GET["subspecies"] );
-    $animal["feeding"] = trim( $_GET["feeding"] );
-    $animal["size_type"] = trim( $_GET["size_type"] );
-    $animal["size_min"] = trim( $_GET["size_min"] );
-    $animal["size_max"] = trim( $_GET["size_max"] );
-    $animal["size_unit"] = trim( $_GET["size_unit"] );
-    $animal["weight_min"] = trim( $_GET["weight_min"] );
-    $animal["weight_max"] = trim( $_GET["weight_max"] );
-    $animal["weight_unit"] = trim( $_GET["weight_unit"] );
-    $animal["habitat"] = trim( $_GET["habitat"] );
-    $animal["home_plane"] = trim( $_GET["home_plane"] );
-    $animal["iucn"] = trim( $_GET["iucn"] );
-    $animal["domestic"] = trim( $_GET["domestic"] ) == "false" ? false : true;
-    $animal["notes"] = str_replace( array(" ,", ", ", " , "), ",", trim( $_GET["notes"] ) );
+    $animal["domain"] = isset( $_GET["domain"] ) ? trim( $_GET["domain"] ) : null;
+    $animal["kingdom"] = isset( $_GET["kingdom"] ) ? trim( $_GET["kingdom"] ) : null;
+    $animal["phylum"] = isset( $_GET["phylum"] ) ? trim( $_GET["phylum"] ) : null;
+    $animal["class"] = isset( $_GET["class"] ) ? trim( $_GET["class"] ) : null;
+    $animal["order"] = isset( $_GET["order"] ) ? trim( $_GET["order"] ) : null;
+    $animal["suborder"] = isset( $_GET["suborder"] ) ? trim( $_GET["suborder"] ) : null;
+    $animal["family"] = isset( $_GET["family"] ) ? trim( $_GET["family"] ) : null;
+    $animal["subfamily"] = isset( $_GET["subfamily"] ) ? trim( $_GET["subfamily"] ) : null;
+    $animal["genus"] = isset( $_GET["genus"] ) ? trim( $_GET["genus"] ) : null;
+    $animal["species"] = isset( $_GET["species"] ) ? trim( $_GET["species"] ) : null;
+    $animal["subspecies"] = isset( $_GET["subspecies"] ) ? trim( $_GET["subspecies"] ) : null;
+    $animal["feeding"] = isset( $_GET["feeding"] ) ? trim( $_GET["feeding"] ) : null;
+    $animal["size_type"] = isset( $_GET["size_type"] ) ? trim( $_GET["size_type"] ) : null;
+    $animal["size_min"] = isset( $_GET["size_min"] ) ? trim( $_GET["size_min"] ) : null;
+    $animal["size_max"] = isset( $_GET["size_max"] ) ? trim( $_GET["size_max"] ) : null;
+    $animal["size_unit"] = isset( $_GET["size_unit"] ) ? trim( $_GET["size_unit"] ) : null;
+    $animal["weight_min"] = isset( $_GET["weight_min"] ) ? trim( $_GET["weight_min"] ) : null;
+    $animal["weight_max"] = isset( $_GET["weight_max"] ) ? trim( $_GET["weight_max"] ) : null;
+    $animal["weight_unit"] = isset( $_GET["weight_unit"] ) ? trim( $_GET["weight_unit"] ) : null;
+    $animal["habitat"] = isset( $_GET["habitat"] ) ? trim( $_GET["habitat"] ) : null;
+    $animal["home_plane"] = isset( $_GET["home_plane"] ) ? trim( $_GET["home_plane"] ) : null;
+    $animal["iucn"] = isset( $_GET["iucn"] ) ? trim( $_GET["iucn"] ) : "DD";
+    $animal["domestic"] = isset( $_GET["domestic"] ) ? (trim( $_GET["domestic"] ) == "false" ? false : true) : false;
+    $animal["notes"] = isset( $_GET["notes"] ) ? str_replace( array(" ,", ", ", " , "), ",", trim( $_GET["notes"] ) ) : null;
     $animal["body"] = trim( $_GET["body"] );
     // Catch $_GET["action"]
     if ( !isset( $_GET["action"] ) ) { $_GET["action"] = "create"; }
@@ -187,7 +163,6 @@ if ( $auth->isLoggedIn() ) {
                                 :notes,
                                 :body
                               )");
-        $stmt->bindValue(":id", $animal["id"], \PDO::PARAM_INT);
         $stmt->bindValue(":author", $animal["author"], \PDO::PARAM_INT);
         $stmt->bindValue(":published", $animal["now"]);
         $stmt->bindValue(":title", $animal["title"]);
