@@ -53,13 +53,13 @@ try {
                           `animals`.`domestic`,
                           `animals`.`notes`,
                           GET_EXERPT(`animals`.`body`) AS `exerpt`,
-                          CONCAT_WS(',', `animals`.`title`, `animals`.`domain`, `animals`.`kingdom`, `animals`.`phylum`, `animals`.`class`, `animals`.`order`, `animals`.`suborder`, `animals`.`family`, `animals`.`subfamily`, `animals`.`genus`, `animals`.`species`, `animals`.`subspecies`, `animals`.`notes`) AS `search_terms`
+                          LCASE(CONCAT_WS(',', `animals`.`title`, `animals`.`domain`, `animals`.`kingdom`, `animals`.`phylum`, `animals`.`class`, `animals`.`order`, `animals`.`suborder`, `animals`.`family`, `animals`.`subfamily`, `animals`.`genus`, `animals`.`species`, `animals`.`subspecies`, `animals`.`notes`)) AS `search_terms`
                         FROM
                           `animals`, `users_profiles`
                         WHERE
                           `animals`.`author` LIKE `users_profiles`.`id`
                         ORDER BY
-                          `animals`.`published` ASC");
+                          `animals`.`title` ASC");
   $stmt->execute();
   $animals = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 } catch (\Exception $e) { $animals = []; }
@@ -96,19 +96,18 @@ try {
                           `plants`.`domestic`,
                           `plants`.`notes`,
                           GET_EXERPT(`plants`.`body`) AS `exerpt`,
-                          CONCAT_WS(',', `plants`.`title`, `plants`.`domain`, `plants`.`kingdom`, `plants`.`clade`, `plants`.`order`, `plants`.`suborder`, `plants`.`family`, `plants`.`subfamily`, `plants`.`genus`, `plants`.`species`, `plants`.`subspecies`, `plants`.`habitat`, `plants`.`home_plane`, `plants`.`notes`) AS `search_terms`
+                          LCASE(CONCAT_WS(',', `plants`.`title`, `plants`.`domain`, `plants`.`kingdom`, `plants`.`clade`, `plants`.`order`, `plants`.`suborder`, `plants`.`family`, `plants`.`subfamily`, `plants`.`genus`, `plants`.`species`, `plants`.`subspecies`, `plants`.`habitat`, `plants`.`home_plane`, `plants`.`notes`)) AS `search_terms`
                         FROM
                           `plants`, `users_profiles`
                         WHERE
                           `plants`.`author` LIKE `users_profiles`.`id`
                         ORDER BY
-                          `plants`.`published` ASC");
+                          `plants`.`title` ASC");
   $stmt->execute();
   $plants = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 } catch (\Exception $e) { $plants = []; }
 // Monsters
 try {
-  // FIXME: This query is VERY broken! XD
   $stmt = $db->prepare("SELECT
                           `monsters`.`id`,
                           `monsters`.`author` AS `author_id`,
@@ -129,21 +128,57 @@ try {
                           `monsters`.`sidekick`,
                           `monsters`.`notes`,
                           `monsters`.`body`,
-                          GET_EXERPT(`animals`.`body`) AS `exerpt`,
-                          SUM( COUNT(`stat_blocks_35e`.`id`) + COUNT(`stat_blocks_5e`.`id`) ) AS `block_count`,
-                          CONCAT_WS(',', `monsters`.`title`, `monsters`.`habitat`, `monsters`.`home_plane`, `monsters`.`notes`) AS `search_terms`
+                          GET_EXERPT(`monsters`.`body`) AS `exerpt`,
+                          LCASE(CONCAT_WS(',', `monsters`.`title`, `monsters`.`habitat`, `monsters`.`home_plane`, `monsters`.`notes`)) AS `search_terms`
                         FROM
-                          `monsters`
-                        LEFT JOIN `users_profiles` ON `users_profiles`.`id` LIKE `monsters`.`author`
-                        LEFT JOIN `stat_blocks_35e` ON `stat_blocks_35e`.`for` LIKE `monsters`.`id`
-                        GROUP BY `stat_blocks_35e`.`for`, `monsters`.`id`
-                        LEFT JOIN `stat_blocks_5e` ON `stat_blocks_5e`.`for` LIKE `monsters`.`id`
-                        GROUP BY `stat_blocks_5e`.`for`, `monsters`.`id`
+                          `monsters`, `users_profiles`
+                        WHERE
+                          `monsters`.`author` LIKE `users_profiles`.`id`
                         ORDER BY
-                          `monsters`.`published` ASC");
+                          `monsters`.`title` ASC");
   $stmt->execute();
   $monsters = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 } catch (\Exception $e) { $monsters = []; }
+// Stat Blocks
+try {
+  $stmt = $db->prepare("SELECT
+                          `stat_blocks_35e`.`id`,
+                          `stat_blocks_35e`.`author` AS `author_id`,
+                          `stat_blocks_35e`.`name`,
+                          `stat_blocks_35e`.`size`,
+                          `stat_blocks_35e`.`type`,
+                          CONCAT(`users_profiles`.`first_name`, ' ', `users_profiles`.`last_name`) AS `author`,
+                          GET_CR_AS_TEXT(`stat_blocks_35e`.`cr`) AS `cr`,
+                          LCASE(CONCAT_WS(',', `stat_blocks_35e`.`name`, `stat_blocks_35e`.`tags`)) AS `search_terms`,
+                          '3.5' AS `version`
+                        FROM
+                          `stat_blocks_35e`, `users_profiles`
+                        WHERE
+                          `stat_blocks_35e`.`author` LIKE `users_profiles`.`id`
+                        ORDER BY
+                          `stat_blocks_35e`.`name` ASC");
+  $stmt->execute();
+  $stats_35e = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+  $stmt = $db->prepare("SELECT
+                          `stat_blocks_5e`.`id`,
+                          `stat_blocks_5e`.`author` AS `author_id`,
+                          `stat_blocks_5e`.`name`,
+                          `stat_blocks_5e`.`size`,
+                          `stat_blocks_5e`.`type`,
+                          CONCAT(`users_profiles`.`first_name`, ' ', `users_profiles`.`last_name`) AS `author`,
+                          GET_CR_AS_TEXT(`stat_blocks_5e`.`cr`) AS `cr`,
+                          LCASE(CONCAT_WS(',', `stat_blocks_5e`.`name`, `stat_blocks_5e`.`tags`)) AS `search_terms`,
+                          '5' AS `version`
+                        FROM
+                          `stat_blocks_5e`, `users_profiles`
+                        WHERE
+                          `stat_blocks_5e`.`author` LIKE `users_profiles`.`id`
+                        ORDER BY
+                          `stat_blocks_5e`.`name` ASC");
+  $stmt->execute();
+  $stats_5e = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+  $stats = array_merge($stats_35e, $stats_5e);
+} catch (\Exception $e) { $stats = []; }
 ?>
 
 <main class="section">
@@ -214,20 +249,6 @@ try {
           <span>Monsters</span>
         </h1>
         <p class="subtitle is-5">A list of current monsters and creatures with associated stat blocks</p>
-        <?php if ( $auth->isLoggedIn() ) { ?>
-        <div class="field">
-          <div class="control is-expanded">
-            <a class="button is-success is-fullwidth mt-4" href="monsters.php?action=create">
-              <span class="icon-text">
-                <span class="icon">
-                  <i class="mdi mdi-ghost mdi-18px"></i>
-                </span>
-                <span>Create Animal</span>
-              </span>
-            </a>
-          </div>
-        </div>
-        <?php } ?>
       </div>
     </div>
 
@@ -324,17 +345,36 @@ try {
     </div>
 
     <div<?php if ( $page != "monsters" ) { ?> class="is-hidden"<?php } ?> id="tab-monsters">
-      <?php if ( count( $monsters ) > 0 ) {
-      $i = 0;
-      $len = count( $monsters );
-      foreach ($monsters as $m) {
-        $i++;
-      ?>
-      <?php if ( ($i % 3) == 1 ) { ?>
       <div class="columns">
-      <?php } ?>
-        <div class="column is-4 plant" data-search-terms="<?php echo $m["search_terms"]; ?>">
-          <div class="card">
+        <div class="column">
+          <!-- Monster Information Blocks -->
+          <div class="box">
+            <h2 class="title is-4">Creatures</h2>
+            <p class="subtitle is-6">A list of information blocks</p>
+            <?php if ( $auth->isLoggedIn() ) { ?>
+            <div class="field">
+              <div class="control is-expanded">
+                <a class="button is-success is-fullwidth mt-4" href="monsters.php?action=create">
+                  <span class="icon-text">
+                    <span class="icon">
+                      <i class="mdi mdi-ghost mdi-18px"></i>
+                    </span>
+                    <span>Create Monster Info</span>
+                  </span>
+                </a>
+              </div>
+            </div>
+            <?php } ?>
+            <div class="field">
+              <div class="control is-expanded">
+                <input type="text" class="input" id="search-monster-infos" placeholder="Enter search terms - for infos...">
+              </div>
+            </div>
+          </div>
+
+          <!-- Info Blocks -->
+          <?php if ( count( $monsters ) > 0 ) { foreach ($monsters as $m) { ?>
+          <div class="card monster mt-5" data-search-terms="<?php echo $m["search_terms"]; ?>">
             <div class="card-content">
               <!-- Chapter header -->
               <div class="media">
@@ -345,28 +385,79 @@ try {
                     </a>
                   </p>
                   <p class="subtitle is-6">
-                    <?php if ( $m["genus"] != "" && $m["species"] != "" ) { ?>
-                    <em><?php echo $m["genus"][0] . ". " . $m["species"]; ?><?php echo ($m["subspecies"] != "") ? " " . $m["subspecies"] : ""; ?></em>
-                    &bull;
-                    <?php } ?>
                     By <a href="profile.php?id=<?php echo $m["author_id"]; ?>"><?php echo $m["author"] != " " ? $m["author"] : "User #" . $m["author_id"]; ?></a>
                   </p>
                 </div>
               </div>
-              <div class="content">
-                <?php echo $md->text( $m["exerpt"] ); ?>
+            </div>
+          </div>
+          <?php } } else { ?>
+          <div class="box">
+            <p class="has-text-centered">No monsters found...</p>
+          </div>
+          <?php } ?>
+        </div>
+
+
+        <div class="column">
+          <!-- Monster Stat Blocks -->
+          <div class="box">
+            <h2 class="title is-4">Stat Blocks</h2>
+            <p class="subtitle is-6">A list of stat blocks</p>
+            <?php if ( $auth->isLoggedIn() ) { ?>
+            <div class="field">
+              <div class="control is-expanded">
+                <a class="button is-success is-fullwidth mt-4" href="stats.php?action=create">
+                  <span class="icon-text">
+                    <span class="icon">
+                      <i class="mdi mdi-ghost-outline mdi-18px"></i>
+                    </span>
+                    <span>Create Monster Stat Block</span>
+                  </span>
+                </a>
+              </div>
+            </div>
+            <?php } ?>
+            <div class="field">
+              <div class="control is-expanded">
+                <input type="text" class="input" id="search-monster-stats" placeholder="Enter search terms - for stats...">
               </div>
             </div>
           </div>
+
+          <!-- Stat blocks -->
+          <?php if ( count( $stats ) > 0 ) { foreach ($stats as $s) { ?>
+          <div class="card statblock mt-5" data-search-terms="<?php echo $m["search_terms"]; ?>">
+            <div class="card-content">
+              <!-- Chapter header -->
+              <div class="media">
+                <div class="media-content">
+                  <p class="title is-4">
+                    <a href="stat.php?id=<?php echo $s["id"]; ?>&version=<?php echo urlencode( $s["version"] ); ?>">
+                      <?php echo $s["name"]; ?>
+                    </a>
+                  </p>
+                  <p class="subtitle is-6">
+                    By <a href="profile.php?id=<?php echo $s["author_id"]; ?>"><?php echo $s["author"] != " " ? $s["author"] : "User #" . $s["author_id"]; ?></a>
+                    &bull;
+                    <?php echo $s["size"] . " " . $s["type"]; ?>
+                    &bull;
+                    <?php echo "CR " . $s["cr"]; ?>
+                    &bull;
+                    <?php echo $s["version"] . "E"; ?>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <?php } } else { ?>
+          <div class="box">
+            <p class="has-text-centered">No stat blocks found...</p>
+          </div>
+          <?php } ?>
         </div>
-      <?php if ( ($i % 3) == 0 || $i == $len ) { ?>
       </div>
-      <?php } ?>
-      <?php } } else { ?>
-        <div class="box">
-          <p class="has-text-centered">No monsters found...</p>
-        </div>
-      <?php } ?>
+
     </div>
   </div>
 </main>
