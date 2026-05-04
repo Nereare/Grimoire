@@ -22,16 +22,16 @@ Gem::Specification.new do |spec|
   end
 
   spec.platform = Gem::Platform::RUBY
-  spec.required_ruby_version = '>= 3.0.0'
+  spec.required_ruby_version = '>= 3.2.0'
 
-  spec.add_development_dependency 'html-proofer', '~>4.3', '>= 4.3.1'
-  spec.add_development_dependency 'nokogiri', '~>1.12', '>= 1.12.5'
-  spec.add_development_dependency 'webrick', '~>1.7', '>= 1.7.0'
+  spec.add_development_dependency 'html-proofer', '~>5.2'
+  spec.add_development_dependency 'nokogiri', '~>1.19'
+  spec.add_development_dependency 'webrick', '~>1.9'
 
-  spec.add_dependency 'jekyll-feed', '~>0.12', '>= 0.12.1'
-  spec.add_dependency 'jekyll', '~>4.0', '>= 4.0.0'
-  spec.add_dependency 'jekyll-redirect-from', '~>0.15', '>= 0.15.0'
-  spec.add_dependency 'jekyll-seo-tag', '~>2.6', '>= 2.6.1'
-  spec.add_dependency 'jekyll-sitemap', '~>1.3', '>= 1.3.1'
-  spec.add_dependency 'jemoji', '~>0.11', '>= 0.11.1'
+  spec.add_dependency 'jekyll-feed', '~>0.17'
+  spec.add_dependency 'jekyll', '~>4.4'
+  spec.add_dependency 'jekyll-redirect-from', '~>0.16'
+  spec.add_dependency 'jekyll-seo-tag', '~>2.8'
+  spec.add_dependency 'jekyll-sitemap', '~>1.4'
+  spec.add_dependency 'jemoji', '~>0.13'
 end
