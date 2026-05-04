@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby ".ruby-version"
 
 group :jekyll_plugins do
   gem 'just-the-docs', '~>0.12'
