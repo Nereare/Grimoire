@@ -25,6 +25,8 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
+      - name: Install Gems
+        run: bundle install
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
