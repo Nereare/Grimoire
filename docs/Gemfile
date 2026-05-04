@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'jekyll', '~>4.4'
 group :jekyll_plugins do
   gem 'just-the-docs', '~>0.12'
   gem 'kramdown', '~>2.5'
